@@ -1,0 +1,92 @@
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.legend {
+  display: flex;
+  gap: var(--space-5);
+  margin-bottom: var(--space-3);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.legendSwatch {
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendSwatch.actual {
+  background: var(--accent);
+}
+
+.legendSwatch.potential {
+  background: rgba(var(--accent-rgb), 0.25);
+  border: 1px solid rgba(var(--accent-rgb), 0.6);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-1) 0;
+  border-radius: var(--radius-sm);
+}
+
+.row:hover {
+  background: var(--surface-raised);
+}
+
+.teamLabel {
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.barTrack {
+  position: relative;
+  height: 20px;
+  border-radius: 4px;
+  background: rgba(var(--accent-rgb), 0.18);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+}
+
+.barFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 4px 0 0 4px;
+  background: var(--accent);
+}
+
+.barFillCapped {
+  border-radius: 4px;
+}
+
+.value {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,161 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  min-height: calc(100svh - 8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+  isolation: isolate;
+}
+
+/* Fixed dark stadium-at-night treatment regardless of site theme — this is a
+   photographic-style hero moment, not a themed surface, so text contrast
+   must hold even when the rest of the app is in light mode. */
+.gradientBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 20%, rgba(var(--accent-rgb), 0.22), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 75% 75%, rgba(var(--gold-rgb), 0.12), transparent 65%),
+    linear-gradient(180deg, #0b1220 0%, #0e1830 55%, #141e30 100%);
+}
+
+.content {
+  text-align: center;
+  padding: var(--space-7) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eaf0fa;
+}
+
+.eyebrow {
+  color: #6fe8b9;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 var(--space-4);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  margin: 0 0 var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3.5ch;
+}
+
+.unitValueWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.unitValue {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.unitLabel {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8fa0bc;
+}
+
+.divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(234, 240, 250, 0.16);
+}
+
+.draftDateLine {
+  color: #b7c3da;
+  font-size: 0.95rem;
+  margin: 0 0 var(--space-2);
+}
+
+.hypeLine {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: var(--space-3) 0 0;
+}
+
+.tbdLine {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 0 var(--space-2);
+}
+
+.waitingLine {
+  color: #8fa0bc;
+  margin: 0;
+}
+
+.liveDot {
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: var(--accent-hot);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liveDot {
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.sleeperLink {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.sleeperLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .countdown {
+    gap: var(--space-3);
+  }
+}

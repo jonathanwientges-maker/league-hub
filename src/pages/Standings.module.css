@@ -1,0 +1,30 @@
+.divisionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-7);
+}
+
+@media (max-width: 900px) {
+  .divisionGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.section {
+  margin-bottom: var(--space-7);
+}
+
+.section h2 {
+  margin-bottom: var(--space-4);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.card {
+  padding: var(--space-5);
+  overflow-x: auto;
+}

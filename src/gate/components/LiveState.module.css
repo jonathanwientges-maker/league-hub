@@ -1,0 +1,89 @@
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  gap: 1.25rem;
+}
+
+.eyebrow {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.liveDot {
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: var(--ember);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+.headline {
+  font-family: "Archivo Black", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 8vw, 5rem);
+  margin: 0;
+}
+
+.subline {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--chalk-dim);
+  margin: 0;
+}
+
+.button {
+  margin-top: 0.75rem;
+  padding: 0.9rem 1.75rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--night);
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.button:hover {
+  filter: brightness(1.08);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liveDot {
+    animation: none;
+  }
+}

@@ -1,0 +1,89 @@
+.wrap {
+  width: min(100%, 640px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.label {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  margin: 0;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  height: 28px;
+  background: var(--turf);
+  border-top: 1px solid rgba(242, 244, 239, 0.16);
+  border-bottom: 1px solid rgba(242, 244, 239, 0.16);
+}
+
+.endzone {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 8%;
+  background: rgba(232, 179, 75, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.endzone span {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  writing-mode: vertical-rl;
+}
+
+.yardLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(242, 244, 239, 0.16);
+}
+
+.yardNumber {
+  position: absolute;
+  top: -1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-size: 0.65rem;
+  color: var(--chalk-dim);
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  transform: translate(-50%, -50%);
+  transition: left 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ball {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  font-size: 0.85rem;
+  color: var(--chalk-dim);
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marker {
+    transition: none;
+  }
+}

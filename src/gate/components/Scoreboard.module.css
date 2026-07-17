@@ -1,0 +1,86 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.groups {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.digits {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.groupLabel {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+}
+
+.colon {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--chalk-dim);
+  font-size: clamp(2rem, 7vw, 4.5rem);
+  line-height: 1;
+  padding-top: 0.1em;
+  align-self: flex-start;
+}
+
+.cell {
+  position: relative;
+  width: clamp(1.9rem, 7vw, 4.5rem);
+  height: clamp(3rem, 12vw, 7.5rem);
+  background: var(--turf);
+  border: 1px solid rgba(242, 244, 239, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  perspective: 400px;
+}
+
+.seam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(242, 244, 239, 0.14);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2rem, 8vw, 5rem);
+  color: var(--gold);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.kickoffLine {
+  font-size: 0.9rem;
+  color: var(--chalk-dim);
+  margin: 0;
+}

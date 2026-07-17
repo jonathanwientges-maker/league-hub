@@ -1,0 +1,19 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.interactive {
+  transition: transform var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}

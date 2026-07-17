@@ -1,0 +1,44 @@
+.contextBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-5);
+}
+
+.archiveIcon {
+  font-size: 0.9rem;
+}
+
+.subNav {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+  overflow-x: auto;
+}
+
+.subNavLink {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.subNavLink:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.subNavLinkActive {
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}

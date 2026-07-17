@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.headerInfo h1 {
+  margin-bottom: var(--space-1);
+}
+
+.meta {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.retroChip {
+  margin-bottom: var(--space-5);
+}
+
+.section {
+  margin-bottom: var(--space-7);
+}
+
+.section h2 {
+  margin-bottom: var(--space-4);
+}
+
+.card {
+  padding: var(--space-5);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th {
+  text-align: left;
+  color: var(--text-dim);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.numeric {
+  text-align: right;
+}
+
+.weekRow {
+  cursor: pointer;
+}
+
+.weekRow:hover {
+  background: var(--surface-raised);
+}
+
+.lineupDetail {
+  background: var(--bg);
+}
+
+.lineupGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  padding: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .lineupGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.lineupColumn h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  margin: 0 0 var(--space-2);
+}
+
+.lineupRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-1) 0;
+  font-size: 0.85rem;
+}
+
+.slotLabel {
+  color: var(--text-dim);
+  width: 5em;
+  flex-shrink: 0;
+}
+
+.playerName {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shouldHaveStarted {
+  color: var(--accent-hot);
+  font-weight: 600;
+}

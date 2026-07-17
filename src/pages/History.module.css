@@ -1,0 +1,170 @@
+.banner {
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-dim);
+  margin: var(--space-4) 0;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.card {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: inherit;
+}
+
+.emptyState {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.year {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.liveChip {
+  vertical-align: middle;
+}
+
+.championRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.championName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.championLabel {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.inProgressLabel {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin: 0;
+}
+
+.placementsRow {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.statsRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.retroChip {
+  align-self: flex-start;
+}
+
+.allTimeSection {
+  margin-top: var(--space-8);
+}
+
+.allTimeCard {
+  padding: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.allTimeGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 800px) {
+  .allTimeGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.recordList {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.recordRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.recordRow:last-child {
+  border-bottom: none;
+}
+
+.statStrip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.statTile {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3);
+  background: var(--surface-raised);
+  border-radius: var(--radius-md);
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.statNote {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}

@@ -1,0 +1,134 @@
+.wrap {
+  position: relative;
+}
+
+.columnHeaders {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+.columnHeaders span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(96px, 1fr));
+  gap: var(--space-5);
+  min-height: 420px;
+}
+
+.connectorLayer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.w1 {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+.w2 {
+  grid-column: 1;
+  grid-row: 3 / 5;
+  align-self: center;
+}
+
+.s1 {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+.s2 {
+  grid-column: 2;
+  grid-row: 3 / 5;
+  align-self: center;
+}
+
+.final {
+  grid-column: 3;
+  grid-row: 1 / 5;
+  align-self: center;
+}
+
+.reseededTag {
+  display: inline-block;
+  margin-top: var(--space-1);
+  font-size: 0.65rem;
+  color: var(--gold);
+  cursor: help;
+}
+
+.round {
+  display: contents;
+}
+
+@media (max-width: 900px) {
+  .columnHeaders {
+    display: none;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    min-height: 0;
+  }
+
+  .connectorLayer {
+    display: none;
+  }
+
+  .round {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .roundCards {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+  }
+
+  .roundCards > * {
+    min-width: 240px;
+    flex-shrink: 0;
+  }
+
+  .roundLabel {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .roundLabel {
+    display: none;
+  }
+
+  .roundCards {
+    display: contents;
+  }
+}

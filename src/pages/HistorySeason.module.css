@@ -1,0 +1,48 @@
+.card {
+  padding: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.placementList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.placementRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.placementRow:last-child {
+  border-bottom: none;
+}
+
+.placementRank {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--text-dim);
+  width: 1.5em;
+  flex-shrink: 0;
+}
+
+.placementName {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.placementName:hover {
+  text-decoration: underline;
+}
+
+.links {
+  margin-top: var(--space-4);
+  font-size: 0.9rem;
+}

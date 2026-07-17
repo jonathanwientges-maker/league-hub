@@ -1,0 +1,20 @@
+.notice {
+  padding: var(--space-6) var(--space-5);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  text-align: center;
+}
+
+.message {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+}
+
+.subnote {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin: 0;
+}

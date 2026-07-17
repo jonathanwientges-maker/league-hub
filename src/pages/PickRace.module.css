@@ -1,0 +1,93 @@
+.card {
+  padding: var(--space-5);
+  overflow-x: auto;
+}
+
+.section {
+  margin-top: var(--space-7);
+}
+
+.section h2 {
+  margin-bottom: var(--space-4);
+}
+
+.groupGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 800px) {
+  .groupGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.explainer {
+  margin-top: var(--space-7);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.explainer summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.explainer p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: var(--space-3);
+}
+
+.projectionChip {
+  margin-bottom: var(--space-4);
+}
+
+.placementList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.placementRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.placementRow:last-child {
+  border-bottom: none;
+}
+
+.placementRank {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--text-dim);
+  width: 2.5em;
+  flex-shrink: 0;
+}
+
+.placementName {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.placementName:hover {
+  text-decoration: underline;
+}
+
+.emptyState {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}

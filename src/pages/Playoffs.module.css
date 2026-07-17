@@ -1,0 +1,59 @@
+.card {
+  padding: var(--space-5);
+  overflow-x: auto;
+}
+
+.section {
+  margin-top: var(--space-7);
+}
+
+.section h2 {
+  margin-bottom: var(--space-4);
+}
+
+.secondaryGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 640px) {
+  .secondaryGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.secondaryCard {
+  padding: var(--space-4);
+}
+
+.secondaryNote {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-top: var(--space-2);
+}
+
+.explainer {
+  margin-top: var(--space-7);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.explainer summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.explainer p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: var(--space-3);
+}
+
+.projectionChip {
+  margin-bottom: var(--space-4);
+}
