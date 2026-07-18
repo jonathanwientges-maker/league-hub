@@ -1,6 +1,6 @@
 // The one and only source of truth for the launch moment. Store in UTC —
 // the gate renders it in each visitor's local timezone.
-export const RELEASE_DATE_UTC = "2026-07-18T06:05:00Z"; // Jul 18, 2026, 8:05 AM German time (CEST)
+export const RELEASE_DATE_UTC = "2026-08-24T08:00:00Z"; // Aug 24, 2026, 10:00 AM German time (CEST)
 
 // The day the gate was deployed — cosmetic only, drives the field-position
 // meter's starting point. Adjust if you redeploy the gate significantly
