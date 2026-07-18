@@ -28,6 +28,9 @@ export const LEAGUE_CONFIG = {
   },
   // ISO datetime; if set, wins over Sleeper's draft start_time for the countdown.
   draftCountdownOverride: null as string | null,
+  // Shown in the top nav in place of Sleeper's full league name (which runs
+  // long for a mobile header). Leave null to show the real name instead.
+  displayName: "DoPE" as string | null,
 
   regularSeasonWeeks: 14,        // read from league settings at runtime, this is fallback
   divisions: 3,

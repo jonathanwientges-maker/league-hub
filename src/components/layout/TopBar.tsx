@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import { useLeague } from "../../hooks/useLeague";
 import { useSeasonContext } from "../../context/SeasonContext";
+import { LEAGUE_CONFIG } from "../../config/league";
 import styles from "./TopBar.module.css";
 
 const NAV_ITEMS = [
@@ -53,7 +54,9 @@ export function TopBar() {
         ) : (
           <span className={styles.avatarPlaceholder} aria-hidden="true" />
         )}
-        <span className={styles.leagueName}>{league?.name ?? "League Hub"}</span>
+        <span className={styles.leagueName}>
+          {LEAGUE_CONFIG.displayName ?? league?.name ?? "League Hub"}
+        </span>
       </NavLink>
       <nav className={styles.nav} aria-label="Primary">
         {NAV_ITEMS.map((item) => (
