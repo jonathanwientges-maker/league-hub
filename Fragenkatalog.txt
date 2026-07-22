@@ -1,0 +1,1052 @@
+close_win
+
+{
+  "category_id": "close_win",
+  "templates": [
+    "Ein Sieg für die Geschichtsbücher des gepflegten Antifootballs: Wie viel Schmerzmittel mussten Sie Ihren Fans einflößen, um diese holprigen {margin} Punkte Vorsprung gegen {opponent} als 'Taktik' zu verkaufen?",
+    "Mit ach und krach {margin} Mickrigpunkte vor {opponent} ins Ziel gerettet. Feiern Sie diesen Duselsieg auf der Vorstandsetage von {team} ernsthaft als Glanzleistung oder schämen Sie sich heimlich?",
+    "Ein klassischer Drecksieg mit {margin} Punkten Differenz. War das die fulminante Wiederauferstehung des Rumpelfußballs bei {team} oder schlicht der unverdienteste Erfolg der Ligageschichte?",
+    "Wenn das Glück ein Vögelchen ist, hat es am Sonntag ein Nest auf dem Trainerbank-Dach von {team} gebaut. Wie erklären Sie {opponent} diese phänomenalen {margin} Punkte Zufall?",
+    "Eine Leistung zum Abgewöhnen, aber die Anzeigetafel zeigt {margin} Punkte Plus gegen {opponent}. Wann laden Sie die Schiedsrichter zum Versöhnungsessen ein?",
+    "Mit hängenden Köpfen und {margin} Punkten Vorsprung über die Ziellinie gekrochen. Ist die Euphorie bei {team} wirklich echt oder heucheln Sie professionellen Frohsinn?",
+    "{margin} Punkte Trennlinie zwischen Triumph und Blamage. Gab es nach dem Abpfiff gegen {opponent} Schampus oder eine interne Krisensitzung wegen akuter Unfähigkeit?",
+    "Das Drama von {team} endete mit {margin} Punkten Differenz. Verstehen Sie, dass neutralen Beobachtern bei diesem Geplänkel gegen {opponent} die Augen tränten?",
+    "Die Redaktion fragt: War dieser {margin}-Punkte-Zittersieg gegen {opponent} Ihr persönliches Sommermärchen oder schlichtweg ästhetische Körperverletzung?",
+    "{margin} Pünktchen vor {opponent}! Haben Sie in den letzten Minuten Stoßgebete gen Himmel geschickt oder hat das gegnerische Lazarett Ihnen den Sieg geschenkt?",
+    "Wer mit {margin} Punkten Vorsprung so großspurig auftritt wie {team}, hat die Demut nie gelernt. Ihr Statement zu dieser unverschämten Glückssträhne gegen {opponent}?",
+    "War das gegen {opponent} noch Sport oder schon verdecktes Fremdschämen mit {margin} Punkten Happy End?",
+    "{margin} Punkte Vorsprung vor {opponent}. Feiern Sie diesen Dusel bei {team} eigentlich mit Zigarre oder mit schlechtem Gewissen?",
+    "Ein Ergebnis wie ein Verkehrsunfall, aber {team} gewinnt mit {margin} Punkten. Ist das schon gelebter Pragmatismus oder einfach nur Dreistigkeit?",
+    "Hauchdünne {margin} Punkte vor {opponent}. Trauen Sie sich nach diesem Gezitter ernsthaft noch in den Liga-Chat?"
+  ]
+}
+
+
+blowout_win
+
+{
+  "category_id": "blowout_win",
+  "templates": [
+    "Manche nennen es Matchup, wir nennen es Hinrichtung: Welcher Diplomat aus Ihrem Trainerstab überbringt {opponent} nach diesem {margin}-Punkte-Debakel das Beileidsschreiben?",
+    "Mit {margin} Punkten Vorsprung über {opponent} hinweggerollt! Haben Sie ab dem dritten Viertel Hallenhockey auf der Bank gespielt oder lief die Aufstellung komplett von selbst?",
+    "Gnadenlose Demontage mit {margin} Punkten Abstand! Ist {team} eine unaufhaltsame Übermacht oder war {opponent} schlicht eine Beleidigung für den Fantasy-Sport?",
+    "Ein Massaker im feinsten Zwirn: {margin} Punkte Abreibung für {opponent}! Wie viel Mitleid heucheln Sie beim nächsten Trainertreffen?",
+    "{opponent} liegt nach dieser {margin}-Punkte-Klatsche zertrümmert am Boden. War das die sportliche Höchststrafe oder nur die logische Konsequenz Ihres Griffs nach der Weltherrschaft?",
+    "Sie haben {opponent} mit {margin} Punkten Kantersieg nach Hause geschickt. Glauben Sie ernsthaft, dass nach diesem Blutbad noch jemand freiwillig gegen {team} antritt?",
+    "{margin} Punkte Vorsprung sprechen eine deutliche Sprache. Ist das die Geburtsstunde einer echten Dynastie oder war der Gegner schlichtweg betrunken?",
+    "Wer {opponent} mit {margin} Punkten abfrühstückt, darf groß reden. Welchen arroganten Spruch haben Sie als Erstes im Gruppenchat platziert?",
+    "Mit {margin} Punkten Klatsche hat {team} den Exempel-Statustag ausgerufen. Haben Sie Ihre Stars überhaupt schmutzig gemacht oder reichten die Wasserträger?",
+    "Ein Lehrstück in Sachen Vernichtung: {margin} Punkte Abstand zu {opponent}! Ab wann haben Sie angefangen, Mitleid mit der gegnerischen Franchise zu empfinden?",
+    "{margin} Punkte Differenz! War die Demontage von {opponent} Ihre persönliche Rache für alte Rechnungen oder einfach purer Sadismus?",
+    "Sie haben {opponent} nach allen Regeln der Kunst zerlegt ({margin} Pkt.). Feiern Sie sich bei {team} jetzt als taktisches Genie oder als Schlächter der Liga?",
+    "Mit {margin} Punkten Kantersieg durchgezogen! Bitten Sie die Liga-Leitung bereits um stärkere Gegnerschaft für {team}?",
+    "{opponent} wurde mit {margin} Punkten Miese aus dem Stadion gefegt. Ist Ihr Führungskader vor lauter Überheblichkeit schon schwebend unterwegs?",
+    "Die {margin}-Punkte-Hinrichtung gegen {opponent} war lückenlos. Ihr Statement zu dieser verheerenden Demonstration der Stärke, bitte."
+  ]
+}
+
+
+close_loss
+
+{
+  "category_id": "close_loss",
+  "templates": [
+    "Tragödie in drei Akten: Um mickrige {margin} Punkte an {opponent} gescheitert — haben Sie den schuldigen Kicker bereits ins Exil oder nur auf den Trade-Block verbannt?",
+    "Knappe Pleite um {margin} Punkte gegen {opponent}. Fehlt Ihnen der eine Star für den Unterschied – und warum haben Sie noch keinen Trade angeleiert?",
+    "{margin} Punkte Differenz zum Glück. Hinterfragen Sie nach diesem Drama bei {team} eigentlich Ihre Coaching-Lizenz oder schieben Sie es auf das Schicksal?",
+    "Wegen mickriger {margin} Punkte verloren! Sind Ihre Stammkräfte unantastbar oder bieten Sie ab heute den halben Kader zum Verkauf an?",
+    "Schon wieder um {margin} Punkte gescheitert. Sind Sie zu stur für Angebote anderer Manager oder wollen Sie diese Pleitenserie weiter aussitzen?",
+    "Nur {margin} Punkte fehlten gegen {opponent}. Liegt es am Pech oder schlicht daran, dass Ihrem Kader in den entscheidenden Sekunden die Extraklasse fehlt?",
+    "Eine {margin}-Punkte-Niederlage, die wie Säure in den Wunden von {team} brennt. Welchem Star stellen Sie heute die Ultimatum-Frage?",
+    "Wer um {margin} Punkte gegen {opponent} verliert, hat keine Ausreden mehr. Bieten Sie Ihre Altlasten jetzt auf dem Transfermarkt feil?",
+    "{margin} Punkte Abweichung vom Sieg. Haben Sie nach dem Desaster gegen {opponent} vor Wut das Tablet in die Kabinenecke gepfeffert?",
+    "Das Scheitern von {team} um {margin} Punkte war vermeidbar. Werden Sie aktiv auf dem Trade-Markt oder verharren Sie in lethargischer Schockstarre?",
+    "Knapp vorbei ist auch daneben ({margin} Pkt. gegen {opponent}). Wie erklären Sie den Fans, dass am Ende wieder nur Enttäuschung bleibt?",
+    "{margin} Punkte fehlten zur Sensation. Fehlt Ihrem Roster die nötige Tiefe oder schlicht der Mut zu aggressiven Spielertäuschen?",
+    "Hauchdünn gescheitert an {opponent} mit {margin} Punkten. Ist Ihr Kader reif für ein punktuelles Upgrade oder fehlt das Verhandlungsgeschick?",
+    "{margin} Punkte Unterschied lassen das Management ratlos zurück. Ihr Statement zu dieser absolut überflüssigen Niederlage gegen {opponent}, bitte.",
+    "Nach diesen bitteren {margin} Punkten Miese gegen {opponent}: Klingelt Ihr Telefon bereits mit Geier-Angeboten für Ihre verzweifelten Stars?"
+  ]
+}
+
+
+blowout_loss
+
+{
+  "category_id": "blowout_loss",
+  "templates": [
+    "Das war kein Spieltag, das war ein Sportunfall: Steht die {margin}-Punkte-Klatsche gegen {opponent} schon als Mahnmal für Trainerversagen im Vereinsmuseum?",
+    "Mit {margin} Punkten Abstand von {opponent} gedemütigt! Planen Sie nach dieser Abreibung den großen Ausverkauf oder vertrauen Sie weiter der Trümmergruppe?",
+    "Eine Niederlage mit {margin} Punkten grenzt an gepflegte Arbeitsverweigerung. Werden Sie Gehälter kürzen oder schicken Sie das Team ins Straftraining?",
+    "{margin} Punkte Watschn von {opponent}! Ist dieser Kader überhaupt noch zu retten oder verhökern Sie die verbliebenen Stars jetzt für Draft-Picks?",
+    "Gegen {opponent} mit {margin} Punkten untergegangen. Gab es in der Kabine von {team} nach dem Spiel eine Prügelei oder nur noch Fassungslosigkeit?",
+    "Das war kein Wettkampf, das war eine Hinrichtung auf offener Bühne ({margin} Pkt.). Haben die Spieler zur Halbzeit bereits die Koffer gepackt?",
+    "Wer mit {margin} Punkten Rückstand verliert, muss sich fragen lassen: Ist Ihr Projekt bei {team} endgültig gescheitert?",
+    "{opponent} hat mit {team} Schlitten gespielt ({margin} Pkt.). Steht Ihr Telefon für Notfall-Trades offen oder haben Sie die Saison abgehakt?",
+    "Das {margin}-Punkte-Debakel gegen {opponent} erschüttert den Verein. Welchen Veteranen opfern Sie als Erstes auf dem Transfermarkt?",
+    "Mit {margin} Punkten abgefrühstückt zu werden ist eine Blamage ohnegleichen. Sind Sie noch der richtige Mann an der Seitenlinie von {team}?",
+    "{margin} Punkte Watschen kassiert! Fühlen Sie sich von Ihrer Mannschaft im Stich gelassen oder war der Matchplan schlicht lächerlich?",
+    "Gegen {opponent} eine {margin}-Punkte-Abfuhr erlitten. Wann bitten Sie die Ligaleitung offiziell um Entschuldigung für diesen Amateursport?",
+    "Das Desaster gegen {opponent} ({margin} Pkt.) schreit nach Konsequenzen. Werden Sie den Kader per Trade komplett umpflügen?",
+    "{margin} Punkte Rückstand auf {opponent}. Welcher Notfallplan existiert im Führungsgremium von {team}, um diesen Totalschaden zu vertuschen?",
+    "Ein historischer Tiefpunkt bei {team} mit {margin} Punkten Miese. Ihr Statement zur drohenden Kernsanierung Ihres Kaders, bitte."
+  ]
+}
+
+
+win_streak_3
+
+{
+  "category_id": "win_streak_3",
+  "templates": [
+    "Seither rollt der Express: {streak} Siege in Folge! Wie erklären Sie der Wissenschaft, dass Ihr Kader physikalischen Gesetzen trotzt und immer noch gewinnt?",
+    "{streak} Siege am Stück für {team}! Wie schwer fällt es Ihnen, sich im Liga-Chat nicht aufzuführen wie der Sonnenkönig persönlich?",
+    "Die Presse staunt nach {streak} Erfolgen in Serie: Spielt {team} plötzlich Football oder hattet Ihr schlicht den leichtesten Spielplan der Liga-Geschichte?",
+    "{streak} Mal hintereinander gewonnen! Ihr Statement zu dem Gerücht, dass der Erfolg von {team} rein auf statistischen Ausreißern basiert.",
+    "Wer {streak} Spiele am Stück gewinnt, fordert den Spott heraus, wenn die Blase platzt. Wie groß ist die Panik vor dem unvermeidlichen Absturz?",
+    "Die Konkurrenz erstarrt vor Ehrfurcht – oder lacht sich ins Fäustchen. Wie realistisch schätzen Sie die Serie von {streak} Siegen selbst ein?",
+    "{streak} Siege in Folge! Haben Sie den Champagner für die Championship-Party bei {team} schon kaltgestellt oder sind Sie noch bei Verstand?",
+    "Mit {streak} Siegen im Rücken lässt sich leicht reden. Wie viel unverschämter Hochmut steckt aktuell in der Führungsetage von {team}?",
+    "{streak} Erfolge am Stück! Führen Sie das auf akribische Arbeit zurück oder darauf, dass die Glücksgötter Mitleid mit Ihnen hatten?",
+    "{team} dominiert seit {streak} Wochen. Glauben Sie ernsthaft, dass Sie in dieser Liga unantastbar sind? Ihr Statement dazu, bitte.",
+    "{streak} Siege in Serie! Wer soll diesen Höhenflug eigentlich noch stoppen – außer Ihre eigene Neigung zum Größtenwahn?",
+    "Der Motor von {team} schnurrt seit {streak} Spielen. Warten Sie sonntags eigentlich nur darauf, dass der Kolbenfresser kommt?",
+    "{streak} Siege am Stück lassen die Rivalen erblassen. Genießen Sie den Neid der Liga oder zittern Ihnen vor dem nächsten Spieltag die Knie?",
+    "Flughöhe erreicht: {streak} Siege hintereinander! Haben Sie die Mannschaft schon auf den unvermeidlichen Realitätscheck vorbereitet?",
+    "Unheimliche Serie bei {team} ({streak} Siege). Ist das die Geburtsstunde einer Dynastie oder fliegen Sie nur extrem hoch vor dem Aufprall?"
+  ]
+}
+
+
+loss_streak_3
+
+{
+  "category_id": "loss_streak_3",
+  "templates": [
+    "{streak} Pleiten am Stück – im Feuilleton nennt man so etwas eine 'ästhetische Dekadenzphase'. Wann nennen Sie es schlicht Arbeitsverweigerung?",
+    "Nach {streak} Niederlagen in Serie brennt bei {team} der Baum lichterloh. Wann verhökern Sie Ihre Altlasten endlich für frische Draft-Picks?",
+    "{streak} Schlappen in Folge! Haben Ihre Spieler den Glauben an Ihren Matchplan verloren oder verweigern sie geschlossen die Gefolgschaft?",
+    "Der Absturz von {team} nimmt kein Ende: {streak} Pleiten! Haben Sie die Kabine noch im Griff oder regiert bereits die reine Anarchie?",
+    "{streak} Niederlagen am Stück. Wann erklären Sie die Saison offiziell für gescheitert und eröffnen den großen Räumungsverkauf im Kader?",
+    "Eine Serie von {streak} Enttäuschungen schüttelt man nicht ab. Bieten Sie Ihre verbliebenen Stars jetzt aktiv anderen Managern an?",
+    "{streak} Niederlagen in Folge für {team}. Liegt das Problem an Ihrer Trainerbank oder an den maßlos überschätzten Akteuren auf dem Feld?",
+    "Nach {streak} Klatschen am Stück: Ist Ihr Telefon so stumm, weil niemand Ihre Spieler will, oder fehlt Ihnen der Mut zum Not-Trade?",
+    "{streak} Mal hintereinander auf die Mütze bekommen! Hand aufs Herz: Haben Sie den Schlüssel zum Siegen im Sommerurlaub verlegt?",
+    "Die Krisensitzung bei {team} nimmt kein Ende. Wie erklären Sie der Führungsetage diese desolate Serie von {streak} Pleiten?",
+    "{streak} Niederlagen am Stück – ist das noch ein Formtief oder bereits die systematische Vorbereitung auf den 1.01-Pick?",
+    "{team} befindet sich im freien Fall ({streak} Pleiten). Ihr Statement zur Vertrauensfrage vor den eigenen Anhängern, bitte.",
+    "Nach {streak} Pleiten in Serie fordert die Presse personelle Konsequenzen. Wer auf Ihrem Roster steht ab sofort auf der Abschussliste?",
+    "{streak} Niederlagen hintereinander. Ist das gescheiterte Projekt {team} überhaupt noch zu retten oder hilft nur noch der Abrissbagger?",
+    "Serienmäßig Frust bei {team} ({streak} Pleiten). Sind Sie bereit für einen Blockbuster-Trade oder schauen Sie dem Untergang weiter zu?"
+  ]
+}
+
+
+bye_player_started
+
+{
+  "category_id": "bye_player_started",
+  "templates": [
+    "{player} verbrachte den Sonntag entspannt auf der Couch – und stand trotzdem in Ihrer Startelf. Ist das Ihre Interpretation von moderner Work-Life-Balance für Kader-Mitglieder?",
+    "Sie haben {player} aufgestellt, obwohl er Bye-Week hatte. Betreiben Sie das Dynasty-Management als Hobby oder schlafen Sie beim Aufstellen ein?",
+    "Null Punkte von {player}, weil er spielfrei hatte! Wie oft wechseln Sie eigentlich Ihre Unterhose, wenn Sie schon Ihr Lineup so selten checken?",
+    "{player} hatte frei und stand trotzdem im Lineup von {team}. Ist das Ihre neue Avantgarde-Taktik oder schlicht verheerender Dilettantismus?",
+    "Ein Bye-Week-Spieler im Aufgebot! Hat {player} Ihnen versprochen, im Wohnzimmer Punkte zu holen, oder wie erklärt man diesen Schnitzer?",
+    "{player} macht 0 Punkte auf der Couch. Haben Sie kein Internet bei {team} oder verwechseln Sie die Sleeper-App mit Candy Crush?",
+    "Sie haben {player} ohne Spiel gestartet. Ist das stummer Protest gegen die Liga-Regeln oder der Beweis, dass Sie den Überblick verloren haben?",
+    "{player} im Lineup trotz Spielfrei! Bitten Sie die Fans von {team} um Verzeihung für diese Schlafmützigkeit oder schieben Sie es aufs WLAN?",
+    "Garantierten Nuller mit {player} kassiert. Wer stellt bei {team} eigentlich die Mannschaft auf – Sie selbst oder Ihr Haustier?",
+    "{player} saß mit Popcorn auf der Tribüne. Wann planen Sie, sich wieder ernsthaft mit Fantasy Football zu beschäftigen?",
+    "Mit {player} auf Bye gestartet. Ist {team} jetzt offiziell das Freilos der Liga für den gegnerischen Manager geworden?",
+    "Sie lassen {player} in der Bye-Week auflaufen. Welcher Geisteszustand lag vor, als Sie am Sonntag auf 'Save Lineup' gedrückt haben?",
+    "{player} hatte frei – Sie offensichtlich auch im Kopf. Wie rechtfertigen Sie diesen Totalausfall vor der versammelten Presse?",
+    "Wer {player} auf Bye aufstellt, hat die Kontrolle über sein Manager-Dasein verloren. Ihr Statement zu diesem peinlichen Anfängerfehler, bitte.",
+    "{player} hatte spielfrei. Wenn Arroganz und Faulheit ein Lineup aufstellen, kommt genau das heraus. Wie erklären Sie diese Schande?"
+  ]
+}
+
+
+out_player_started
+
+{
+  "category_id": "out_player_started",
+  "templates": [
+    "{player} lag auf der Intensivstation, Sie gaben ihm den Startplatz. Glauben Sie an telepathische Punkteübertragung oder war das reine Schlafapnoe beim Aufstellen?",
+    "{player} war offiziell als 'OUT' gemeldet und stand trotzdem im Lineup von {team}. Hoffen Sie auf Wunderheilungen oder lesen Sie Berichte auf Chinesisch?",
+    "Sie haben einen verletzten {player} aufgestellt! Glauben Sie an Geister oder ist Ihr Scouting-Ressort schlichtweg pleite?",
+    "{player} lag mit Krücken auf der Tribüne, während er für {team} punkten sollte. Welcher Teufel hat Sie bei diesem Sabotage-Akt geritten?",
+    "Einen Spieler mit Status 'OUT' wie {player} starten zu lassen, grenzt an Arbeitsverweigerung. Werden Sie sich selbst abmahnen?",
+    "{player} war out. Wussten Sie das nicht oder dachten Sie, die Punkte werden Ihnen aus Mitleid gutgeschrieben?",
+    "Null Punkte von {player}, weil er verletzt war. Wie peinlich ist es Ihnen auf einer Skala von 1 bis 10, so ein Lineup abzugeben?",
+    "Sie schicken den verletzten {player} ins Rennen. Haben Sie die Push-Nachrichten stummgeschaltet oder scheren Sie sich nicht um Erfolg?",
+    "{player} ist verletzt und Sie stellen ihn auf. Ist das die berüchtigte Fachkompetenz, mit der Sie {team} zum Titel führen wollen?",
+    "Mit einem verletzten {player} auflaufen – haben Sie das Aufstellen am Wochenende im vollkommenen Vollrausch erledigt?",
+    "{player} hat das Spiel im Schlafanzug verfolgt. Wie erklären Sie der Liga, dass Sie solche Geschenke an den Gegner verteilen?",
+    "Status 'OUT' bei {player} ignoriert! Ist das fahrlässige Unwissenheit oder Ihre persönliche Art, den Gegner zum Lachen zu bringen?",
+    "Wer {player} verletzt startet, sollte vielleicht lieber Halma spielen. Wann treten Sie von Ihrem Posten bei {team} zurück?",
+    "{player} lag auf dem Isoliertisch und Sie geben ihm einen Startplatz. Ihr Statement zu dieser sportlichen Bankrotterklärung, bitte.",
+    "Ein verletzter {player} im Lineup von {team}. Haben Sie den Überblick verloren oder die Aufstellung schlicht vergessen?"
+  ]
+}
+
+
+bench_outperformed
+
+{
+  "category_id": "bench_outperformed",
+  "templates": [
+    "{player} zaubert {points} Punkte auf der Ersatzbank, während Ihre Stammkräfte implodieren. Würfeln Sie Ihre Aufstellung vor dem Spiel oder befragen Sie ein Pendel?",
+    "Bankdrücker {player} liefert fette {points} Punkte als {position}! Haben Sie Ihren Riecher für Formkurven im Sommerurlaub vergessen?",
+    "{points} Punkte von {player} auf der Bank! Führen Sie die Aufstellung bei {team} nach dem Zufallsprinzip durch oder befragen Sie Glaskugeln?",
+    "Auf der Bank holt {player} glanzvolle {points} Punkte. Welcher Praktikant hat Ihnen geraten, diesen {position} draußen zu lassen?",
+    "{player} schmort mit {points} Punkten auf der Bank. Tut es weh zu wissen, dass Sie den Sieg eigenhändig auf der Ersatzbank verschenkt haben?",
+    "{points} Punkte als {position} verstauben auf Ihrer Bank dank {player}. Hören Sie bei Aufstellungen auf Ihr Bauchgefühl oder auf gar nichts?",
+    "Während Ihre Starter versagen, zaubert {player} {points} Punkte auf der Bank. Hinterfragen Sie Ihre Trainerlizenz nach diesem Griff ins Klo?",
+    "{player} liefert {points} Punkte als {position} ab – leider nur für die Reservistenliste. Wie rechtfertigen Sie diese Coaching-Fehlentscheidung?",
+    "{points} Punkte von {player} verschenkt! Glauben Sie, dass Ihre Stars einen Freifahrtschein besitzen, völlig unabhängig von der Form?",
+    "Wer {player} bei {points} Punkten auf der Bank lässt, hat den Sport nie geliebt. Was sagen Sie den Fans von {team} zu diesem Patzer?",
+    "{points} Punkte auf der Bank durch {player}. Haben Sie sich die Matchups überhaupt angesehen oder stellen Sie nur nach Namen auf?",
+    "{player} zeigt als {position} eine Glanzleistung ({points} Pkt.), aber leider nur auf der Tribüne. Wann fangen Sie an, nach Form aufzustellen?",
+    "{points} Punkte verbrannt mit {player}. Ihr Statement zu Ihrem mangelnden Händchen bei Personalentscheidungen, bitte.",
+    "Glanzleistung auf der Ersatzbank: {player} glänzt mit {points} Punkten. Fühlen Sie sich von Ihrem eigenen Kader ausgetrickst?",
+    "Bank-Explosion von {player} mit {points} Punkten! Werden Sie den Mann nächste Woche bringen oder schmollt Ihr Ego lieber weiter?"
+  ]
+}
+
+
+starter_underperformed_once
+
+{
+  "category_id": "starter_underperformed_once",
+  "templates": [
+    "Mickrige {points} Punkte von {player}! War das die sportliche Version von Verweigerung oder reift in ihm bereits der Gedanke an eine Vertragsauflösung?",
+    "Kümmerliche {points} Punkte von Starter {player}! Ist er das schwächste Glied in Ihrer Kette oder hat er schlicht versagt?",
+    "{player} enttäuscht maßlos mit {points} Punkten. Klammern Sie sich weiter stur an ihn oder stellen Sie ihn ab sofort ins Schaufenster für einen Trade?",
+    "Wer wie {player} nur {points} Punkte abliefert, hat in einer Startelf nichts verloren. Wäre es Zeit, sich nach Tradepartnern umzusehen?",
+    "Unter {points} Punkte von {player}! War das eine einmalige Frechheit oder bahnt sich da der endgültige Leistungsverfall Ihres Stars an?",
+    "{player} liefert mickrige {points} Punkte ab. Haben Sie schon die Peitsche rausgeholt oder tätscheln Sie ihm mitleidig den Rücken?",
+    "Ist {player} nach diesen katastrophalen {points} Punkten für Sie noch unantastbar oder kann man Ihnen Angebote für ihn schicken?",
+    "{points} Punkte von {player}. Haben Sie ihn vor dem Spiel überhaupt aufgewärmt oder schläft der Mann auf dem Spielfeld ein?",
+    "{player} versagt auf ganzer Linie ({points} Punkte). Wer trägt die Verantwortung dafür – der Spieler selbst oder Ihr fehlerhafter Matchplan?",
+    "Nach mickrigen {points} Punkten von {player}: Bleibt er in der Startelf von {team} oder schicken Sie ihn zur Denkpause auf die Bank?",
+    "{points} Punkte als Starter sind ein Schlag ins Gesicht aller Fans von {team}. Wie erklären Sie diese unterirdische Vorstellung von {player}?",
+    "Können Sie mit den {points} Punkten von {player} ruhig schlafen, oder suchen Sie auf dem Transfermarkt schon nach Ersatz?",
+    "{player} bringt nur {points} Punkte auf die Anzeigetafel. Ihr Statement zu dieser sportlichen Arbeitsverweigerung, bitte.",
+    "Der Auftritt von {player} war mit {points} Punkten eine Frechheit. Sind Sie bereit, ihn für ein solides Gebot abzugeben?",
+    "{points} Punkte von {player} – ist das der Moment, in dem der Marktwert dieses Spielers endgültig im Kellergeschoss kollabiert?"
+  ]
+}
+
+
+starter_underperformed_repeat
+
+{
+  "category_id": "starter_underperformed_repeat",
+  "templates": [
+    "Die 'Causa {player}': Zum dritten Mal in Folge ein Offenbarungseid. Welches Kompromat besitzt der Mann gegen Sie, dass er ungestraft weiter starten darf?",
+    "Schon wieder unter 5 Punkte von {player}! Warum halten Sie mit einer Sturheit an ihm fest, die an Realitätsverweigerung grenzt?",
+    "Zum dritten Mal in Folge schmiert {player} komplett ab. Ist das die berüchtigte Nibelungentreue bei {team} oder feilschen Sie schon um Trades?",
+    "{player} liefert erneut eine Nullnummer. Sind Sie bereit, ihn endlich gegen einen funktionierenden Baustein zu traden, oder reiten Sie das tote Pferd weiter?",
+    "Drei Pleiten-Auftritte von {player} in Serie! Wie viel Vorschusslorbeeren hat dieser Mann auf Ihrem Roster überhaupt noch verblieben?",
+    "{player} enttäuscht am Laufband. Warum lassen Sie ihn Woche für Woche Ihr Lineup ruinieren, anstatt ihn auf den Trade-Block zu setzen?",
+    "Der 'Sané-Vorwurf' steht im Raum: {player} hat Narrenfreiheit bei {team}. Wann greifen Sie endlich hart durch?",
+    "Schon wieder ein Desaster von {player}. Bieten Sie ihn der Konkurrenz für 'nen Apfel und 'n Ei an oder hoffen Sie immer noch auf Wunder?",
+    "Wie rechtfertigen Sie den Startplatz von {player} nach drei unterirdischen Vorstellungen in Folge? Steckt da ein geheimer Vertrag dahinter?",
+    "Dreimal hintereinander gescheitert: Hat {player} Erpressungsmaterial gegen Sie in der Hand oder warum darf er immer wieder auflaufen?",
+    "{player} liefert verlässlich unter 5 Punkte. Ist er Ihr persönliches Maskottchen oder soll das professioneller Dynasty-Football sein?",
+    "Wann ist das Maß bei {player} voll? Oder wollen Sie warten, bis er Ihre kompletten Playoff-Chancen im Alleingang vernichtet hat?",
+    "Dritte Enttäuschung in Folge von {player}. Ihr Statement zu dieser unbegreiflichen Personalseilschaft bei {team}, bitte.",
+    "Dritter Nullinger in Serie von {player}. Werden Sie das Kapitel jetzt per Trade beenden oder weiter Schmerzen erdulden?",
+    "{player} verweigert zum dritten Mal die Leistung. Hören wir heute die offizielle Ankündigung, dass er zum Verkauf steht?"
+  ]
+}
+
+
+win_weak_position_group
+
+{
+  "category_id": "win_weak_position_group",
+  "templates": [
+    "Sieg gefeiert, aber {points} Punkte auf {position} grenzen an Kulissenschieberei. Ist diese Positionsgruppe Ihr persönliches Sommermärchen oder nur ein Sanierungsfall?",
+    "Gewonnen, aber Ihre {position}-Gruppe bringt mickrige {points} Punkte! Glauben Sie ernsthaft, dass Sie mit dieser Rumpftruppe auf Dauer durchkommen?",
+    "{points} Punkte von der {position}-Fraktion! {team} siegt zwar, aber ist diese Position nicht Ihre offenste Wunde im Meisterschaftsrennen?",
+    "Trotz Untergang auf der {position}-Position ({points} Pkt.) gewonnen. Sind Sie offen für Trades, um dieses Elend auf der Position endlich zu beenden?",
+    "Ein Sieg mit {points} Punkten auf {position} ist wie ein Lottogewinn mit gefälschtem Schein. Wann verstärken Sie sich auf dieser Schwachstelle?",
+    "Ihre {position} liefern mickrige {points} Punkte ab. Bitten Sie jeden Tag den Football-Gott um Entschuldigung für diese eklatante Lücke im Kader?",
+    "{points} Punkte von den {position}! Wie lange kann der Rest von {team} dieses Loch im Kader noch kompensieren, bevor es kracht?",
+    "Sieg trotz Katastrophen-Leistung auf {position} ({points} Pkt.). Suchen Sie auf dem Trade-Markt bereits nach Verstärkung?",
+    "Wer mit {points} Punkten auf {position} gewinnt, sollte leise sein. Wie erklären Sie das eklatante Ungleichgewicht in Ihrem Kader?",
+    "Ihre {position}-Einheit wackelt gewaltig ({points} Pkt.). War das ein einmaliger Ausrutscher oder ist das die traurige Realität bei {team}?",
+    "Gewonnen, aber die {position} holten nur {points} Punkte. Haben Sie Angst vor Teams, die diese Schwachstelle gnadenlos ausnutzen werden?",
+    "{points} Punkte auf {position} sind ein Trauerspiel. Wie wollen Sie verhindern, dass diese Position Sie die Postseason kostet?",
+    "Sieg hin oder her – Ihre {position} mit {points} Punkten waren unterirdisch. Ihr Statement zu diesem Schwachpunkt, bitte.",
+    "{points} Punkte auf {position} schreien nach Handelsaktivität. Gehen Sie in den nächsten Tagen auf die Suche nach einem Trade-Partner?",
+    "Sieg eingetütet, aber {position} bleibt mit {points} Punkten ein Trümmerfeld. Ist das Ihr Ernst oder kommt da noch ein Kader-Upgrade?"
+  ]
+}
+
+
+loss_weak_position_group
+
+{
+  "category_id": "loss_weak_position_group",
+  "templates": [
+    "Untergang mit System: {points} Magerpunkte auf {position}. Wann beenden Sie die Verweigerungshaltung und holen per Trade endlich bundesligataugliches Personal?",
+    "Pleite kassiert und die {position} bringen nur {points} Punkte! Ist diese Position der Hauptgrund für den Untergang von {team}?",
+    "Mickrige {points} Punkte auf {position}! Werden Sie jetzt endlich aktiv traden oder schauen Sie tatenlos zu, wie Ihre Saison den Bach runtergeht?",
+    "Ihre {position}-Gruppe ist eine reine Baustelle ({points} Pkt.). Haben Sie den Mut für einen großen Trade oder fehlt Ihnen dafür das Verhandlungsgeschick?",
+    "Mit {points} Punkten auf {position} kann man kein Spiel gewinnen. Welchen Star auf dieser Position wollen Sie der Konkurrenz abspenstig machen?",
+    "Katastrophe auf {position} ({points} Punkte)! Ist Ihr Telefon schon heiß gelaufen oder warten Sie ab, bis die Saison gelaufen ist?",
+    "{points} Punkte von der {position}-Einheit. Sind diese Spieler überhaupt tauglich für Ihre Ambitionen oder gehören die auf den Waiver Wire?",
+    "Die Niederlage geht voll auf die Kappe Ihrer {position} ({points} Pkt.). Planen Sie bereits den Notfall-Umbau dieser Truppe per Trade?",
+    "{points} Punkte auf {position}! Wer bei {team} hat diese Kaderzusammenstellung verbrochen und wann übernimmt er die Verantwortung?",
+    "Das Desaster auf {position} ({points} Punkte) hat Ihnen das Genick gebrochen. Wie erklären Sie Ihren Fans diesen eklatanten Qualitätsmangel?",
+    "Wegen mickriger {points} Punkte auf {position} verloren. Sind Sie zu stur, um einzusehen, dass hier dringend neues Blut gebraucht wird?",
+    "{position} schmiert ab ({points} Pkt.). War das die Bestätigung, dass Ihre Kaderplanung auf dieser Position völlig schiefgelaufen ist?",
+    "{points} Punkte auf {position} haben den Untergang besiegelt. Ihr Statement zur drängendsten Baustelle bei {team}, bitte.",
+    "Offener Offenbarungseid auf {position} ({points} Pkt.). Bieten Sie Ihre First-Round-Picks feil, um dieses Loch sofort zu stopfen?",
+    "{points} Magerpunkte auf {position} verlangen nach Taten. Welche Manager in der Liga haben Sie wegen eines Trades bereits kontaktiert?"
+  ]
+}
+
+
+player_to_ir
+
+{
+  "category_id": "player_to_ir",
+  "templates": [
+    "{player} auf IR – Ihr Saisonprojekt liegt auf dem Gabentisch der Pathologie. Bieten Sie die verbliebenen Stars bereits auf dem Schwarzmarkt an?",
+    "{player} fällt aus und wandert auf IR. Ist damit die Saison von {team} gelaufen oder haben Sie tatsächlich einen Plan B im Ärmel?",
+    "Der Schock sitzt tief: {player} auf IR! Gehen Sie jetzt in den Ausverkauf oder klammern Sie sich weiter an die vage Hoffnung auf Playoffs?",
+    "{player} ist verletzt auf IR. Wir heucheln tiefes Mitleid: Wie sehr tut es weh zu wissen, dass Ihr bester Mann ausfällt?",
+    "Ohne {player} sieht der Kader von {team} ziemlich dünn aus. Werden Sie versuchen, den Ausfall über Trades zu kompensieren?",
+    "{player} auf IR gesetzt. Ist das der Todesstoß für Ihre Ambitionen oder die perfekte Ausrede für ein gescheitertes Jahr?",
+    "{player} muss auf IR. Klingelt Ihr Telefon schon mit Geier-Angeboten der Konkurrenz, die Ihre Not ausnutzen wollen?",
+    "{player} fällt lange aus. Wer in Ihrem Kader soll diesen Verlust bitte auffangen – oder ist das schlicht unmöglich?",
+    "{player} auf der Verletztenliste. War das das fehlende Puzzleteil, das Ihr Kartenhaus jetzt endgültig zum Einsturz bringt?",
+    "{player} auf IR. Werden Sie den Gürtel enger schnallen oder auf dem Transfermarkt noch einmal All-In gehen?",
+    "Der Ausfall von {player} trifft {team} ins Herz. Haben Sie schon Taschentücher für die Nachbesprechung verteilt?",
+    "{player} ist weg auf IR. Glauben die verbleibenden Spieler noch an Ihre Führung oder herrscht bereits Zweckoptimismus?",
+    "{player} auf IR gelandet. Ihr Statement zur plötzlichen Verwundbarkeit von {team}, bitte.",
+    "{player} liegt flach. Werden Sie jetzt als Verkäufer auf dem Trade-Markt aktiv, um wenigstens Zukunfts-Assets zu sichern?",
+    "IR-Schock bei {player}! Reagieren Sie mit einem Verzweiflungs-Deal oder geben Sie die Saison gedanklich verloren?"
+  ]
+}
+
+
+taxi_over_5
+
+{
+  "category_id": "taxi_over_5",
+  "templates": [
+    "{player} punktet mit {points} Zählern im Taxi Squad. Feiern Sie das intern bereits als 'Fohlenelf-Revolution' oder verstaubt das Talent weiter?",
+    "Taxi-Talent {player} holt {points} Punkte im Nachwuchs. Bekommt der Junge jetzt ein Fleißkärtchen oder darf er weiter im Unterholz schimmeln?",
+    "Starke {points} Punkte von {player} im Taxi Squad! Loben Sie Ihre Nachwuchsarbeit bereits hochjubelnd oder war das nur Zufall?",
+    "{player} zeigt im Taxi Squad mit {points} Punkten auf. Sind Sie stolz wie ein Ziehvater oder ärgern Sie sich, dass er nicht im Roster stand?",
+    "{points} Punkte von {player} in der Jugendakademie von {team}! Bilden Sie den nächsten Star aus oder war der Gegner einfach dankbar?",
+    "{player} punktet solide mit {points} Zählern auf der Taxi-Liste. Wann trauen Sie dem Jungen mal echte Spielzeit bei den Großen zu?",
+    "Nachwuchshoffnung {player} erzielt {points} Punkte. Ist das der Beweis für Ihr exzellentes Scouting oder hatte er einfach Glück?",
+    "{points} Punkte von {player} im Taxi Squad. Werden die etablierten Starter bei {team} jetzt nervös wegen der Konkurrenz von unten?",
+    "{player} nutzt seine Chance im Taxi Squad ({points} Pkt.). Wie viel Kredit hat er sich damit beim Trainerstab erarbeitet?",
+    "Ihr Taxi-Juwel {player} liefert {points} Punkte. Feiern Sie sich jetzt als Talentflüsterer der Liga?",
+    "{points} Punkte durch {player} auf der Parkbank. Ein gutes Zeichen für die Zukunft von {team} oder nur ein kurzes Strohfeuer?",
+    "{player} zeigt Lebenszeichen im Taxi Squad ({points} Pkt.). Wie sieht der Langzeitplan für diese Personalie aus?",
+    "{player} mit {points} Punkten im Taxi Squad. Ihr Statement zu diesem kleinen Lichtblick in Ihrem Nachwuchsbereich, bitte.",
+    "{points} Punkte vom Taxi-Akteur {player}. Ist der Junge unverkäuflich oder lässt er sich als Trade-Dreingabe verscherbeln?",
+    "Solide {points} Punkte von {player} im Nachwuchs. Bieten Sie das Talent jetzt der Konkurrenz an, bevor der Hype verfliegt?"
+  ]
+}
+
+
+taxi_over_10
+
+{
+  "category_id": "taxi_over_10",
+  "templates": [
+    "{points} Punkte im Taxi Squad von {player}! Die Ultras fordern die sofortige Startelf-Beförderung — oder wollen Sie das Juwel lieber an einen fähigen Manager verkaufen?",
+    "{player} zaubert {points} Punkte im Taxi Squad aufs Parkett! Presse und Fans fordern die Beförderung – was zögern Sie noch?",
+    "{points} Punkte von Taxi-Talent {player}! Lassen Sie dieses Juwel weiter im Nachwuchs versauern oder traden Sie lieber einen Star weg?",
+    "{player} explodiert mit {points} Punkten im Taxi Squad. Sind Sie zu feige, ihn ins aktive Lineup zu holen, oder worauf warten Sie?",
+    "Mit {points} Punkten brennt {player} im Taxi Squad die Hütte ab. Haben andere Manager angefragt, um Ihnen den Diamanten abzuluchsen?",
+    "{points} Punkte von {player} im Taxi-Kader! Wie erklären Sie den Fans von {team}, dass so eine Granate nicht in der Startelf steht?",
+    "{player} haut {points} Punkte raus, während Ihre Starter blass bleiben. Traden Sie Platz frei im Roster oder schikanieren Sie das Talent weiter?",
+    "Wahnsinn von {player} ({points} Pkt.) im Taxi Squad! Bekommt er am nächsten Spieltag den Startplatz oder herrscht Senioren-Bonus?",
+    "{points} Punkte von {player}! Haben Sie überhaupt gemerkt, was für ein Biest da in Ihrem Nachwuchsbereich herangewachsen ist?",
+    "{player} stiehlt Ihren Startern mit {points} Punkten die Show. Wann erlösen Sie den Jungen aus dem Taxi Squad?",
+    "{points} Punkte im Taxi Squad von {player}. Bricht bei {team} jetzt die Jugend-Revolution aus oder bremsen Sie das Talent wieder aus?",
+    "Wer {player} nach {points} Punkten weiter im Taxi Squad versauern lässt, versteht das Geschäft nicht. Was ist Ihr Plan?",
+    "{player} liefert {points} Punkte im Nachwuchs. Ihr Statement zur überfälligen Beförderung ins Hauptteam, bitte.",
+    "{points} Punkte auf der Taxi-Bank! Nutzen Sie den Hype um {player}, um ihn teuer zu traden, oder behalten Sie den Rohdiamanten?",
+    "Gala-Vorstellung von Taxi-Talent {player} ({points} Pkt.). Steht der Junge ab heute im Schaufenster für interessierte Manager?"
+  ]
+}
+
+
+taxi_all_under_3
+
+{
+  "category_id": "taxi_all_under_3",
+  "templates": [
+    "Kein Taxi-Talent über 3 Punkte! Ist Ihr Nachwuchszentrum eigentlich eine Bausparzentrale oder schlichtweg talentfreie Zone?",
+    "Kein einziger Taxi-Squad-Spieler von {team} kam über 3 Punkte. Ist Ihre Jugendakademie eine Ruine oder nur ein Alt-Herren-Treff?",
+    "Absolute Ebbe im Nachwuchs von {team}! Kein Talent reißt die 3-Punkte-Hürde. Wer scoutet bei Ihnen eigentlich – blinde Maulwürfe?",
+    "Die Jugend von {team} ist eine reine Enttäuschung (alle unter 3 Pkt.). Haben Sie die Prospects auf dem Flohmarkt zusammengekauft?",
+    "Alle Taxi-Spieler unter 3 Punkten! Wenn das die Zukunft von {team} ist, können Sie den Laden gleich morgen zusperren.",
+    "Null Tiefe, null Talent im Taxi Squad! Warum investieren Sie überhaupt Zeit in Nachwuchs, wenn nur Müll dabei herauskommt?",
+    "Keine 3 Punkte von keinem Taxi-Akteur. Ist das die schlechteste Talentförderung in der langen Geschichte dieser Liga?",
+    "Die Reserve von {team} bringt nicht mal 3 Punkte auf die Tafel. Haben die Jungs ihre Schuhe falsch herum angezogen?",
+    "Alle Taxi-Talente versagen auf ganzer Linie. Steht die Nachwuchsabteilung von {team} vor der kompletten Auflösung?",
+    "Nicht mal 3 Punkte von den Nachwuchskräften. Wie erklären Sie den Sponsoren dieses totale Versagen in der Nachwuchsarbeit?",
+    "Das Taxi Squad von {team} gleicht einer Wüste ohne Wasser. Wer trägt die Schuld an dieser dramatischen Talentfreiheit?",
+    "Alle unter 3 Punkten im Nachwuchs. Arbeiten Sie im Scouting mit Würfeln oder mit veralteten Glücksspiel-Automaten?",
+    "Keines Ihrer Talente schafft 3 Punkte. Ihr Statement zur verheerenden Lage in Ihrer Jugendakademie, bitte.",
+    "Nachwuchs-Katastrophe bei {team}! Werden Sie die nutzlosen Taxi-Assets umgehend entlassen oder weiter durchfüttern?",
+    "Alle Taxi-Akteure scheitern an der 3-Punkte-Marke. Glauben Sie immer noch, dass Ihr Scouting-System funktioniert?"
+  ]
+}
+undefeated_w2plus
+
+{
+  "category_id": "undefeated_w2plus",
+  "templates": [
+    "Makellos mit {record} in Woche {week}! Fliegen Sie bereits so hoch, dass Sie den Ozonloch-Sauerstoffmangel im Kopf spüren?",
+    "Makellose {record}-Bilanz in Woche {week}! Sagen Sie selbst: Ist das der Beginn einer Dynastie oder nur atemberaubendes Dusel?",
+    "{record} in Woche {week}! Glauben Sie bei {team} wirklich an Ihre Stärke oder warten Sie sonntags selbst auf den Einbruch?",
+    "Noch ungeschlagen in Woche {week} ({record}). Feiern Sie Ihre Genialität oder wissen Sie selbst nicht, wie das passieren konnte?",
+    "In Woche {week} steht {team} bei {record}. Wie fühlt es sich an, vom Spielplan so unverschämt verwöhnt zu werden?",
+    "{record} nach Woche {week}! Ihr Statement dazu, wie man mit gepflegtem Mittelmaß ungeschlagen an der Spitze stehen kann.",
+    "Unbesiegt durch Woche {week} ({record})! Suchen die Rivalen schon Ihre Schwachstellen oder lachen sie noch über Ihr Glück?",
+    "Woche {week}, Bilanz {record}. Trauen sich die anderen Manager überhaupt noch in den Chat, oder ist die Demut echt?",
+    "Mit {record} schwebend in Woche {week}! Haben die gegnerischen Manager verabredet verloren oder ist das Können?",
+    "Makellos in Woche {week} ({record})! Werden die Spieler bei {team} vor lauter Arroganz schon nachlässig im Training?",
+    "{record} in Woche {week}! Welches Opfer an die Football-Götter müssen die Rivalen bringen, um Ihr Glück zu stoppen?",
+    "Bisher fleckenlos mit {record} in Woche {week}. Haben Sie den Champagner für die Party schon kaltgestellt?",
+    "In Woche {week} thront {team} bei {record}. Ist Ihre Überheblichkeit noch spieltagstauglich oder bereits pathologisch?",
+    "Ungeschlagen in Woche {week} ({record})! Haben Sie den Pokal schon gravieren lassen oder kommt der Realitätscheck?",
+    "Mit {record} durch Woche {week} spaziert. Wer soll dieses Phänomen aufhalten – außer Ihr Hang zum Größenwahn?"
+  ]
+}
+
+
+
+undefeated_after_w4
+
+{
+  "category_id": "undefeated_after_w4",
+  "templates": [
+    "Vier Wochen, {record}-Bilanz! Ist das der Beginn einer Dynastie oder nur die größte statistische Fälschung seit 1998?",
+    "Monat eins im Kasten, {record} auf der Anzeigetafel! Haben Sie die Krone für das Vorstandszimmer schon bestellt?",
+    "Makellose {record} nach 4 Wochen! Wie viel unverschämten Dusel braucht ein Manager eigentlich für so einen Start?",
+    "Vier Spiele, vier Siege bei {team} ({record}). Ist der Titel jetzt Pflicht oder droht bald der Kater der Realität?",
+    "{record} nach Woche 4! Werden Sie schon schlampig bei der Aufstellung oder treibt Sie die gierige Gier nach dem Ring?",
+    "Unbesiegt mit {record} nach vier Spieltagen! Welchem Football-Gott haben Sie diese Bilanz opfern müssen?",
+    "Mit {record} nach 4 Wochen ganz oben! Glauben Sie ernsthaft, dass Ihr Roster dieser Last auf Dauer standhält?",
+    "Vier Siege am Stück ({record})! Ihr Statement zu dem Gerücht, dass {team} den geschenkten Spielplan der Saison hat.",
+    "Makellose {record}-Bilanz! Wann platzt die Seifenblase bei {team} und wer darf die Trümmer dann aufräumen?",
+    "{team} dominiert mit {record} nach vier Wochen. Hält Ihr fragiles Nervenkostüm diesen Erwartungsdruck aus?",
+    "Mit {record} ungeschlagen! Haben die Konkurrenten vor Ehrfurcht das Handtuch geworfen oder lachen sie heimlich?",
+    "{record} nach 4 Spieltagen! Ist das die Geburtsstunde einer Dynastie oder fliegen Sie nur extrem hoch vor dem Aufprall?",
+    "Vier Wochen makellos ({record})! Feiern Sie intern schon die Perfect Season oder zittern Ihnen die Knie?",
+    "Ungeschlagen bei {record} nach Monat eins! Blickt man von Ihrem Elfenbeinturm eigentlich mit Mitleid herab?",
+    "Mit {record} nach 4 Spieltagen unantastbar. Ihr Statement zur erschreckenden Dominanz Ihres Ensembles, bitte."
+  ]
+}
+
+
+
+undefeated_after_w6
+
+{
+  "category_id": "undefeated_after_w6",
+  "templates": [
+    "Ungeschlagen bei {record}! Welches Opfer an die Football-Götter müssen die Rivalen erbringen, um Ihr Glück zu stoppen?",
+    "Sechs Siege bei null Pleiten ({record})! Wie ertragen Sie die neidischen Blicke der Konkurrenz im Gruppenchat?",
+    "{team} steht bei {record} nach 6 Wochen. Ist das noch Sport oder schon verdeckte Monopolisierung der Liga?",
+    "Mit {record} weiterhin makellos! Haben Sie Panik vor der ersten Niederlage, die Ihr Kartenhaus entzaubern wird?",
+    "Sechs Spieltage, {record}-Bilanz! Ist {team} eine echte Übermacht oder bricht die Fassade vor den Playoffs ein?",
+    "Unbesiegt nach 6 Wochen ({record})! Schlafen Sie sonntags eigentlich ein, weil der Spielplan so anspruchslos ist?",
+    "{record} nach 6 Wochen! Ihr Statement dazu, wie man mit dieser Truppe so unverschämt ungeschlagen bleiben kann.",
+    "Wahnsinn bei {team}: {record}! Befürchten Sie, dass Ihre Stars pünktlich zum Saisonfinale die Form verlieren?",
+    "Ungeschlagen mit {record} nach 6 Partien! Traut sich überhaupt noch ein Kontrahent, Ihre Aufstellung anzuzweifeln?",
+    "Sechs Siege in Serie ({record})! Wer trägt im Trainerstab die Verantwortung für diesen erschreckenden Dominanzanfall?",
+    "Bei {record} stellt sich die Frage: Welcher Herkules soll Sie eigentlich noch von Ihrem hohen Ross stoßen?",
+    "{record} nach 6 Wochen! Feiern Sie Ihre eigene Genialität oder wissen Sie selbst nicht, wie das passieren konnte?",
+    "Sechs Spieltage makellos ({record}). Haben Sie den Sekt für die Meisterschaftsfeier schon im Kühlhaus?",
+    "Mit {record} durch die erste Saisonhälfte mürbe gemacht. Ist Ihr Selbstbewusstsein noch tragbar für Mitmenschen?",
+    "Sechs Wochen unbesiegt bei {record}! Ihr Statement zur drohenden langweiligen Alleinherrschaft in der Liga, bitte."
+  ]
+}
+
+
+
+winless_w2plus
+
+{
+  "category_id": "winless_w2plus",
+  "templates": [
+    "{record} in Woche {week}: Der Absturz hat Methode. Sprechen wir noch von Formtief oder bereiten Sie die Insolvenz vor?",
+    "Null Siege bei {record} in Woche {week}! Suchen Sie die Schuld im Spielplan oder bei Ihren überschätzten Spielern?",
+    "In Woche {week} steht {team} bei desaströsen {record}. Wäre ein Ausverkauf Ihrer Veteranen für Draft-Picks die Rettung?",
+    "{record} in Woche {week}! Sind Sie mit diesem Trümmerhaufen zufrieden oder schlichtweg verhandlungsfaul bei Trades?",
+    "Woche {week} und {team} dümpelt bei {record} herum. Haben Sie die Saison gedanklich bereits im Mülleimer entsorgt?",
+    "Bei {record} in Woche {week} fragen alle: Wann holen Sie den ersten Punkt oder bleiben Sie die Lachnummer der Liga?",
+    "Woche {week}, Bilanz {record}. Trauen Sie sich überhaupt noch, morgens die Sleeper-App auf Ihrem Smartphone zu öffnen?",
+    "{team} steht bei {record} in Woche {week}. Ist das noch ein Formtief oder die gezielte Jagd auf die rote Laterne?",
+    "Null Erfolge nach Woche {week} ({record}). Bieten Sie Ihre verbliebenen Stars jetzt anderen Managern feil?",
+    "{record} in Woche {week}! Ist Ihr Kader schlicht unbrauchbar oder verweigert der Coach die Arbeit an der Seitenlinie?",
+    "In Woche {week} steht die Null auf der Siegesseite ({record}). Ihr Statement zu diesem peinlichen Fehlstart, bitte.",
+    "{record} nach Woche {week}! Haben die Akteure von {team} auf dem Feld bereits geschlossen die weiße Fahne gehisst?",
+    "Bei {record} in Woche {week} bleibt die Frage: Wer in der Liga soll sich vor dieser Truppe eigentlich noch fürchten?",
+    "Desaster bei {record} in Woche {week}! Klingelt Ihr Telefon schon mit Geier-Angeboten für Ihre verzweifelten Stars?",
+    "Nuller-Bilanz {record} in Woche {week}. Liegt der Fehler am veralteten System oder an Ihrem mangelnden Verhandlungsgeschick?"
+  ]
+}
+
+
+
+winless_after_w4
+
+{
+  "category_id": "winless_after_w4",
+  "templates": [
+    "Vier Wochen, null Siege ({record})! Hand aufs Herz: Ist das gezieltes 'Tanking' oder einfach ein Offenbarungseid?",
+    "Mit {record} nach 4 Wochen am Tabellenende. Wann geben Sie Ihre Veteranen frei, um wenigstens Picks zu retten?",
+    "{record} nach Monat eins! Sind Sie zu stur für Angebote anderer Manager oder fehlt Ihnen der Mut für radikale Trades?",
+    "Vier Schlappen in Serie ({record})! Brennt bei {team} schon der Baum lichterloh oder schlafen Sie am Steuer?",
+    "Katastrophen-Start mit {record} nach 4 Wochen! Haben Sie in der Sommer-Vorbereitung eigentlich irgendetwas richtig gemacht?",
+    "Bei {record} nach 4 Spieltagen herrscht Entsetzen. Wann übernimmt in der Führungsetage jemand die Verantwortung?",
+    "{team} steht bei {record} nach 4 Wochen. Wie fühlt es sich an, als Schießbude der Liga herhalten zu müssen?",
+    "Null Siege bei {record}! Ist dieser Kader überhaupt noch zu retten oder gehört der Laden komplett abgewrackt?",
+    "Nach 4 Wochen steht bei {team} die {record}. Ihr Statement zur sportlichen Kapitulation im ersten Saisonviertel, bitte.",
+    "{record} nach 4 Partien! Wie erklären Sie den Sponsoren, dass {team} zum verlässlichen Freilos mutiert ist?",
+    "Mit {record} nach vier Wochen am Abgrund. Haben die Akteure Ihren Matchplan überhaupt je verstanden?",
+    "Vier Pleiten in Folge ({record})! Verhandeln Sie bereits Notfall-Deals oder schauen Sie dem Untergang weiter zu?",
+    "{record} nach Monat eins! Wer auf Ihrem Roster steht ab sofort auf der Abschussliste für interessierte Manager?",
+    "Nuller-Serie bei {record}. Berufen Sie heute noch die Krisensitzung ein oder ergeben Sie sich dem Schicksal?",
+    "Desaströse {record} nach 4 Spieltagen. Ist das noch professioneller Fantasy-Sport oder gelebte Inkompetenz?"
+  ]
+}
+
+
+
+winless_after_w6
+
+{
+  "category_id": "winless_after_w6",
+  "templates": [
+    "Sechs Klatschen ({record})! Wenn Ihr Team ein Schiff wäre, würde die Titanic daneben wie ein Luxusliner aussehen.",
+    "Sechs Niederlagen bei {record}! Wann starten Sie den großen Feuerausverkauf für den 1.01-Pick im nächsten Draft?",
+    "Bei {record} nach 6 Wochen: Welche Stars bieten Sie der Konkurrenz an, bevor ihr Marktwert im Keller kollabiert?",
+    "{record} nach 6 Spieltagen! Werden Sie aktiv auf dem Trade-Markt oder schauen Sie tatenlos beim Untergang zu?",
+    "Sechs Wochen, null Siege ({record})! Ist {team} offiziell das peinlichste Ensemble in der Geschichte dieser Liga?",
+    "Mit {record} nach 6 Spieltagen am Boden. Feiern Sie das Tanking bereits offen oder heucheln Sie noch Siegeswillen?",
+    "Das Elend nimmt kein Ende: {record} nach 6 Wochen. Wann reichen Sie den offiziellen Rücktritt bei der Ligaleitung ein?",
+    "{team} steht bei {record}. Haben Ihre Spieler überhaupt noch Lust, sonntags für diesen Verein aufzulaufen?",
+    "Sechs Schlappen in Folge ({record}). Suchen Sie im Internet bereits nach Lehrvideos über vernünftiges Dynasty-Management?",
+    "{record} nach 6 Wochen! Ihr Statement dazu, wie man eine gesamte Saison so dermaßen in den Sand setzen kann.",
+    "Wo soll bei {record} nach 6 Spieltagen noch Hoffnung herkommen? Gibt es überhaupt einen Lichtblick im Kader?",
+    "Mit {record} am absoluten Tiefpunkt. Haben Sie schon die Entschuldigungsschreiben an Ihre Fans verschickt?",
+    "6 Wochen Frust mit {record}. Ist dieser Trümmerhaufen von {team} die Strafe für jahrelange verfehlte Kaderplanung?",
+    "Bei {record} nach 6 Pleiten! Gehen die verbliebenen Leistungsträger jetzt für Draft-Picks auf den Transfermarkt?",
+    "Sechs Spieltage, null Punkte ({record}). Wie begründen Sie den Fans, dass Sie immer noch im Amt sitzen?"
+  ]
+}
+
+
+
+opp_undefeated
+
+{
+  "category_id": "opp_undefeated",
+  "templates": [
+    "Der unbesiegte Gigant {opponent} bittet zum Tanz. Treten Sie mit der weißen Fahne an oder hoffen Sie auf Wunder?",
+    "Gegen {opponent} wartet ein unbesiegter Brocken. Haben Sie sich vor Angst schon in der Trainerkabine eingeschlossen?",
+    "{opponent} hat noch kein Spiel verloren. Mit welchem absurden Matchplan wollen Sie dieses Bollwerk knacken?",
+    "Geht {team} gegen den ungeschlagenen Spitzenreiter {opponent} als Lamm zur Schlachtbank oder haben Sie Mumm?",
+    "{opponent} ist makellos. Gibt es im Führungskader von {team} überhaupt den Hauch eines Glaubens an eine Sensation?",
+    "Gegen das unbesiegte {opponent} zu spielen ist kein Wunschkonzert. Ihr Statement zu Ihren verschwindend geringen Chancen.",
+    "Sind Sie derjenige, der die Serie von {opponent} bricht, oder werden Sie nur die nächste Leiche auf deren Triumphzug?",
+    "Unbesiegt trifft auf {team}! Werden Sie {opponent} unterschätzen oder haben Sie die Hosen bereits gestrichen voll?",
+    "{opponent} reist ungeschlagen an. Haben Sie die Taschentücher für die Pleite am Sonntagabend schon bereitgelegt?",
+    "Gegen ein fehlerfreies {opponent} braucht {team} eine Herkulesaufgabe. Wer soll diese Wunderleistung erbringen?",
+    "Werden Sie {opponent} die erste Niederlage zufügen oder dient {team} wieder nur als dankbares Kanonenfutter?",
+    "{opponent} schwebt auf Wolke sieben und trifft auf {team}. Wie verhindern Sie, dass das ein historisches Debakel wird?",
+    "Der ungeschlagene Primus {opponent} fordert Sie. Haben Sie heimlich Dynamit im Matchplan versteckt oder mauern Sie?",
+    "Gegen {opponent} droht die Hinrichtung. Welchen lyrischen Notfallplan haben Sie für die Pressekonferenz danach?",
+    "Ein unbesiegter Gegner {opponent} wartet. Ist {team} bereit für die Abwehrschlacht oder schenken Sie gleich ab?"
+  ]
+}
+
+
+
+opp_winless
+
+{
+  "category_id": "opp_winless",
+  "templates": [
+    "Gegen das sieglose Schlusslicht {opponent}: Haben Sie Angst vor dem Gegner oder vor der historischen Blamage?",
+    "Kommende Woche geht es gegen das sieglose {opponent}. Wenn Sie hier verlieren, müssen Sie sofort zurücktreten, oder?",
+    "Pflichtsieg gegen das Schlusslicht {opponent}! Wie groß ist die Angst bei {team}, sich vor der Liga komplett zu blamieren?",
+    "{opponent} hat null Siege auf dem Konto. Werden Sie den Gegner unterschätzen und krachend auf die Schnauze fallen?",
+    "Gegen das sieglose {opponent} kann man nur verlieren. Wie wollen Sie mit diesem enormen Peinlichkeitsdruck umgehen?",
+    "{opponent} wartet verzweifelt auf den ersten Sieg. Dient {team} am Wochenende etwa als barmherziger Aufbaugegner?",
+    "Ein Spiel gegen {opponent} sollte ein Spaziergang sein. Ihr Statement zu der drohenden Schande einer Niederlage, bitte.",
+    "Wer gegen {opponent} verliert, verliert das Gesicht. Wie halten Sie die Konzentration im Kader von {team} hoch?",
+    "{opponent} ist noch sieglos. Werden Sie das Spiel mit der B-Elf bestreiten oder haben Sie Angst vor dem Tabellenletzten?",
+    "{opponent} dümpelt am Boden der Liga. Gibt es irgendein Szenario, in dem {team} diesen Pflichtsieg noch versemmelt?",
+    "Gegen einen Punktelieferanten wie {opponent} zählen nur Fakten. Wie hoch wird der Kantersieg für {team} ausfallen?",
+    "{opponent} sucht nach Haltestrohhalmen. Werden Sie dem Gegner gnadenlos den Fangschuss geben oder Mitleid zeigen?",
+    "Pflichtaufgabe gegen {opponent}! Wie verhindern Sie, dass Arroganz und Selbstüberschätzung Ihre Aufstellung ruinieren?",
+    "{opponent} steht mit dem Rücken zur Wand. Treten Sie feinsinnig nach oder erweisen Sie sich als barmherziger Samariter?",
+    "Null Siege beim Gegner {opponent}. Wenn {team} da patzt, schämen sich selbst die eigenen Ultras – einverstanden?"
+  ]
+}
+
+
+
+opp_won_last
+
+{
+  "category_id": "opp_won_last",
+  "templates": [
+    "{opponent} reist mit dem Rückenwind des Erfolgs an. Welches Bollwerk wollen Sie errichten, um den Durchmarsch zu stoppen?",
+    "{opponent} kommt mit einem frischen Sieg im Rücken. Zittern Ihren Spielern bei {team} schon die Knie vor Ehrfurcht?",
+    "Der nächste Gegner {opponent} hat zuletzt gepunktet. Wie wollen Sie diesen gegnerischen Schwung brechen?",
+    "{opponent} hat Selbstvertrauen getankt. Glaubt man bei {team} wirklich, dass man diesen Gegner aufhalten kann?",
+    "Nach dem Erfolg der letzten Woche platzt {opponent} vor Arroganz. Nutzen Sie das aus oder lassen Sie sich überrollen?",
+    "{opponent} kommt mit breiter Brust zu {team}. Haben Sie eine Taktik entwickelt, um diese Zuversicht zu zerstören?",
+    "Der Sieg von {opponent} letzte Woche war eine Ansage. Ihr Statement dazu, wie {team} diesem Druck standhalten will.",
+    "{opponent} hat gewonnen und fordert nun {team}. Haben Sie die Schwachstellen aus deren letztem Auftritt analysiert?",
+    "Ein siegreiches {opponent} wartet auf Sie. Werden Sie die Serie stoppen oder werden Sie das nächste Opfer auf dem Weg?",
+    "{opponent} schwimmt auf einer Erfolgswelle. Wie wollen Sie verhindern, dass {team} darin jämmerlich ersäuft?",
+    "Gegen ein siegreiches {opponent} braucht {team} Höchstleistung. Haben Sie überhaupt das Zeug zu so einem Auftritt?",
+    "{opponent} hat letzte Woche aufgetrumpft. Haben Sie Schiss oder empfinden Sie Vorfreude auf dieses schwere Duell?",
+    "{opponent} bringt Siegesgewissheit mit. Mit welcher defensiven Waffe will {team} am Sonntag dagegenhalten?",
+    "Der Kontrahent {opponent} jubelte zuletzt. Werden Sie die Partystimmung im gegnerischen Lager nachhaltig ruinieren?",
+    "{opponent} kommt selbstbewusst aus der Vorwoche. Gehen Sie als Jäger ins Spiel oder verkriechen Sie sich defensiv?"
+  ]
+}
+
+
+
+opp_lost_last
+
+{
+  "category_id": "opp_lost_last",
+  "templates": [
+    "{opponent} liegt am Boden. Treten Sie feinsinnig nach oder erweisen Sie sich als barmherziger Samariter?",
+    "{opponent} hat letzte Woche gewaltig einen auf den Sack bekommen. Nutzen Sie die Gunst der Stunde zum Tritt in den Haufen?",
+    "Nach der Pleite ist {opponent} angeschlagen. Werden Sie das gegnerische Elend gnadenlos ausnutzen oder Geschenke verteilen?",
+    "{opponent} kommt frustriert aus einer Niederlage. Haben Sie Angst vor der Trotzantwort oder lachen Sie sich ins Fäustchen?",
+    "Gegner {opponent} liegt am Boden. Ihr Statement zur Pflicht, die Verwundbarkeit dieses Gegners jetzt eiskalt auszunutzen.",
+    "{opponent} hat zuletzt verloren. Werden Sie in die Wunden reiben oder lassen Sie sich von einem verwundeten Tier beißen?",
+    "Nach dem Patzer von {opponent}: Ist ein Sieg für {team} am Wochenende reine Formsache oder wackeln Sie selbst?",
+    "{opponent} hat sich letzte Woche blamiert. Wie verhindern Sie, dass {team} denselben Amateursport abliefert?",
+    "Ein angeschlagenes {opponent} wartet auf {team}. Gibt es eine Klatsche für den Gegner oder wird es eng?",
+    "{opponent} brennt auf Wiedergutmachung nach der Pleite. Haben Sie den passenden Feuerlöscher in der Kabine parat?",
+    "Nach der Niederlage von {opponent} fordert die Presse einen klaren Sieg von {team}. Wie gehen Sie mit der Erwartung um?",
+    "{opponent} hat versagt. Zeigen Sie am Sonntag, wie man es richtig macht, oder treten Sie in das gleiche Fettnäpfchen?",
+    "{opponent} steckt im Frust. Werden Sie den gegnerischen Manager im Chat weiter aufziehen oder konzentrieren Sie sich aufs Spiel?",
+    "Das gegnerische Ensemble von {opponent} strauchelt. Werden Sie den Todesstoß versetzen oder als Retter auftreten?",
+    "Frust beim Kontrahenten {opponent}! Ist {team} bereit, die Gunst der Stunde für ein Schützenfest zu nutzen?"
+  ]
+}
+
+
+
+opp_win_streak
+
+{
+  "category_id": "opp_win_streak",
+  "templates": [
+    "{streak} Siege in Folge für {opponent}! Gehen Sie als Lamm zur Schlachterei oder haben Sie Dynamit im Matchplan?",
+    "{opponent} reitet eine Serie von {streak} Siegen in Folge! Werden Sie das Team sein, das diese Machtdemonstration beendet?",
+    "{streak} Siege am Stück für {opponent}! Glaubt bei {team} irgendjemand ernsthaft an einen Erfolg oder schenken Sie gleich ab?",
+    "Gegen {opponent} zu spielen, die {streak} Mal hintereinander gewonnen haben – haben Sie schon das Testament aufgesetzt?",
+    "{streak} Erfolge in Serie bei {opponent}! Wie wollen Sie diesen Express stoppen, ohne komplett überrollt zu werden?",
+    "{opponent} wirkt unschlagbar mit {streak} Siegen. Ihr Statement zu der drohenden Hinrichtung von {team}, bitte.",
+    "Wer {streak} Spiele am Stück gewinnt wie {opponent}, hat eine große Klappe. Haben Sie das Zeug, sie zu stopfen?",
+    "{opponent} kommt mit {streak} Siegen im Gepäck. Ist Ihr Team bereit für die absolute Abwehrschlacht am Sonntag?",
+    "{streak} Siege in Folge für den Gegner {opponent}! Haben Sie den Matchplan aus dem Hut gezaubert oder hoffen Sie auf Wunder?",
+    "Die Serie von {opponent} steht bei {streak}. Ist {team} nur ein weiterer Meilenstein auf deren Triumphzug durch die Liga?",
+    "Gegen die Siegeswelle von {opponent} ({streak} Siege): Werden Sie kläglich untergehen oder als Helden vom Platz gehen?",
+    "{opponent} hat {streak} Mal in Serie triumphiert. Werden Sie vor Ehrfurcht erstarren oder mutig angreifen?",
+    "{streak} Siege von {opponent} in Folge. Sagen Sie den Fans von {team}, warum man am Sonntag überhaupt einschalten soll.",
+    "Die Walze von {opponent} rollt seit {streak} Wochen. Stellen Sie sich mit der Brechstange entgegen oder mauern Sie?",
+    "Kann {team} der unaufhaltsamen Macht von {opponent} ({streak} Siege) überhaupt irgendetwas Zählbares entgegensetzen?"
+  ]
+}
+
+
+
+opp_loss_streak
+
+{
+  "category_id": "opp_loss_streak",
+  "templates": [
+    "{opponent} sammelt Niederlagen wie andere Treuepunkte ({streak} in Serie). Wie tief müssten Sie sinken, um hier zu stolpern?",
+    "{opponent} hat {streak} Pleiten am Stück kassiert. Wenn Sie gegen dieses Wrack verlieren, ist die Saison vorbei, oder?",
+    "{streak} Niederlagen in Folge für {opponent}! Wie peinlich wäre es auf einer Skala von 1 bis 10, diese Serie zu beenden?",
+    "Gegner {opponent} befindet sich mit {streak} Pleiten im freien Fall. Werden Sie den endgültigen Todesstoß versetzen?",
+    "{streak} Niederlagen am Stück bei {opponent}! Haben Sie Mitleid mit dem Wrack oder treten Sie noch einmal kräftig nach?",
+    "Gegen ein Team mit {streak} Pleiten in Serie wie {opponent} – Ihr Statement zur klaren Favoritenrolle von {team}.",
+    "{opponent} hat {streak} Mal verloren. Wenn {team} das verliert, sollten Sie Ihren Managerposten abgeben. Einverstanden?",
+    "{streak} Schlappen für {opponent} in Folge! Werden Sie den Gegner komplett demütigen oder den Aufbaugegner spielen?",
+    "{opponent} krebst mit {streak} Niederlagen am Ende herum. Wie verhindern Sie peinliche Nachlässigkeiten bei {team}?",
+    "Die Krisen-Serie von {opponent} steht bei {streak}. Werden Sie dem gegnerischen Manager nach dem Spiel Taschentücher schicken?",
+    "{streak} Pleiten bei {opponent}. Welchen zynischen Spruch haben Sie sich für den Gruppenchat schon zurechtgelegt?",
+    "Gegen {opponent} ({streak} Pleiten in Serie) zählt nur eine Demontage. Wie hoch wollen Sie am Wochenende gewinnen?",
+    "{opponent} hat {streak} Mal hintereinander auf die Mütze bekommen. Macht Ihnen diese Schießbude überhaupt noch Angst?",
+    "Das Pleiten-Ensemble {opponent} ({streak} Niederlagen) reist an. Ist ein Ausrutsch-Szenario bei {team} gedanklich verboten?",
+    "{streak} Niederlagen des Gegners {opponent}! Feiern Sie den eingeplanten Sieg schon vorab oder warnen Sie vor Leichtsinn?"
+  ]
+}
+
+
+
+opp_more_pf
+
+{
+  "category_id": "opp_more_pf",
+  "templates": [
+    "{opponent} hat deutlich mehr Punkte auf dem Konto. Akzeptieren Sie die Rolle des intellektuellen Underdogs im Duell?",
+    "Die Offense von {opponent} strotzt vor Punkten, während {team} hinterherhinkt. Haben Sie Taktik oder nur Hoffnung?",
+    "Auf dem Papier hat {opponent} viel mehr Firepower erzielt als {team}. Wie wollen Sie diesen Qualitätsunterschied wettmachen?",
+    "{opponent} erzielt Punkte am Fließband, Sie eher im Schneckentempo. Ihr Statement zu dieser eklatanten Punktekluft.",
+    "Die Punktekonto-Statistik spricht eine klare Sprache pro {opponent}. Haben Sie Angst, dass Sie am Sonntag überrannt werden?",
+    "{opponent} hat mehr Punkte auf dem Konto als {team}. Werden Sie das Spiel Mauern oder auf ein Offensivfeuerwerk hoffen?",
+    "Punkte-Vergleich: {opponent} hui, {team} eher pfui. Warum glauben Sie trotzdem an eine minimale Chance am Wochenende?",
+    "{opponent} ballert die Liga zusammen, während {team} Punkte stottert. Welcher Zaubertrick soll Ihnen am Sonntag helfen?",
+    "Die Scoring-Power von {opponent} übertrifft Ihre bei Weitem. Ist das die schmerzhafte Wahrheit über Ihren Kader?",
+    "{opponent} hat ligaweit mehr Punkte als Sie auf dem Konto. Werden Sie sich am Sonntag ehrfurchtsvoll defensiv einigeln?",
+    "Weniger erzielte Punkte als {opponent}. Geben Sie zu, dass der gegnerische Kader einfach besser zusammengestellt ist?",
+    "{opponent} ist Ihnen bei den Points For weit voraus. Wie erklären Sie den Fans diesen eklatanten sportlichen Rückstand?",
+    "Punkte-Gigant {opponent} fordert {team}. Ist Ihr Abwehrriegel stark genug oder droht eine Abreibung nach Noten?",
+    "Die Angriffsmaschine von {opponent} läuft heißer als Ihre. Bitten Sie die Football-Götter um Ladehemmung beim Gegner?",
+    "Unterlegen bei den erzielten Punkten gegenüber {opponent}. Planen Sie einen taktischen Coup oder Beten für ein Wunder?"
+  ]
+}
+
+
+
+opp_more_wins
+
+{
+  "category_id": "opp_more_wins",
+  "templates": [
+    "Die Tabelle spricht Bände pro {opponent}. Versuchen Sie es am Sonntag mit Taktik oder beten Sie nur für ein Wunder?",
+    "{opponent} steht in der Tabelle besser da als {team}. Gehen Sie mit vollen Hosen in dieses Verfolger-Duell?",
+    "Bessere Bilanz für {opponent}! Ist das die Bestätigung, dass der gegnerische Manager einfach den besseren Job macht?",
+    "{opponent} hat mehr Siege auf dem Konto als {team}. Glauben Sie wirklich, dass Sie diesen Abstand verkürzen können?",
+    "Die Tabelle lügt nicht: {opponent} steht vor Ihnen. Ihr Statement zur ungeliebten Rolle des Jägers in dieser Partie.",
+    "{opponent} blickt von oben auf {team} herab. Motiviert Sie dieser Zustand oder schlägt er nachhaltig aufs Gemüt?",
+    "Mehr Siege für {opponent} als für {team}. Werden Sie am Sonntag zeigen, wer der wahre Chef im Ring sein müsste?",
+    "{opponent} hat die deutlich bessere Bilanz. Welche Ausrede haben Sie parat, wenn der Abstand noch größer wird?",
+    "Sie hinken hinter der Bilanz von {opponent} her. Haben Sie das Zeug dazu, den Favoriten ins Straucheln zu bringen?",
+    "{opponent} hat mehr Spiele gewonnen als Sie. Werden Sie sich am Wochenende am gegnerischen Erfolg abarbeiten?",
+    "Die Siegesbilanz spricht klar für {opponent}. Ist das Spiel am Sonntag Ihre allerletzte Chance auf Tuchfühlung?",
+    "{opponent} steht tabellarisch über {team}. Erkennen Sie die gegnerische Überlegenheit an oder spucken Sie große Töne?",
+    "Mehr Erfolge auf dem Konto von {opponent}. Wie wollen Sie dem favorisierten Kontrahenten ein Bein stellen?",
+    "Der Tabellenstand bevorteilt {opponent}. Verstecken Sie sich hinter Ausreden oder blasen Sie zur Attacke?",
+    "{opponent} zieht in der Tabelle davon. Ist dieses Spiel Ihre letzte Möglichkeit, den Anschluss nicht völlig zu verlieren?"
+  ]
+}
+
+
+
+expectations_early_over500
+
+{
+  "category_id": "expectations_early_over500",
+  "templates": [
+    "Traumstart bei {record}! Ist der Champagner im Vorstandszimmer bereits kaltgestellt oder droht der Kater der Realität?",
+    "Ein starker Frühstart mit {record} für {team}! Fliegen Sie gerade über den Wolken oder planen Sie schon den Absturz?",
+    "Mit {record} im ersten Saisonviertel oben mit dabei. Werden die Championship-Träume bei {team} langsam konkret?",
+    "Guter Start mit {record}! Haben Sie schlichtweg Glück mit dem Spielplan gehabt oder bildet {team} eine Großmacht?",
+    "{record} zu Saisonbeginn! Glauben Sie wirklich, dass Sie diese hohe Pace über die volle Distanz durchhalten können?",
+    "Mit {record} über dem Schnitt gestartet. Ihr Statement dazu, wie man mit diesem Kader plötzlich so weit oben stehen kann.",
+    "{team} steht bei {record}. Trauen Sie Ihrem eigenen Braten schon oder warten Sie sonntags immer noch auf den Einbruch?",
+    "Klasse Frühform mit {record}! Werden die Spieler bei {team} jetzt schon überheblich oder halten Sie die Zügel straff?",
+    "Mit {record} voll im Soll. Ist das schon das Maximum dessen, was {team} leisten kann, oder kommt da noch mehr?",
+    "{record} auf dem Konto! Werden die Rivalen in der Liga schon nervös oder lachen sie noch über Ihren Frühform-Hype?",
+    "Glänzender Auftakt bei {record}. Wie verhindern Sie, dass die Erwartungshaltung der Fans ins Unermessliche steigt?",
+    "Mit {record} unter den Top-Teams der Frühphase. Feiern Sie sich bereits als unfehlbares Mastermind der Vorbereitung?",
+    "{record} nach den ersten Wochen. Ist {team} ein echter Titelkandidat oder nur ein kurzzeitiges Strohfeuer im Frühherbst?",
+    "Frühform-Rausch bei {record}! Wie bewahren Sie in der Führungsetage von {team} jetzt die nötige kühle Bodenhaftung?",
+    "Starkes {record} zum Auftakt! Ist dieser Höhenflug das Ergebnis akribischer Analyse oder purer Zufall?"
+  ]
+}
+
+
+
+expectations_early_at500
+
+{
+  "category_id": "expectations_early_at500",
+  "templates": [
+    "Perfektes Graues-Maus-Dasein bei {record}: Riskieren Sie per Trade den Sprung nach vorne oder verharren Sie in Behaglichkeit?",
+    "Perfektes Mittelmaß mit {record} in der Frühphase! Sind Sie zu stur für einen Trade oder fehlen die passenden Angebote?",
+    "Genau .500 mit {record}! Werden Sie als Käufer auf dem Trade-Markt aktiv oder schielen Sie schon auf den Rebuild?",
+    "{record} zu Saisonbeginn – langweiliger geht es kaum. Fehlt {team} der Mut zu einem aggressiven Kader-Umbaumove?",
+    "Graue Maus der Liga mit {record}. Wie wollen Sie {team} aus diesem lethargischen Tabellenmittelfeld befreien?",
+    "Mit {record} steht {team} im absoluten Niemandsland. Gehen Sie demnächst All-in per Trade oder bleiben Sie passiv?",
+    "{record} im ersten Saisonviertel. Ihr Statement dazu, wie man mit so viel Talent im Kader so durchschnittlich sein kann.",
+    "Weder Fisch noch Fleisch bei {record}. Wann fällt bei {team} die Entscheidung: Angriff auf die Playoffs oder Tanking?",
+    "{record} zu Beginn. Ist dieser Kader einfach nicht gut genug für mehr oder schläft das Management am Steuer?",
+    "Mit {record} im Mittelfeld gefangen. Haben Sie schon andere Manager kontaktiert, um frischen Trade-Wind einzuhauchen?",
+    "{record} zum Auftakt. Reicht Ihnen dieses Schaukeln in der Tabellenmitte oder brennt in Ihnen noch irgendein Ehrgeiz?",
+    "Mit {record} weder Top noch Flop. Wie verkaufen Sie den Anhängern von {team} diese absolute Bedeutungslosigkeit?",
+    "{record} nach den ersten Spielen. Sind Sie bereit für einen Blockbuster-Trade, um die Saison endlich zu zünden?",
+    "Stagnation bei {record}! Welchen Star würden Sie opfern, um diesen trist-grauen Mittelmaß-Sumpf zu verlassen?",
+    ".500-Bilanz {record} im Startviertel. Bieten Sie verstaubte Kaderleichen jetzt aktiv auf dem Transfermarkt an?"
+  ]
+}
+
+
+
+expectations_early_under500
+
+{
+  "category_id": "expectations_early_under500",
+  "templates": [
+    "Startschwierigkeiten bei {record}. Tauschen Sie jetzt das Tafelsilber gegen Draft-Picks oder träumen Sie von Wunderheilungen?",
+    "Holpriger Start mit {record}! Haben Sie den Mut, verbleibende Stars für Picks zu verscherbeln, oder hoffen Sie auf Wunder?",
+    "{record} im ersten Saisonviertel – die Enttäuschung ist groß. Stehen Ihre besten Spieler bereits auf dem Trade-Block?",
+    "Fehlstart mit {record}! Sind Sie bereit, die Erwartungen drastisch nach unten zu korrigieren und Rebuild einzuläuten?",
+    "{record} zu Saisonbeginn ist unterirdisch für {team}. Werden Sie bald die Reißleine ziehen oder weiter träumen?",
+    "Mit {record} hinken Sie den Ansprüchen hinterher. Ihr Statement zu der Frage, ob Ihr Kader schlicht überschätzt ist.",
+    "{team} krebst bei {record} herum. Klingelt Ihr Telefon schon mit Geier-Angeboten für Ihre unzufriedenen Stars?",
+    "Nur {record} in den ersten Wochen! Liegt es an der schlechten Kaderzusammenstellung oder am katastrophalen Matchplan?",
+    "Mit {record} am Ende der Tabelle. Korrigieren Sie das Saisonziel jetzt offiziell auf einen 'Top 3 Draft-Pick'?",
+    "{record} zu Beginn – wie lange schauen Sie diesem Elend zu, bevor Sie den Kader per Trade komplett umwerfen?",
+    "Der Motor von {team} stottert gewaltig ({record}). Haben die Spieler den Glauben an die Saison bereits verloren?",
+    "Mit {record} im Tabellenkeller. Gibt es in Ihrem Kader irgendwen, der unschuldig an dieser Misere ist?",
+    "{record} nach den ersten Partien. Wie erklären Sie diesen kompletten Fehlstart den treuen Anhängern von {team}?",
+    "Fehlstart-Tristesse bei {record}! Trennen Sie sich jetzt von alternden Leistungsträgern für die Zukunft der Franchise?",
+    "Enttäuschende {record} nach wenigen Wochen. Werden Sie als Verkäufer am Transfermarkt aktiv, um Zukunfts-Assets zu sichern?"
+  ]
+}
+
+
+
+expectations_mid_over500
+
+{
+  "category_id": "expectations_mid_over500",
+  "templates": [
+    "Saisonmitte bei {record}! Opfern Sie Ihre First-Round-Picks für den Pokal oder fehlt der Mut zum Meisterschafts-Casino?",
+    "Zur Saisonmitte bei {record}! Gehen Sie jetzt All-in per Trade für den Titel oder fehlt Ihnen dafür das Risiko-Gen?",
+    "Mit {record} voll auf Playoff-Kurs. Welche Verstärkung holen Sie sich per Trade, um die Meisterschaft abzusichern?",
+    "{record} zur Halbzeit! Verhökern Sie jetzt Ihre Zukunft für den Ring oder bleiben Sie stur und vorsichtig?",
+    "Starke Ausgangslage mit {record}! Ist die Finalteilnahme für {team} ab jetzt das absolute Minimum der Saison?",
+    "Mit {record} im oberen Drittel. Ihr Statement dazu, ob {team} das Zeug zum neuen Champion dieser Liga hat.",
+    "{record} zur Saisonmitte! Werden die Spieler vor lauter Selbstzufriedenheit nachlässig oder bleibt der Fokus scharf?",
+    "Mit {record} zur Halbzeit auf Playoff-Kurs. Haben Sie schon Angebote für Ihre Future Picks verschickt?",
+    "{record} auf dem Konto! Wer soll {team} auf dem Weg in die Postseason jetzt eigentlich noch ernsthaft stoppen?",
+    "Solide {record}-Bilanz zur Saisonmitte. Fehlt Ihrem Kader noch das letzte Puzzleteil für den ganz großen Wurf?",
+    "Mit {record} ganz oben dabei. Werden Sie die Konkurrenz auf dem Trade-Markt jetzt aggressiv unter Druck setzen?",
+    "{record} zur Halbzeit. Ist das die beste Saison der Vereinsgeschichte oder kommt der große Einbruch erst noch?",
+    "Mit {record} im Titelrennen. Haben Sie den Champagner für die Playoff-Qualifikation schon kaltgestellt?",
+    "Titel-Hunger bei {record}! Opfern Sie Ihre Draft-Picks der nächsten Jahre für den ultimativen Sieg im Super Bowl?",
+    "Erfolgsverwöhnt bei {record} zur Halbzeit. Nutzen Sie die komfortable Lage, um per Trade ein Star-Upgrade einzutüten?"
+  ]
+}
+
+
+
+expectations_mid_at500
+
+{
+  "category_id": "expectations_mid_at500",
+  "templates": [
+    "{record} zur Halbzeit — der klassische Scheideweg. Werden Sie aktiv auf dem Trade-Markt oder schauen Sie beim Verblühen zu?",
+    "Zur Saisonmitte genau bei {record}! Kaufen Sie jetzt für den Playoff-Push oder verkaufen Sie für die Zukunft?",
+    "{record} zur Halbzeit – die Stunde der Wahrheit! Haben Sie den Mut zum radikalen Schnitt per Trade?",
+    "Niemandsland mit {record}! Wann entscheiden Sie sich endlich, ob Sie Contender oder Rebuilder sein wollen?",
+    "Mit {record} auf der Rasierklinge. Welche Spieler auf Ihrem Roster sind ab sofort feilzubieten?",
+    "Genau {record} zur Saisonmitte. Ihr Statement dazu, warum {team} einfach nicht vom Fleck kommen will.",
+    "{record} zur Halbzeit! Verharren Sie weiter in Schockstarre oder starten Sie den großen Trade-Angriff?",
+    "Mit {record} auf Platz 6 herumkrebsen. Fehlt Ihnen das Verhandlungsgeschick, um den entscheidenden Deal zu machen?",
+    "{record} zur Saisonmitte. Ist dieser Kader das perfekte Mahnmal für gepflegtes Dynasty-Mittelmaß?",
+    "Bei {record} stellt sich die Frage: Sind Sie Käufer oder Verkäufer vor der nahenden Trade-Deadline?",
+    "Mit {record} auf dem Zaun sitzen. Werden Sie die Saison abschenken oder investieren Sie Ihre First-Round-Picks?",
+    "{record} zur Halbzeit. Wie lange wollen Sie den Fans diese quälende Orientierungslosigkeit noch zumuten?",
+    "Mit {record} festgefahren. Welcher Trade soll {team} aus dieser lethargischen Durchschnittlichkeit retten?",
+    "Orientierungslos bei {record}! Trennen Sie sich von halbguten Starter-Assets für echtes Zukunftskapital?",
+    "Mittelmaß-Tristesse bei {record} zur Saisonmitte. Haben Sie schon Verhandlungen eröffnet, um den Roster aufzumischen?"
+  ]
+}
+
+
+
+expectations_mid_under500
+
+{
+  "category_id": "expectations_mid_under500",
+  "templates": [
+    "Abgeschlagen bei {record}! Wer auf Ihrem Roster ist noch feilzubieten, bevor der Marktwert im Keller kollabiert?",
+    "Zur Saisonmitte bei mickrigen {record}! Welcher Veteran darf den Verein jetzt für junge Talente und Picks verlassen?",
+    "Enttäuschende {record} zur Halbzeit! Ist der Rebuild jetzt offiziell ausgerufen oder träumen Sie immer noch?",
+    "Mit {record} unter den Erwartungen. Wer in Ihrem Kader ist eigentlich noch absolut unverkäuflich?",
+    "{record} zur Saisonmitte ist ein Offenbarungseid. Starten Sie jetzt den Feuerausverkauf auf dem Trade-Markt?",
+    "Mit {record} weit abgeschlagen. Ihr Statement zur gescheiterten Saison und den Vorbereitungen auf den Draft.",
+    "{record} zur Halbzeit! Haben Sie die Saison intern schon abgehakt und den Fokus voll auf Next-Year-Picks gelegt?",
+    "Bei {record} brennt die Hütte. Wie viele Absagen haben Sie im Chat schon für Ihre überteuerten Veteranen kassiert?",
+    "Mit {record} am Tabellenende. Nutzen Sie die verbleibenden Wochen, um den Roster für das nächste Jahr umzupflügen?",
+    "{record} zur Saisonmitte – katastrophal! Sind Sie bereit, sich von liebgewonnenen Namen per Trade zu trennen?",
+    "Mit {record} tief im Keller. Liegt das Problem am Alter des Kaders oder am eklatanten Mangel an Talent?",
+    "{record} zur Halbzeit. Wie erklären Sie den Sponsoren, dass {team} diese Saison nur noch Statist ist?",
+    "Mit {record} ohne Playoff-Chancen. Werden Sie gezielt tanken, um sich den Top-Pick im nächsten Draft zu sichern?",
+    "Saisonruine bei {record}! Werden Sie verbliebene Leistungsträger heute noch auf den Trade-Block setzen?",
+    "Trümmerfeld {record} zur Saisonhälfte. Ist Ihr Telefon offen für sprichwörtliche Geier-Angebote der Konkurrenz?"
+  ]
+}
+
+
+
+late_division_1st
+
+{
+  "category_id": "late_division_1st",
+  "templates": [
+    "Platz 1 in der Division mit {record}! Blickt man von Ihrem Elfenbeinturm eigentlich mit Verachtung oder Mitleid herab?",
+    "Platz 1 in der Division mit {record}! Alles andere als der Super-Bowl-Sieg wäre jetzt eine blamable Enttäuschung, oder?",
+    "Mit {record} an der Spitze der Division! Wie hoch ist die zermürbende Last der Favoritenrolle auf Ihren Schultern?",
+    "Division-Leader mit {record}! Sagen Sie es laut: Ist {team} das beste Dynasty-Team, das diese Liga je gesehen hat?",
+    "Mit {record} auf Platz 1 der Division. Feiern Sie die Krönung schon vorab oder haben Sie Angst vor den Playoffs?",
+    "Division-Spitzenreiter mit {record}. Ihr Statement zu der absoluten Dominanz, die Sie der Konkurrenz aufzwingen.",
+    "Mit {record} thronen Sie über der Division. Trauen Sie sich überhaupt noch zu schwächeln oder herrscht Siegeszwang?",
+    "Platz 1 fest in der Hand ({record}). Haben die gegnerischen Manager in Ihrer Division überhaupt noch Hoffnung?",
+    "Mit {record} an der Divisionsspitze. Werden Sie die Stammkräfte im Spätsaison-Endspurt schonen oder durchziehen?",
+    "Unangefochten Erster mit {record}! Blickt man von da oben eigentlich mit Mitleid oder Verachtung auf den Rest herab?",
+    "Mit {record} auf dem Divisions-Thron. Haben Sie die Reden für die Championship-Party bereits fertig geschrieben?",
+    "Platz 1 in der Division mit {record}. Wie verhindern Sie, dass Arroganz Ihr Team in den Playoffs zu Fall bringt?",
+    "Mit {record} Spitzenreiter. Ist dieser Kader bereit für den ultimativen Triumph oder bricht er unter Druck zusammen?",
+    "Platz 1 in der Division bei {record}! Zittern Ihnen im Saison-Endspurt die Knie oder genießen Sie die Aussicht?",
+    "Divisions-Throner {team} ({record})! Ist die Meisterschaft bereits eingetütet oder war das nur Vorgeplänkel?"
+  ]
+}
+
+
+
+late_division_2nd3rd
+
+{
+  "category_id": "late_division_2nd3rd",
+  "templates": [
+    "Auf Verfolgerkurs ({record}). Haben Sie das Zeug zum Königsmörder oder reicht es am Ende wieder nur für Vize-Dasein?",
+    "Platz 2 oder 3 in der Division mit {record}! Sind Sie bereit für All-in-Trades oder schwafeln Sie nur über Titel?",
+    "Mit {record} mitten im Kampf um die Wildcard! Haben Sie die Eier, Ihre Zukunft für den entscheidenden Push zu opfern?",
+    "Verfolgerrolle mit {record}! Werden Sie noch einen Verzweiflungs-Trade raushauen, um die Spitze anzugreifen?",
+    "Mit {record} knapp hinter Platz 1 der Division. Fehlt Ihnen die Qualität oder einfach der Mut zum großen Move?",
+    "Auf Platz 2/3 mit {record}. Ihr Statement dazu, ob {team} in den Playoffs Kanonenfutter oder Schreckgespenst ist.",
+    "Mit {record} im Playoff-Rennen. Werden Sie auf der Zielgeraden noch einmal das letzte Hemd im Trade riskieren?",
+    "Verfolger bei {record} in der Division. Glauben Sie ernsthaft, dass Sie den Spitzenreiter noch abfangen können?",
+    "Mit {record} auf der Kippe. Ist dieser Kader bereit für Do-or-Die-Football oder zittert die Mannschaft?",
+    "Platz 2 oder 3 mit {record}. Warum sollte irgendjemand in den Playoffs Angst vor {team} haben?",
+    "Mit {record} im Divisions-Mittelteil. Steckt in diesem Kader noch eine Schippe Extra-Leistung für den Endspurt?",
+    "Playoff-Kampf mit {record}! Werden Sie die Risiken eingehen, die man für eine Championship nun mal braucht?",
+    "Mit {record} hinter der Spitze. Haben Sie schon ausgerechnet, wie die Szenarien für Ihre Playoff-Quali aussehen?",
+    "Auf Verfolger-Posten bei {record}! Welches Roster-Puzzleteil opfern Sie kurz vor der Deadline für den großen Wurf?",
+    "Platz 2 oder 3 ({record}) im Endspurt! Gehen Sie Risiko per Trade einzugehen oder begnügen Sie sich mit der Hoffnung?"
+  ]
+}
+
+
+
+late_division_4th
+
+{
+  "category_id": "late_division_4th",
+  "templates": [
+    "Tabellenende in der Division ({record}). Welcher Erlöser im nächsten Draft soll dieses Trümmerfeld sanieren?",
+    "Letzter Platz in der Division mit {record}! Welcher Wunsch-Pick soll im kommenden Draft Ihre verkorkste Haut retten?",
+    "Abgeschlagen auf Platz 4 mit {record}! Haben die Vorbereitungen auf die nächste Saison und der Ausverkauf begonnen?",
+    "Mit {record} das Schlusslicht der Division. Welcher Star wird bei {team} als Erstes auf den Opferaltar gelegt?",
+    "Divisions-Kellersitz mit {record}. Ist das gescheiterte Projekt {team} noch zu reparieren oder hilft nur Abriss?",
+    "Mit {record} Letzter in der Division. Ihr Statement zu den Gründen für dieses beispiellose Saison-Debakel.",
+    "Platz 4 mit {record}! Haben Sie den Fans schon erklärt, warum das Management in dieser Saison komplett versagt hat?",
+    "Mit {record} am Tabellenende der Division. Klingeln die Telefone der Konkurrenz schon wegen Ihren verbliebenen Assets?",
+    "Letzter bei {record}! Ist der 1.01-Pick das einzige verbliebene Argument, warum man bei {team} nicht den Stecker zieht?",
+    "Mit {record} abgeschlagen. Werden Sie in den verbleibenden Spielen wenigstens noch den Spielverderber geben?",
+    "Divisions-Schlusslicht mit {record}. Haben Sie bereits die Kündigung für Ihr Scouting-Team vorbereitet?",
+    "Mit {record} auf Platz 4 der Division. Gibt es irgendeinen Spieler im Kader, der sich nicht schämen muss?",
+    "Rote Laterne in der Division ({record}). Wie planen Sie den Wiederaufbau aus diesem Trümmerfeld?",
+    "Abgewrackt auf Platz 4 der Division ({record})! Verkaufen Sie den Restkader jetzt für sprichwörtlich 'nen Apfel und 'n Ei?",
+    "Letzter Platz bei {record}! Wie groß ist die Hoffnung, per Trade wenigstens noch ein paar späte Draft-Picks abzugreifen?"
+  ]
+}
+
+
+
+division_game
+
+{
+  "category_id": "division_game",
+  "templates": [
+    "Divisions-Rivalität gegen {opponent}! Wird das ein Festspiel der Taktik oder eine Schlammschlacht für den Chat?",
+    "Divisions-Duell gegen {opponent}! Gehen Sie in diesem Hass-Spiel voran oder verkümmert {team} unter dem Druck?",
+    "Es geht gegen den Rivalen {opponent}! Haben Sie den Spielern bereits die Leviten gelesen oder herrscht Kuschelkurs?",
+    "Divisions-Rivalität pur gegen {opponent}! Werden Sie den Gegner auf dem Feld demolieren oder im Chat große Töne spucken?",
+    "Das Duell gegen {opponent} steht an! Ist das für {team} nur ein normales Spiel oder brennt die Hütte lichterloh?",
+    "Matchup gegen den Divisions-Konkurrenten {opponent}! Ihr Statement zu den Giftpfeilen, die bereits geflogen sind.",
+    "Gegen {opponent} geht es um die Vorherrschaft in der Division. Hat {team} das Zeug dazu, den Rivalen zu demütigen?",
+    "Divisions-Kracher gegen {opponent}! Haben Sie sich eine besondere Demütigung für den gegnerischen Manager überlegt?",
+    "Gegen {opponent} steht mehr als nur ein Sieg auf dem Spiel – es geht um Ehre. Zittern Ihnen bereits die Knie?",
+    "Rivalen-Duell mit {opponent}! Werden Sie nach dem Spiel als Sieger hohnlachen oder sich im Keller verstecken?",
+    "Gegen den Divisions-Rivalen {opponent}! Haben Sie den Matchplan extra aggressiv gestaltet oder mauern Sie?",
+    "Schicksalsspiel in der Division gegen {opponent}. Kann {team} diesem enormen Druck überhaupt standhalten?",
+    "Divisions-Fight gegen {opponent}! Zeigen Sie Flagge oder überlassen Sie dem Rivalen kampflos das Feld?",
+    "Es knackt in der Division gegen {opponent}! Bricht die Abwehr von {team} ein oder behalten Sie die Nerven?",
+    "Divisions-Derby gegen {opponent}! Was erwartet den gegnerischen Manager nach dem Anpfiff in der Gerüchteküche?"
+  ]
+}
+
+
+
+rivalry_statement
+
+{
+  "category_id": "rivalry_statement",
+  "templates": [
+    "Das Hass-Duell gegen Erzfeind {opponent}! Welche lyrischen Giftpfeile haben Sie im Köcher, um ihn mürbe zu machen?",
+    "Rivalry Game gegen {opponent}! Haben Sie den Arsch in der Hose für eine klare Ansage oder verstecken Sie sich hinter Phrasen?",
+    "Sie haben {opponent} offiziell zum Erzfeind erklärt! Welche Worte richten Sie vor dieser Schlacht an ihn?",
+    "Das Hass-Duell gegen {opponent} steht bevor! Ist das der Spieltag, an dem Sie den Erzrivalen persönlich ruinieren?",
+    "Showdown gegen Ihren erklärten Erzfeind {opponent}! Wie sehr brennen Sie darauf, ihm die Pleite ins Gesicht zu reiben?",
+    "Rivalry Week gegen {opponent}! Ihr offizielles Statement zur sportlichen Vernichtung, die Sie angedroht haben.",
+    "Es geht gegen {opponent}! Ist dieses Duell für Sie wichtiger als der eigentliche Gewinn der Meisterschaft?",
+    "{opponent} fordert Sie im Rivalen-Duell! Werden Sie ihm am Sonntag das Maul stopfen oder als Verlierer schleichen?",
+    "Der absolute Schicksalstag gegen Erzfeind {opponent}! Haben Sie die Mannschaft schon auf Kriegspfad eingeschworen?",
+    "Gegen {opponent} zählt nur ein Sieg! Was passiert im Verein {team}, wenn Sie ausgerechnet dieses Duell vergeigen?",
+    "Ausgerechnet {opponent}! Welchen Spruch lassen Sie nach dem Spiel im Chat ab, wenn Sie den Rivalen demoliert haben?",
+    "Fight Night gegen {opponent}! Sind Sie bereit, auf dem Feld alle Register zu ziehen, um dem Erzfeind wehzutun?",
+    "Das Duell der Giganten gegen {opponent}! Werden Sie den Gegner wie angekündigt vernichten oder einknicken?",
+    "Prestige pur gegen {opponent}! Haben Sie den Matchplan extra fies auf die Schwachstellen des Erzrivalen abgestimmt?",
+    "Es wird schmutzig gegen {opponent}! Werden Sie den Gegner nach allen Regeln der Kunst auf dem Feld zerlegen?"
+  ]
+}
+
+generic_fallback
+
+{
+  "category_id": "generic_fallback",
+  "templates": [
+    "Zwischenbilanz bei {record} in Woche {week}: Ist das bei {team} noch kontrollierter Sport oder bereits das Prinzip Hoffnung?",
+    "In Woche {week} steht {team} bei {record}. Wie lautet Ihre Zwischenbilanz – Meisterwerk oder anhaltende Katastrophe?",
+    "Mit {record} nach Woche {week}. Sind Sie mit dem Erreichten zufrieden oder schlafen Sie beim Managen ein?",
+    "Bei {record} in Woche {week}: Planen Sie in nächster Zeit Trades zur Verstärkung oder bleibt Ihr Telefon stumm?",
+    "Woche {week}, Bilanz {record}. Wo sehen Sie aktuell die größten Baustellen im Kader von {team}?",
+    "{team} dümpelt bei {record} in Woche {week}. Ihr Statement zur bisherigen Gesamtleistung Ihres Franchise, bitte.",
+    "Mit {record} in Woche {week}. Hören Sie bei Aufstellungen eigentlich auf Daten, Bauchgefühl oder den Zufall?",
+    "In Woche {week} blicken wir auf {record} bei {team}. Sind Sie Contender, Rebuilder oder einfach nur Passagier?",
+    "Bilanz {record} nach Woche {week}. Haben andere Manager schon angefragt, um Ihren Kader zu fleddern?",
+    "{team} steht bei {record} in Woche {week}. Was antworten Sie den Kritikern, die Ihre Kaderplanung verhöhnen?",
+    "Woche {week} mit {record}. Gibt es bei {team} Spieler, die kurz vor dem Rauswurf oder Trade stehen?",
+    "Mit {record} in Woche {week}. Welches Zierschild hängt aktuell an der Kabinentür: 'Im Aufbau' oder 'Verzweifelt'?",
+    "In Woche {week} steht die Bilanz bei {record}. Haben Sie das Zeug, die Saison noch positiv zu gestalten?",
+    "{record} nach Woche {week}! Suchen Sie noch nach der richtigen Formel oder haben Sie das Konzept Dynasty verstanden?",
+    "Mit {record} in Woche {week}. Ihr Statement zur Frage, ob dieser Kader das Zeug zu Großem hat oder überschätzt ist."
+  ]
+}
+

@@ -1,0 +1,20 @@
+{
+  "category_id": "opp_winless",
+  "templates": [
+    "Gegen das sieglose Schlusslicht {opponent}: Haben Sie Angst vor dem Gegner oder vor der historischen Blamage?",
+    "Kommende Woche geht es gegen das sieglose {opponent}. Wenn Sie hier verlieren, müssen Sie sofort zurücktreten, oder?",
+    "Pflichtsieg gegen das Schlusslicht {opponent}! Wie groß ist die Angst bei {team}, sich vor der Liga komplett zu blamieren?",
+    "{opponent} hat null Siege auf dem Konto. Werden Sie den Gegner unterschätzen und krachend auf die Schnauze fallen?",
+    "Gegen das sieglose {opponent} kann man nur verlieren. Wie wollen Sie mit diesem enormen Peinlichkeitsdruck umgehen?",
+    "{opponent} wartet verzweifelt auf den ersten Sieg. Dient {team} am Wochenende etwa als barmherziger Aufbaugegner?",
+    "Ein Spiel gegen {opponent} sollte ein Spaziergang sein. Ihr Statement zu der drohenden Schande einer Niederlage, bitte.",
+    "Wer gegen {opponent} verliert, verliert das Gesicht. Wie halten Sie die Konzentration im Kader von {team} hoch?",
+    "{opponent} ist noch sieglos. Werden Sie das Spiel mit der B-Elf bestreiten oder haben Sie Angst vor dem Tabellenletzten?",
+    "{opponent} dümpelt am Boden der Liga. Gibt es irgendein Szenario, in dem {team} diesen Pflichtsieg noch versemmelt?",
+    "Gegen einen Punktelieferanten wie {opponent} zählen nur Fakten. Wie hoch wird der Kantersieg für {team} ausfallen?",
+    "{opponent} sucht nach Haltestrohhalmen. Werden Sie dem Gegner gnadenlos den Fangschuss geben oder Mitleid zeigen?",
+    "Pflichtaufgabe gegen {opponent}! Wie verhindern Sie, dass Arroganz und Selbstüberschätzung Ihre Aufstellung ruinieren?",
+    "{opponent} steht mit dem Rücken zur Wand. Treten Sie feinsinnig nach oder erweisen Sie sich als barmherziger Samariter?",
+    "Null Siege beim Gegner {opponent}. Wenn {team} da patzt, schämen sich selbst die eigenen Ultras – einverstanden?"
+  ]
+}

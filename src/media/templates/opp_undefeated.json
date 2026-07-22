@@ -1,0 +1,20 @@
+{
+  "category_id": "opp_undefeated",
+  "templates": [
+    "Der unbesiegte Gigant {opponent} bittet zum Tanz. Treten Sie mit der weißen Fahne an oder hoffen Sie auf Wunder?",
+    "Gegen {opponent} wartet ein unbesiegter Brocken. Haben Sie sich vor Angst schon in der Trainerkabine eingeschlossen?",
+    "{opponent} hat noch kein Spiel verloren. Mit welchem absurden Matchplan wollen Sie dieses Bollwerk knacken?",
+    "Geht {team} gegen den ungeschlagenen Spitzenreiter {opponent} als Lamm zur Schlachtbank oder haben Sie Mumm?",
+    "{opponent} ist makellos. Gibt es im Führungskader von {team} überhaupt den Hauch eines Glaubens an eine Sensation?",
+    "Gegen das unbesiegte {opponent} zu spielen ist kein Wunschkonzert. Ihr Statement zu Ihren verschwindend geringen Chancen.",
+    "Sind Sie derjenige, der die Serie von {opponent} bricht, oder werden Sie nur die nächste Leiche auf deren Triumphzug?",
+    "Unbesiegt trifft auf {team}! Werden Sie {opponent} unterschätzen oder haben Sie die Hosen bereits gestrichen voll?",
+    "{opponent} reist ungeschlagen an. Haben Sie die Taschentücher für die Pleite am Sonntagabend schon bereitgelegt?",
+    "Gegen ein fehlerfreies {opponent} braucht {team} eine Herkulesaufgabe. Wer soll diese Wunderleistung erbringen?",
+    "Werden Sie {opponent} die erste Niederlage zufügen oder dient {team} wieder nur als dankbares Kanonenfutter?",
+    "{opponent} schwebt auf Wolke sieben und trifft auf {team}. Wie verhindern Sie, dass das ein historisches Debakel wird?",
+    "Der ungeschlagene Primus {opponent} fordert Sie. Haben Sie heimlich Dynamit im Matchplan versteckt oder mauern Sie?",
+    "Gegen {opponent} droht die Hinrichtung. Welchen lyrischen Notfallplan haben Sie für die Pressekonferenz danach?",
+    "Ein unbesiegter Gegner {opponent} wartet. Ist {team} bereit für die Abwehrschlacht oder schenken Sie gleich ab?"
+  ]
+}

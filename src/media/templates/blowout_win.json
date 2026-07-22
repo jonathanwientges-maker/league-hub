@@ -1,0 +1,20 @@
+{
+  "category_id": "blowout_win",
+  "templates": [
+    "Manche nennen es Matchup, wir nennen es Hinrichtung: Welcher Diplomat aus Ihrem Trainerstab überbringt {opponent} nach diesem {margin}-Punkte-Debakel das Beileidsschreiben?",
+    "Mit {margin} Punkten Vorsprung über {opponent} hinweggerollt! Haben Sie ab dem dritten Viertel Hallenhockey auf der Bank gespielt oder lief die Aufstellung komplett von selbst?",
+    "Gnadenlose Demontage mit {margin} Punkten Abstand! Ist {team} eine unaufhaltsame Übermacht oder war {opponent} schlicht eine Beleidigung für den Fantasy-Sport?",
+    "Ein Massaker im feinsten Zwirn: {margin} Punkte Abreibung für {opponent}! Wie viel Mitleid heucheln Sie beim nächsten Trainertreffen?",
+    "{opponent} liegt nach dieser {margin}-Punkte-Klatsche zertrümmert am Boden. War das die sportliche Höchststrafe oder nur die logische Konsequenz Ihres Griffs nach der Weltherrschaft?",
+    "Sie haben {opponent} mit {margin} Punkten Kantersieg nach Hause geschickt. Glauben Sie ernsthaft, dass nach diesem Blutbad noch jemand freiwillig gegen {team} antritt?",
+    "{margin} Punkte Vorsprung sprechen eine deutliche Sprache. Ist das die Geburtsstunde einer echten Dynastie oder war der Gegner schlichtweg betrunken?",
+    "Wer {opponent} mit {margin} Punkten abfrühstückt, darf groß reden. Welchen arroganten Spruch haben Sie als Erstes im Gruppenchat platziert?",
+    "Mit {margin} Punkten Klatsche hat {team} den Exempel-Statustag ausgerufen. Haben Sie Ihre Stars überhaupt schmutzig gemacht oder reichten die Wasserträger?",
+    "Ein Lehrstück in Sachen Vernichtung: {margin} Punkte Abstand zu {opponent}! Ab wann haben Sie angefangen, Mitleid mit der gegnerischen Franchise zu empfinden?",
+    "{margin} Punkte Differenz! War die Demontage von {opponent} Ihre persönliche Rache für alte Rechnungen oder einfach purer Sadismus?",
+    "Sie haben {opponent} nach allen Regeln der Kunst zerlegt ({margin} Pkt.). Feiern Sie sich bei {team} jetzt als taktisches Genie oder als Schlächter der Liga?",
+    "Mit {margin} Punkten Kantersieg durchgezogen! Bitten Sie die Liga-Leitung bereits um stärkere Gegnerschaft für {team}?",
+    "{opponent} wurde mit {margin} Punkten Miese aus dem Stadion gefegt. Ist Ihr Führungskader vor lauter Überheblichkeit schon schwebend unterwegs?",
+    "Die {margin}-Punkte-Hinrichtung gegen {opponent} war lückenlos. Ihr Statement zu dieser verheerenden Demonstration der Stärke, bitte."
+  ]
+}

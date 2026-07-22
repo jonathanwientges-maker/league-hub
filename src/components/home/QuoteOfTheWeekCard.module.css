@@ -1,0 +1,85 @@
+.wrap {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-6) var(--space-5);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(var(--accent-rgb), 0.14), transparent 55%),
+    var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-raised);
+  margin-bottom: var(--space-6);
+  transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.wrap:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.winner {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), var(--shadow-raised);
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.freshHeadline {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin: 0 0 var(--space-4);
+}
+
+.cta {
+  margin-left: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.quote {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 3.2vw, 1.9rem);
+  line-height: 1.4;
+  margin: 0 0 var(--space-5);
+}
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.bylineName {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.likes {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}

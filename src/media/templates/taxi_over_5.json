@@ -1,0 +1,20 @@
+{
+  "category_id": "taxi_over_5",
+  "templates": [
+    "{player} punktet mit {points} Zählern im Taxi Squad. Feiern Sie das intern bereits als 'Fohlenelf-Revolution' oder verstaubt das Talent weiter?",
+    "Taxi-Talent {player} holt {points} Punkte im Nachwuchs. Bekommt der Junge jetzt ein Fleißkärtchen oder darf er weiter im Unterholz schimmeln?",
+    "Starke {points} Punkte von {player} im Taxi Squad! Loben Sie Ihre Nachwuchsarbeit bereits hochjubelnd oder war das nur Zufall?",
+    "{player} zeigt im Taxi Squad mit {points} Punkten auf. Sind Sie stolz wie ein Ziehvater oder ärgern Sie sich, dass er nicht im Roster stand?",
+    "{points} Punkte von {player} in der Jugendakademie von {team}! Bilden Sie den nächsten Star aus oder war der Gegner einfach dankbar?",
+    "{player} punktet solide mit {points} Zählern auf der Taxi-Liste. Wann trauen Sie dem Jungen mal echte Spielzeit bei den Großen zu?",
+    "Nachwuchshoffnung {player} erzielt {points} Punkte. Ist das der Beweis für Ihr exzellentes Scouting oder hatte er einfach Glück?",
+    "{points} Punkte von {player} im Taxi Squad. Werden die etablierten Starter bei {team} jetzt nervös wegen der Konkurrenz von unten?",
+    "{player} nutzt seine Chance im Taxi Squad ({points} Pkt.). Wie viel Kredit hat er sich damit beim Trainerstab erarbeitet?",
+    "Ihr Taxi-Juwel {player} liefert {points} Punkte. Feiern Sie sich jetzt als Talentflüsterer der Liga?",
+    "{points} Punkte durch {player} auf der Parkbank. Ein gutes Zeichen für die Zukunft von {team} oder nur ein kurzes Strohfeuer?",
+    "{player} zeigt Lebenszeichen im Taxi Squad ({points} Pkt.). Wie sieht der Langzeitplan für diese Personalie aus?",
+    "{player} mit {points} Punkten im Taxi Squad. Ihr Statement zu diesem kleinen Lichtblick in Ihrem Nachwuchsbereich, bitte.",
+    "{points} Punkte vom Taxi-Akteur {player}. Ist der Junge unverkäuflich oder lässt er sich als Trade-Dreingabe verscherbeln?",
+    "Solide {points} Punkte von {player} im Nachwuchs. Bieten Sie das Talent jetzt der Konkurrenz an, bevor der Hype verfliegt?"
+  ]
+}

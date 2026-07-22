@@ -1,0 +1,20 @@
+{
+  "category_id": "opp_lost_last",
+  "templates": [
+    "{opponent} liegt am Boden. Treten Sie feinsinnig nach oder erweisen Sie sich als barmherziger Samariter?",
+    "{opponent} hat letzte Woche gewaltig einen auf den Sack bekommen. Nutzen Sie die Gunst der Stunde zum Tritt in den Haufen?",
+    "Nach der Pleite ist {opponent} angeschlagen. Werden Sie das gegnerische Elend gnadenlos ausnutzen oder Geschenke verteilen?",
+    "{opponent} kommt frustriert aus einer Niederlage. Haben Sie Angst vor der Trotzantwort oder lachen Sie sich ins Fäustchen?",
+    "Gegner {opponent} liegt am Boden. Ihr Statement zur Pflicht, die Verwundbarkeit dieses Gegners jetzt eiskalt auszunutzen.",
+    "{opponent} hat zuletzt verloren. Werden Sie in die Wunden reiben oder lassen Sie sich von einem verwundeten Tier beißen?",
+    "Nach dem Patzer von {opponent}: Ist ein Sieg für {team} am Wochenende reine Formsache oder wackeln Sie selbst?",
+    "{opponent} hat sich letzte Woche blamiert. Wie verhindern Sie, dass {team} denselben Amateursport abliefert?",
+    "Ein angeschlagenes {opponent} wartet auf {team}. Gibt es eine Klatsche für den Gegner oder wird es eng?",
+    "{opponent} brennt auf Wiedergutmachung nach der Pleite. Haben Sie den passenden Feuerlöscher in der Kabine parat?",
+    "Nach der Niederlage von {opponent} fordert die Presse einen klaren Sieg von {team}. Wie gehen Sie mit der Erwartung um?",
+    "{opponent} hat versagt. Zeigen Sie am Sonntag, wie man es richtig macht, oder treten Sie in das gleiche Fettnäpfchen?",
+    "{opponent} steckt im Frust. Werden Sie den gegnerischen Manager im Chat weiter aufziehen oder konzentrieren Sie sich aufs Spiel?",
+    "Das gegnerische Ensemble von {opponent} strauchelt. Werden Sie den Todesstoß versetzen oder als Retter auftreten?",
+    "Frust beim Kontrahenten {opponent}! Ist {team} bereit, die Gunst der Stunde für ein Schützenfest zu nutzen?"
+  ]
+}

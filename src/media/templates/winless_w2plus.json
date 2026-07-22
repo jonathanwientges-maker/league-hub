@@ -1,0 +1,20 @@
+{
+  "category_id": "winless_w2plus",
+  "templates": [
+    "{record} in Woche {week}: Der Absturz hat Methode. Sprechen wir noch von Formtief oder bereiten Sie die Insolvenz vor?",
+    "Null Siege bei {record} in Woche {week}! Suchen Sie die Schuld im Spielplan oder bei Ihren überschätzten Spielern?",
+    "In Woche {week} steht {team} bei desaströsen {record}. Wäre ein Ausverkauf Ihrer Veteranen für Draft-Picks die Rettung?",
+    "{record} in Woche {week}! Sind Sie mit diesem Trümmerhaufen zufrieden oder schlichtweg verhandlungsfaul bei Trades?",
+    "Woche {week} und {team} dümpelt bei {record} herum. Haben Sie die Saison gedanklich bereits im Mülleimer entsorgt?",
+    "Bei {record} in Woche {week} fragen alle: Wann holen Sie den ersten Punkt oder bleiben Sie die Lachnummer der Liga?",
+    "Woche {week}, Bilanz {record}. Trauen Sie sich überhaupt noch, morgens die Sleeper-App auf Ihrem Smartphone zu öffnen?",
+    "{team} steht bei {record} in Woche {week}. Ist das noch ein Formtief oder die gezielte Jagd auf die rote Laterne?",
+    "Null Erfolge nach Woche {week} ({record}). Bieten Sie Ihre verbliebenen Stars jetzt anderen Managern feil?",
+    "{record} in Woche {week}! Ist Ihr Kader schlicht unbrauchbar oder verweigert der Coach die Arbeit an der Seitenlinie?",
+    "In Woche {week} steht die Null auf der Siegesseite ({record}). Ihr Statement zu diesem peinlichen Fehlstart, bitte.",
+    "{record} nach Woche {week}! Haben die Akteure von {team} auf dem Feld bereits geschlossen die weiße Fahne gehisst?",
+    "Bei {record} in Woche {week} bleibt die Frage: Wer in der Liga soll sich vor dieser Truppe eigentlich noch fürchten?",
+    "Desaster bei {record} in Woche {week}! Klingelt Ihr Telefon schon mit Geier-Angeboten für Ihre verzweifelten Stars?",
+    "Nuller-Bilanz {record} in Woche {week}. Liegt der Fehler am veralteten System oder an Ihrem mangelnden Verhandlungsgeschick?"
+  ]
+}

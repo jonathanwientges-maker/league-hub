@@ -1,0 +1,20 @@
+{
+  "category_id": "out_player_started",
+  "templates": [
+    "{player} lag auf der Intensivstation, Sie gaben ihm den Startplatz. Glauben Sie an telepathische Punkteübertragung oder war das reine Schlafapnoe beim Aufstellen?",
+    "{player} war offiziell als 'OUT' gemeldet und stand trotzdem im Lineup von {team}. Hoffen Sie auf Wunderheilungen oder lesen Sie Berichte auf Chinesisch?",
+    "Sie haben einen verletzten {player} aufgestellt! Glauben Sie an Geister oder ist Ihr Scouting-Ressort schlichtweg pleite?",
+    "{player} lag mit Krücken auf der Tribüne, während er für {team} punkten sollte. Welcher Teufel hat Sie bei diesem Sabotage-Akt geritten?",
+    "Einen Spieler mit Status 'OUT' wie {player} starten zu lassen, grenzt an Arbeitsverweigerung. Werden Sie sich selbst abmahnen?",
+    "{player} war out. Wussten Sie das nicht oder dachten Sie, die Punkte werden Ihnen aus Mitleid gutgeschrieben?",
+    "Null Punkte von {player}, weil er verletzt war. Wie peinlich ist es Ihnen auf einer Skala von 1 bis 10, so ein Lineup abzugeben?",
+    "Sie schicken den verletzten {player} ins Rennen. Haben Sie die Push-Nachrichten stummgeschaltet oder scheren Sie sich nicht um Erfolg?",
+    "{player} ist verletzt und Sie stellen ihn auf. Ist das die berüchtigte Fachkompetenz, mit der Sie {team} zum Titel führen wollen?",
+    "Mit einem verletzten {player} auflaufen – haben Sie das Aufstellen am Wochenende im vollkommenen Vollrausch erledigt?",
+    "{player} hat das Spiel im Schlafanzug verfolgt. Wie erklären Sie der Liga, dass Sie solche Geschenke an den Gegner verteilen?",
+    "Status 'OUT' bei {player} ignoriert! Ist das fahrlässige Unwissenheit oder Ihre persönliche Art, den Gegner zum Lachen zu bringen?",
+    "Wer {player} verletzt startet, sollte vielleicht lieber Halma spielen. Wann treten Sie von Ihrem Posten bei {team} zurück?",
+    "{player} lag auf dem Isoliertisch und Sie geben ihm einen Startplatz. Ihr Statement zu dieser sportlichen Bankrotterklärung, bitte.",
+    "Ein verletzter {player} im Lineup von {team}. Haben Sie den Überblick verloren oder die Aufstellung schlicht vergessen?"
+  ]
+}

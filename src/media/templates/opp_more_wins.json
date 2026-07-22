@@ -1,0 +1,20 @@
+{
+  "category_id": "opp_more_wins",
+  "templates": [
+    "Die Tabelle spricht Bände pro {opponent}. Versuchen Sie es am Sonntag mit Taktik oder beten Sie nur für ein Wunder?",
+    "{opponent} steht in der Tabelle besser da als {team}. Gehen Sie mit vollen Hosen in dieses Verfolger-Duell?",
+    "Bessere Bilanz für {opponent}! Ist das die Bestätigung, dass der gegnerische Manager einfach den besseren Job macht?",
+    "{opponent} hat mehr Siege auf dem Konto als {team}. Glauben Sie wirklich, dass Sie diesen Abstand verkürzen können?",
+    "Die Tabelle lügt nicht: {opponent} steht vor Ihnen. Ihr Statement zur ungeliebten Rolle des Jägers in dieser Partie.",
+    "{opponent} blickt von oben auf {team} herab. Motiviert Sie dieser Zustand oder schlägt er nachhaltig aufs Gemüt?",
+    "Mehr Siege für {opponent} als für {team}. Werden Sie am Sonntag zeigen, wer der wahre Chef im Ring sein müsste?",
+    "{opponent} hat die deutlich bessere Bilanz. Welche Ausrede haben Sie parat, wenn der Abstand noch größer wird?",
+    "Sie hinken hinter der Bilanz von {opponent} her. Haben Sie das Zeug dazu, den Favoriten ins Straucheln zu bringen?",
+    "{opponent} hat mehr Spiele gewonnen als Sie. Werden Sie sich am Wochenende am gegnerischen Erfolg abarbeiten?",
+    "Die Siegesbilanz spricht klar für {opponent}. Ist das Spiel am Sonntag Ihre allerletzte Chance auf Tuchfühlung?",
+    "{opponent} steht tabellarisch über {team}. Erkennen Sie die gegnerische Überlegenheit an oder spucken Sie große Töne?",
+    "Mehr Erfolge auf dem Konto von {opponent}. Wie wollen Sie dem favorisierten Kontrahenten ein Bein stellen?",
+    "Der Tabellenstand bevorteilt {opponent}. Verstecken Sie sich hinter Ausreden oder blasen Sie zur Attacke?",
+    "{opponent} zieht in der Tabelle davon. Ist dieses Spiel Ihre letzte Möglichkeit, den Anschluss nicht völlig zu verlieren?"
+  ]
+}

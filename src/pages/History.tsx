@@ -14,18 +14,6 @@ import { Skeleton } from "../components/common/Skeleton";
 import { RevealGroup, RevealItem } from "../components/common/Reveal";
 import styles from "./History.module.css";
 
-function findHighestOptimalWeek(teams: Team[]): { team: Team; week: number; points: number } | null {
-  let best: { team: Team; week: number; points: number } | null = null;
-  for (const team of teams) {
-    for (const w of team.weeklyScores) {
-      if (!best || w.optimalPoints > best.points) {
-        best = { team, week: w.week, points: w.optimalPoints };
-      }
-    }
-  }
-  return best;
-}
-
 function SeasonHallCardView({
   season,
   teams,
@@ -70,7 +58,6 @@ function SeasonHallCardView({
       a.wins / Math.max(1, a.wins + a.losses + a.ties)
   )[0];
   const pointsLeader = [...teams].sort((a, b) => b.pointsFor - a.pointsFor)[0];
-  const highestOptimal = findHighestOptimalWeek(teams);
 
   return (
     <Card className={styles.card} as={Link} to={`/history/${season.season}`} interactive>
@@ -126,12 +113,6 @@ function SeasonHallCardView({
         )}
       </div>
 
-      {highestOptimal && (
-        <Chip tone="accent" className={styles.retroChip}>
-          Highest optimal week: {highestOptimal.team.teamName}, Wk {highestOptimal.week} (
-          {highestOptimal.points.toFixed(1)})
-        </Chip>
-      )}
     </Card>
   );
 }

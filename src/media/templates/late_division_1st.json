@@ -1,0 +1,20 @@
+{
+  "category_id": "late_division_1st",
+  "templates": [
+    "Platz 1 in der Division mit {record}! Blickt man von Ihrem Elfenbeinturm eigentlich mit Verachtung oder Mitleid herab?",
+    "Platz 1 in der Division mit {record}! Alles andere als der Super-Bowl-Sieg wäre jetzt eine blamable Enttäuschung, oder?",
+    "Mit {record} an der Spitze der Division! Wie hoch ist die zermürbende Last der Favoritenrolle auf Ihren Schultern?",
+    "Division-Leader mit {record}! Sagen Sie es laut: Ist {team} das beste Dynasty-Team, das diese Liga je gesehen hat?",
+    "Mit {record} auf Platz 1 der Division. Feiern Sie die Krönung schon vorab oder haben Sie Angst vor den Playoffs?",
+    "Division-Spitzenreiter mit {record}. Ihr Statement zu der absoluten Dominanz, die Sie der Konkurrenz aufzwingen.",
+    "Mit {record} thronen Sie über der Division. Trauen Sie sich überhaupt noch zu schwächeln oder herrscht Siegeszwang?",
+    "Platz 1 fest in der Hand ({record}). Haben die gegnerischen Manager in Ihrer Division überhaupt noch Hoffnung?",
+    "Mit {record} an der Divisionsspitze. Werden Sie die Stammkräfte im Spätsaison-Endspurt schonen oder durchziehen?",
+    "Unangefochten Erster mit {record}! Blickt man von da oben eigentlich mit Mitleid oder Verachtung auf den Rest herab?",
+    "Mit {record} auf dem Divisions-Thron. Haben Sie die Reden für die Championship-Party bereits fertig geschrieben?",
+    "Platz 1 in der Division mit {record}. Wie verhindern Sie, dass Arroganz Ihr Team in den Playoffs zu Fall bringt?",
+    "Mit {record} Spitzenreiter. Ist dieser Kader bereit für den ultimativen Triumph oder bricht er unter Druck zusammen?",
+    "Platz 1 in der Division bei {record}! Zittern Ihnen im Saison-Endspurt die Knie oder genießen Sie die Aussicht?",
+    "Divisions-Throner {team} ({record})! Ist die Meisterschaft bereits eingetütet oder war das nur Vorgeplänkel?"
+  ]
+}

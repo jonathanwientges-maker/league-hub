@@ -1,0 +1,20 @@
+{
+  "category_id": "bench_outperformed",
+  "templates": [
+    "{player} zaubert {points} Punkte auf der Ersatzbank, während Ihre Stammkräfte implodieren. Würfeln Sie Ihre Aufstellung vor dem Spiel oder befragen Sie ein Pendel?",
+    "Bankdrücker {player} liefert fette {points} Punkte als {position}! Haben Sie Ihren Riecher für Formkurven im Sommerurlaub vergessen?",
+    "{points} Punkte von {player} auf der Bank! Führen Sie die Aufstellung bei {team} nach dem Zufallsprinzip durch oder befragen Sie Glaskugeln?",
+    "Auf der Bank holt {player} glanzvolle {points} Punkte. Welcher Praktikant hat Ihnen geraten, diesen {position} draußen zu lassen?",
+    "{player} schmort mit {points} Punkten auf der Bank. Tut es weh zu wissen, dass Sie den Sieg eigenhändig auf der Ersatzbank verschenkt haben?",
+    "{points} Punkte als {position} verstauben auf Ihrer Bank dank {player}. Hören Sie bei Aufstellungen auf Ihr Bauchgefühl oder auf gar nichts?",
+    "Während Ihre Starter versagen, zaubert {player} {points} Punkte auf der Bank. Hinterfragen Sie Ihre Trainerlizenz nach diesem Griff ins Klo?",
+    "{player} liefert {points} Punkte als {position} ab – leider nur für die Reservistenliste. Wie rechtfertigen Sie diese Coaching-Fehlentscheidung?",
+    "{points} Punkte von {player} verschenkt! Glauben Sie, dass Ihre Stars einen Freifahrtschein besitzen, völlig unabhängig von der Form?",
+    "Wer {player} bei {points} Punkten auf der Bank lässt, hat den Sport nie geliebt. Was sagen Sie den Fans von {team} zu diesem Patzer?",
+    "{points} Punkte auf der Bank durch {player}. Haben Sie sich die Matchups überhaupt angesehen oder stellen Sie nur nach Namen auf?",
+    "{player} zeigt als {position} eine Glanzleistung ({points} Pkt.), aber leider nur auf der Tribüne. Wann fangen Sie an, nach Form aufzustellen?",
+    "{points} Punkte verbrannt mit {player}. Ihr Statement zu Ihrem mangelnden Händchen bei Personalentscheidungen, bitte.",
+    "Glanzleistung auf der Ersatzbank: {player} glänzt mit {points} Punkten. Fühlen Sie sich von Ihrem eigenen Kader ausgetrickst?",
+    "Bank-Explosion von {player} mit {points} Punkten! Werden Sie den Mann nächste Woche bringen oder schmollt Ihr Ego lieber weiter?"
+  ]
+}

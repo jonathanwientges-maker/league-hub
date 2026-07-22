@@ -1,0 +1,235 @@
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) var(--space-7);
+}
+
+.fireCard {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: var(--space-5);
+  border-color: var(--accent-hot);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(var(--accent-hot-rgb), 0.22), transparent 60%),
+    var(--surface);
+  box-shadow: 0 0 24px rgba(var(--accent-hot-rgb), 0.18);
+  margin-bottom: var(--space-5);
+}
+
+.fireCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(var(--accent-hot-rgb), 0.06) 0 3px,
+    transparent 3px 24px
+  );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fireCard {
+    animation: emberGlow 3.2s ease-in-out infinite;
+  }
+}
+
+@keyframes emberGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(var(--accent-hot-rgb), 0.16);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(var(--accent-hot-rgb), 0.34);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-hot);
+  text-align: center;
+  margin: 0 0 var(--space-2);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin: 0 0 var(--space-4);
+}
+
+.rankRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(var(--accent-hot-rgb), 0.15);
+}
+
+.rankRow:last-child {
+  border-bottom: none;
+}
+
+.rank {
+  width: 1.8em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--accent-hot);
+  text-align: center;
+}
+
+.rankFirst {
+  color: var(--gold);
+}
+
+.rankName {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.rankTeamName {
+  font-weight: 700;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rankStats {
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.rankRecord {
+  font-weight: 700;
+}
+
+.rankPf {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  display: block;
+}
+
+.emptyState {
+  color: var(--text-dim);
+  text-align: center;
+  padding: var(--space-4) 0;
+}
+
+.gameLogRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  margin: 0 calc(var(--space-3) * -1);
+  border-radius: var(--radius-md);
+  border-bottom: 1px solid rgba(var(--accent-hot-rgb), 0.15);
+}
+
+.gameLogRow:last-child {
+  border-bottom: none;
+}
+
+.gameLogRowMutual {
+  background: rgba(var(--accent-hot-rgb), 0.12);
+  border-bottom-color: transparent;
+}
+
+.gameLogWeek {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  width: 3.2em;
+  flex-shrink: 0;
+}
+
+.gameLogMatchup {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.gameLogTeam {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.gameLogScore {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.gameLogWinner {
+  color: var(--accent);
+}
+
+.gameLogVs {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+/* Deliberately plain/neutral — the joke is that these teams didn't earn the fire. */
+.lambsCard {
+  padding: var(--space-5);
+}
+
+.lambsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-3);
+}
+
+.lamb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.lambName {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.explainer {
+  margin-top: var(--space-7);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.explainer summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.explainer p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: var(--space-3);
+}

@@ -1,0 +1,20 @@
+{
+  "category_id": "division_game",
+  "templates": [
+    "Divisions-Rivalität gegen {opponent}! Wird das ein Festspiel der Taktik oder eine Schlammschlacht für den Chat?",
+    "Divisions-Duell gegen {opponent}! Gehen Sie in diesem Hass-Spiel voran oder verkümmert {team} unter dem Druck?",
+    "Es geht gegen den Rivalen {opponent}! Haben Sie den Spielern bereits die Leviten gelesen oder herrscht Kuschelkurs?",
+    "Divisions-Rivalität pur gegen {opponent}! Werden Sie den Gegner auf dem Feld demolieren oder im Chat große Töne spucken?",
+    "Das Duell gegen {opponent} steht an! Ist das für {team} nur ein normales Spiel oder brennt die Hütte lichterloh?",
+    "Matchup gegen den Divisions-Konkurrenten {opponent}! Ihr Statement zu den Giftpfeilen, die bereits geflogen sind.",
+    "Gegen {opponent} geht es um die Vorherrschaft in der Division. Hat {team} das Zeug dazu, den Rivalen zu demütigen?",
+    "Divisions-Kracher gegen {opponent}! Haben Sie sich eine besondere Demütigung für den gegnerischen Manager überlegt?",
+    "Gegen {opponent} steht mehr als nur ein Sieg auf dem Spiel – es geht um Ehre. Zittern Ihnen bereits die Knie?",
+    "Rivalen-Duell mit {opponent}! Werden Sie nach dem Spiel als Sieger hohnlachen oder sich im Keller verstecken?",
+    "Gegen den Divisions-Rivalen {opponent}! Haben Sie den Matchplan extra aggressiv gestaltet oder mauern Sie?",
+    "Schicksalsspiel in der Division gegen {opponent}. Kann {team} diesem enormen Druck überhaupt standhalten?",
+    "Divisions-Fight gegen {opponent}! Zeigen Sie Flagge oder überlassen Sie dem Rivalen kampflos das Feld?",
+    "Es knackt in der Division gegen {opponent}! Bricht die Abwehr von {team} ein oder behalten Sie die Nerven?",
+    "Divisions-Derby gegen {opponent}! Was erwartet den gegnerischen Manager nach dem Anpfiff in der Gerüchteküche?"
+  ]
+}

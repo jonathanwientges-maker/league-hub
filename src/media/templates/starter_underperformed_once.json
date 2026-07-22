@@ -1,0 +1,20 @@
+{
+  "category_id": "starter_underperformed_once",
+  "templates": [
+    "Mickrige {points} Punkte von {player}! War das die sportliche Version von Verweigerung oder reift in ihm bereits der Gedanke an eine Vertragsauflösung?",
+    "Kümmerliche {points} Punkte von Starter {player}! Ist er das schwächste Glied in Ihrer Kette oder hat er schlicht versagt?",
+    "{player} enttäuscht maßlos mit {points} Punkten. Klammern Sie sich weiter stur an ihn oder stellen Sie ihn ab sofort ins Schaufenster für einen Trade?",
+    "Wer wie {player} nur {points} Punkte abliefert, hat in einer Startelf nichts verloren. Wäre es Zeit, sich nach Tradepartnern umzusehen?",
+    "Unter {points} Punkte von {player}! War das eine einmalige Frechheit oder bahnt sich da der endgültige Leistungsverfall Ihres Stars an?",
+    "{player} liefert mickrige {points} Punkte ab. Haben Sie schon die Peitsche rausgeholt oder tätscheln Sie ihm mitleidig den Rücken?",
+    "Ist {player} nach diesen katastrophalen {points} Punkten für Sie noch unantastbar oder kann man Ihnen Angebote für ihn schicken?",
+    "{points} Punkte von {player}. Haben Sie ihn vor dem Spiel überhaupt aufgewärmt oder schläft der Mann auf dem Spielfeld ein?",
+    "{player} versagt auf ganzer Linie ({points} Punkte). Wer trägt die Verantwortung dafür – der Spieler selbst oder Ihr fehlerhafter Matchplan?",
+    "Nach mickrigen {points} Punkten von {player}: Bleibt er in der Startelf von {team} oder schicken Sie ihn zur Denkpause auf die Bank?",
+    "{points} Punkte als Starter sind ein Schlag ins Gesicht aller Fans von {team}. Wie erklären Sie diese unterirdische Vorstellung von {player}?",
+    "Können Sie mit den {points} Punkten von {player} ruhig schlafen, oder suchen Sie auf dem Transfermarkt schon nach Ersatz?",
+    "{player} bringt nur {points} Punkte auf die Anzeigetafel. Ihr Statement zu dieser sportlichen Arbeitsverweigerung, bitte.",
+    "Der Auftritt von {player} war mit {points} Punkten eine Frechheit. Sind Sie bereit, ihn für ein solides Gebot abzugeben?",
+    "{points} Punkte von {player} – ist das der Moment, in dem der Marktwert dieses Spielers endgültig im Kellergeschoss kollabiert?"
+  ]
+}

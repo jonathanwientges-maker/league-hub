@@ -88,6 +88,7 @@ export interface SleeperPlayer {
   fantasy_positions: string[] | null;
   team: string | null;
   status?: string | null;
+  injury_status?: string | null;
 }
 
 export interface NflState {

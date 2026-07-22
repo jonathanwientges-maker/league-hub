@@ -1,0 +1,20 @@
+{
+  "category_id": "opp_loss_streak",
+  "templates": [
+    "{opponent} sammelt Niederlagen wie andere Treuepunkte ({streak} in Serie). Wie tief müssten Sie sinken, um hier zu stolpern?",
+    "{opponent} hat {streak} Pleiten am Stück kassiert. Wenn Sie gegen dieses Wrack verlieren, ist die Saison vorbei, oder?",
+    "{streak} Niederlagen in Folge für {opponent}! Wie peinlich wäre es auf einer Skala von 1 bis 10, diese Serie zu beenden?",
+    "Gegner {opponent} befindet sich mit {streak} Pleiten im freien Fall. Werden Sie den endgültigen Todesstoß versetzen?",
+    "{streak} Niederlagen am Stück bei {opponent}! Haben Sie Mitleid mit dem Wrack oder treten Sie noch einmal kräftig nach?",
+    "Gegen ein Team mit {streak} Pleiten in Serie wie {opponent} – Ihr Statement zur klaren Favoritenrolle von {team}.",
+    "{opponent} hat {streak} Mal verloren. Wenn {team} das verliert, sollten Sie Ihren Managerposten abgeben. Einverstanden?",
+    "{streak} Schlappen für {opponent} in Folge! Werden Sie den Gegner komplett demütigen oder den Aufbaugegner spielen?",
+    "{opponent} krebst mit {streak} Niederlagen am Ende herum. Wie verhindern Sie peinliche Nachlässigkeiten bei {team}?",
+    "Die Krisen-Serie von {opponent} steht bei {streak}. Werden Sie dem gegnerischen Manager nach dem Spiel Taschentücher schicken?",
+    "{streak} Pleiten bei {opponent}. Welchen zynischen Spruch haben Sie sich für den Gruppenchat schon zurechtgelegt?",
+    "Gegen {opponent} ({streak} Pleiten in Serie) zählt nur eine Demontage. Wie hoch wollen Sie am Wochenende gewinnen?",
+    "{opponent} hat {streak} Mal hintereinander auf die Mütze bekommen. Macht Ihnen diese Schießbude überhaupt noch Angst?",
+    "Das Pleiten-Ensemble {opponent} ({streak} Niederlagen) reist an. Ist ein Ausrutsch-Szenario bei {team} gedanklich verboten?",
+    "{streak} Niederlagen des Gegners {opponent}! Feiern Sie den eingeplanten Sieg schon vorab oder warnen Sie vor Leichtsinn?"
+  ]
+}

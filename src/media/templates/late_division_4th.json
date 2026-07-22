@@ -1,0 +1,20 @@
+{
+  "category_id": "late_division_4th",
+  "templates": [
+    "Tabellenende in der Division ({record}). Welcher Erlöser im nächsten Draft soll dieses Trümmerfeld sanieren?",
+    "Letzter Platz in der Division mit {record}! Welcher Wunsch-Pick soll im kommenden Draft Ihre verkorkste Haut retten?",
+    "Abgeschlagen auf Platz 4 mit {record}! Haben die Vorbereitungen auf die nächste Saison und der Ausverkauf begonnen?",
+    "Mit {record} das Schlusslicht der Division. Welcher Star wird bei {team} als Erstes auf den Opferaltar gelegt?",
+    "Divisions-Kellersitz mit {record}. Ist das gescheiterte Projekt {team} noch zu reparieren oder hilft nur Abriss?",
+    "Mit {record} Letzter in der Division. Ihr Statement zu den Gründen für dieses beispiellose Saison-Debakel.",
+    "Platz 4 mit {record}! Haben Sie den Fans schon erklärt, warum das Management in dieser Saison komplett versagt hat?",
+    "Mit {record} am Tabellenende der Division. Klingeln die Telefone der Konkurrenz schon wegen Ihren verbliebenen Assets?",
+    "Letzter bei {record}! Ist der 1.01-Pick das einzige verbliebene Argument, warum man bei {team} nicht den Stecker zieht?",
+    "Mit {record} abgeschlagen. Werden Sie in den verbleibenden Spielen wenigstens noch den Spielverderber geben?",
+    "Divisions-Schlusslicht mit {record}. Haben Sie bereits die Kündigung für Ihr Scouting-Team vorbereitet?",
+    "Mit {record} auf Platz 4 der Division. Gibt es irgendeinen Spieler im Kader, der sich nicht schämen muss?",
+    "Rote Laterne in der Division ({record}). Wie planen Sie den Wiederaufbau aus diesem Trümmerfeld?",
+    "Abgewrackt auf Platz 4 der Division ({record})! Verkaufen Sie den Restkader jetzt für sprichwörtlich 'nen Apfel und 'n Ei?",
+    "Letzter Platz bei {record}! Wie groß ist die Hoffnung, per Trade wenigstens noch ein paar späte Draft-Picks abzugreifen?"
+  ]
+}

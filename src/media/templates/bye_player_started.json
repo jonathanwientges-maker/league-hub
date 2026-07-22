@@ -1,0 +1,20 @@
+{
+  "category_id": "bye_player_started",
+  "templates": [
+    "{player} verbrachte den Sonntag entspannt auf der Couch – und stand trotzdem in Ihrer Startelf. Ist das Ihre Interpretation von moderner Work-Life-Balance für Kader-Mitglieder?",
+    "Sie haben {player} aufgestellt, obwohl er Bye-Week hatte. Betreiben Sie das Dynasty-Management als Hobby oder schlafen Sie beim Aufstellen ein?",
+    "Null Punkte von {player}, weil er spielfrei hatte! Wie oft wechseln Sie eigentlich Ihre Unterhose, wenn Sie schon Ihr Lineup so selten checken?",
+    "{player} hatte frei und stand trotzdem im Lineup von {team}. Ist das Ihre neue Avantgarde-Taktik oder schlicht verheerender Dilettantismus?",
+    "Ein Bye-Week-Spieler im Aufgebot! Hat {player} Ihnen versprochen, im Wohnzimmer Punkte zu holen, oder wie erklärt man diesen Schnitzer?",
+    "{player} macht 0 Punkte auf der Couch. Haben Sie kein Internet bei {team} oder verwechseln Sie die Sleeper-App mit Candy Crush?",
+    "Sie haben {player} ohne Spiel gestartet. Ist das stummer Protest gegen die Liga-Regeln oder der Beweis, dass Sie den Überblick verloren haben?",
+    "{player} im Lineup trotz Spielfrei! Bitten Sie die Fans von {team} um Verzeihung für diese Schlafmützigkeit oder schieben Sie es aufs WLAN?",
+    "Garantierten Nuller mit {player} kassiert. Wer stellt bei {team} eigentlich die Mannschaft auf – Sie selbst oder Ihr Haustier?",
+    "{player} saß mit Popcorn auf der Tribüne. Wann planen Sie, sich wieder ernsthaft mit Fantasy Football zu beschäftigen?",
+    "Mit {player} auf Bye gestartet. Ist {team} jetzt offiziell das Freilos der Liga für den gegnerischen Manager geworden?",
+    "Sie lassen {player} in der Bye-Week auflaufen. Welcher Geisteszustand lag vor, als Sie am Sonntag auf 'Save Lineup' gedrückt haben?",
+    "{player} hatte frei – Sie offensichtlich auch im Kopf. Wie rechtfertigen Sie diesen Totalausfall vor der versammelten Presse?",
+    "Wer {player} auf Bye aufstellt, hat die Kontrolle über sein Manager-Dasein verloren. Ihr Statement zu diesem peinlichen Anfängerfehler, bitte.",
+    "{player} hatte spielfrei. Wenn Arroganz und Faulheit ein Lineup aufstellen, kommt genau das heraus. Wie erklären Sie diese Schande?"
+  ]
+}

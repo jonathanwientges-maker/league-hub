@@ -1,0 +1,20 @@
+{
+  "category_id": "taxi_all_under_3",
+  "templates": [
+    "Kein Taxi-Talent über 3 Punkte! Ist Ihr Nachwuchszentrum eigentlich eine Bausparzentrale oder schlichtweg talentfreie Zone?",
+    "Kein einziger Taxi-Squad-Spieler von {team} kam über 3 Punkte. Ist Ihre Jugendakademie eine Ruine oder nur ein Alt-Herren-Treff?",
+    "Absolute Ebbe im Nachwuchs von {team}! Kein Talent reißt die 3-Punkte-Hürde. Wer scoutet bei Ihnen eigentlich – blinde Maulwürfe?",
+    "Die Jugend von {team} ist eine reine Enttäuschung (alle unter 3 Pkt.). Haben Sie die Prospects auf dem Flohmarkt zusammengekauft?",
+    "Alle Taxi-Spieler unter 3 Punkten! Wenn das die Zukunft von {team} ist, können Sie den Laden gleich morgen zusperren.",
+    "Null Tiefe, null Talent im Taxi Squad! Warum investieren Sie überhaupt Zeit in Nachwuchs, wenn nur Müll dabei herauskommt?",
+    "Keine 3 Punkte von keinem Taxi-Akteur. Ist das die schlechteste Talentförderung in der langen Geschichte dieser Liga?",
+    "Die Reserve von {team} bringt nicht mal 3 Punkte auf die Tafel. Haben die Jungs ihre Schuhe falsch herum angezogen?",
+    "Alle Taxi-Talente versagen auf ganzer Linie. Steht die Nachwuchsabteilung von {team} vor der kompletten Auflösung?",
+    "Nicht mal 3 Punkte von den Nachwuchskräften. Wie erklären Sie den Sponsoren dieses totale Versagen in der Nachwuchsarbeit?",
+    "Das Taxi Squad von {team} gleicht einer Wüste ohne Wasser. Wer trägt die Schuld an dieser dramatischen Talentfreiheit?",
+    "Alle unter 3 Punkten im Nachwuchs. Arbeiten Sie im Scouting mit Würfeln oder mit veralteten Glücksspiel-Automaten?",
+    "Keines Ihrer Talente schafft 3 Punkte. Ihr Statement zur verheerenden Lage in Ihrer Jugendakademie, bitte.",
+    "Nachwuchs-Katastrophe bei {team}! Werden Sie die nutzlosen Taxi-Assets umgehend entlassen oder weiter durchfüttern?",
+    "Alle Taxi-Akteure scheitern an der 3-Punkte-Marke. Glauben Sie immer noch, dass Ihr Scouting-System funktioniert?"
+  ]
+}

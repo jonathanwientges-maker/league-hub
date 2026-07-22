@@ -139,42 +139,28 @@ async function generateOgImage() {
   await svgToPng(svg, width, height, join(publicDir, "og-gate.png"));
 }
 
-async function generateIcon(size, outPath) {
-  const svg = await satori(
-    {
-      type: "div",
-      props: {
-        style: {
-          width: size,
-          height: size,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: NIGHT,
-        },
-        children: {
-          type: "div",
-          props: {
-            style: {
-              display: "flex",
-              fontFamily: "Archivo Black",
-              fontSize: size * 0.55,
-              color: GOLD,
-            },
-            children: "K",
-          },
-        },
-      },
-    },
-    { width: size, height: size, fonts }
-  );
+// Matches LEAGUE_CONFIG.anchor.leagueId (src/config/league.ts) — the league's
+// avatar carries forward via previous_league_id, so the anchor's is stable
+// season over season. Update here (and re-run this script) only if the
+// commissioner changes the league's logo on Sleeper.
+const LEAGUE_ID = "1255212520214384640";
 
-  await svgToPng(svg, size, size, outPath);
+async function fetchLeagueLogo() {
+  const league = await fetch(`https://api.sleeper.app/v1/league/${LEAGUE_ID}`).then((r) => r.json());
+  const avatarRes = await fetch(`https://sleepercdn.com/avatars/${league.avatar}`);
+  return Buffer.from(await avatarRes.arrayBuffer());
+}
+
+async function generateIconFromLogo(size, outPath, logoBuffer) {
+  await sharp(logoBuffer).resize(size, size, { fit: "cover" }).png().toFile(outPath);
+  console.log("wrote", outPath);
 }
 
 await generateOgImage();
-await generateIcon(192, join(publicDir, "icon-192.png"));
-await generateIcon(512, join(publicDir, "icon-512.png"));
-await generateIcon(180, join(publicDir, "apple-touch-icon.png"));
+
+const logoBuffer = await fetchLeagueLogo();
+await generateIconFromLogo(192, join(publicDir, "icon-192.png"), logoBuffer);
+await generateIconFromLogo(512, join(publicDir, "icon-512.png"), logoBuffer);
+await generateIconFromLogo(180, join(publicDir, "apple-touch-icon.png"), logoBuffer);
 
 console.log("Done.");

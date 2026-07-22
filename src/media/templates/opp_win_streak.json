@@ -1,0 +1,20 @@
+{
+  "category_id": "opp_win_streak",
+  "templates": [
+    "{streak} Siege in Folge für {opponent}! Gehen Sie als Lamm zur Schlachterei oder haben Sie Dynamit im Matchplan?",
+    "{opponent} reitet eine Serie von {streak} Siegen in Folge! Werden Sie das Team sein, das diese Machtdemonstration beendet?",
+    "{streak} Siege am Stück für {opponent}! Glaubt bei {team} irgendjemand ernsthaft an einen Erfolg oder schenken Sie gleich ab?",
+    "Gegen {opponent} zu spielen, die {streak} Mal hintereinander gewonnen haben – haben Sie schon das Testament aufgesetzt?",
+    "{streak} Erfolge in Serie bei {opponent}! Wie wollen Sie diesen Express stoppen, ohne komplett überrollt zu werden?",
+    "{opponent} wirkt unschlagbar mit {streak} Siegen. Ihr Statement zu der drohenden Hinrichtung von {team}, bitte.",
+    "Wer {streak} Spiele am Stück gewinnt wie {opponent}, hat eine große Klappe. Haben Sie das Zeug, sie zu stopfen?",
+    "{opponent} kommt mit {streak} Siegen im Gepäck. Ist Ihr Team bereit für die absolute Abwehrschlacht am Sonntag?",
+    "{streak} Siege in Folge für den Gegner {opponent}! Haben Sie den Matchplan aus dem Hut gezaubert oder hoffen Sie auf Wunder?",
+    "Die Serie von {opponent} steht bei {streak}. Ist {team} nur ein weiterer Meilenstein auf deren Triumphzug durch die Liga?",
+    "Gegen die Siegeswelle von {opponent} ({streak} Siege): Werden Sie kläglich untergehen oder als Helden vom Platz gehen?",
+    "{opponent} hat {streak} Mal in Serie triumphiert. Werden Sie vor Ehrfurcht erstarren oder mutig angreifen?",
+    "{streak} Siege von {opponent} in Folge. Sagen Sie den Fans von {team}, warum man am Sonntag überhaupt einschalten soll.",
+    "Die Walze von {opponent} rollt seit {streak} Wochen. Stellen Sie sich mit der Brechstange entgegen oder mauern Sie?",
+    "Kann {team} der unaufhaltsamen Macht von {opponent} ({streak} Siege) überhaupt irgendetwas Zählbares entgegensetzen?"
+  ]
+}

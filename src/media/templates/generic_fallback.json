@@ -1,0 +1,20 @@
+{
+  "category_id": "generic_fallback",
+  "templates": [
+    "Zwischenbilanz bei {record} in Woche {week}: Ist das bei {team} noch kontrollierter Sport oder bereits das Prinzip Hoffnung?",
+    "In Woche {week} steht {team} bei {record}. Wie lautet Ihre Zwischenbilanz – Meisterwerk oder anhaltende Katastrophe?",
+    "Mit {record} nach Woche {week}. Sind Sie mit dem Erreichten zufrieden oder schlafen Sie beim Managen ein?",
+    "Bei {record} in Woche {week}: Planen Sie in nächster Zeit Trades zur Verstärkung oder bleibt Ihr Telefon stumm?",
+    "Woche {week}, Bilanz {record}. Wo sehen Sie aktuell die größten Baustellen im Kader von {team}?",
+    "{team} dümpelt bei {record} in Woche {week}. Ihr Statement zur bisherigen Gesamtleistung Ihres Franchise, bitte.",
+    "Mit {record} in Woche {week}. Hören Sie bei Aufstellungen eigentlich auf Daten, Bauchgefühl oder den Zufall?",
+    "In Woche {week} blicken wir auf {record} bei {team}. Sind Sie Contender, Rebuilder oder einfach nur Passagier?",
+    "Bilanz {record} nach Woche {week}. Haben andere Manager schon angefragt, um Ihren Kader zu fleddern?",
+    "{team} steht bei {record} in Woche {week}. Was antworten Sie den Kritikern, die Ihre Kaderplanung verhöhnen?",
+    "Woche {week} mit {record}. Gibt es bei {team} Spieler, die kurz vor dem Rauswurf oder Trade stehen?",
+    "Mit {record} in Woche {week}. Welches Zierschild hängt aktuell an der Kabinentür: 'Im Aufbau' oder 'Verzweifelt'?",
+    "In Woche {week} steht die Bilanz bei {record}. Haben Sie das Zeug, die Saison noch positiv zu gestalten?",
+    "{record} nach Woche {week}! Suchen Sie noch nach der richtigen Formel oder haben Sie das Konzept Dynasty verstanden?",
+    "Mit {record} in Woche {week}. Ihr Statement zur Frage, ob dieser Kader das Zeug zu Großem hat oder überschätzt ist."
+  ]
+}

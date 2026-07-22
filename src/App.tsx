@@ -10,6 +10,8 @@ import { Team } from "./pages/Team";
 import { History } from "./pages/History";
 import { HistorySeason } from "./pages/HistorySeason";
 import { HistorySeasonLayout } from "./pages/HistorySeasonLayout";
+import { MediaRoom } from "./pages/MediaRoom/MediaRoom";
+import { Rivalries } from "./pages/Rivalries";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/standings" element={<Standings />} />
             <Route path="/playoffs" element={<Playoffs />} />
             <Route path="/pick-race" element={<PickRace />} />
+            <Route path="/media-room" element={<MediaRoom />} />
+            <Route path="/rivalries" element={<Rivalries />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/team/:rosterId" element={<Team />} />
             <Route path="/history" element={<History />} />

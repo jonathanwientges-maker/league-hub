@@ -1,0 +1,20 @@
+{
+  "category_id": "close_loss",
+  "templates": [
+    "Tragödie in drei Akten: Um mickrige {margin} Punkte an {opponent} gescheitert — haben Sie den schuldigen Kicker bereits ins Exil oder nur auf den Trade-Block verbannt?",
+    "Knappe Pleite um {margin} Punkte gegen {opponent}. Fehlt Ihnen der eine Star für den Unterschied – und warum haben Sie noch keinen Trade angeleiert?",
+    "{margin} Punkte Differenz zum Glück. Hinterfragen Sie nach diesem Drama bei {team} eigentlich Ihre Coaching-Lizenz oder schieben Sie es auf das Schicksal?",
+    "Wegen mickriger {margin} Punkte verloren! Sind Ihre Stammkräfte unantastbar oder bieten Sie ab heute den halben Kader zum Verkauf an?",
+    "Schon wieder um {margin} Punkte gescheitert. Sind Sie zu stur für Angebote anderer Manager oder wollen Sie diese Pleitenserie weiter aussitzen?",
+    "Nur {margin} Punkte fehlten gegen {opponent}. Liegt es am Pech oder schlicht daran, dass Ihrem Kader in den entscheidenden Sekunden die Extraklasse fehlt?",
+    "Eine {margin}-Punkte-Niederlage, die wie Säure in den Wunden von {team} brennt. Welchem Star stellen Sie heute die Ultimatum-Frage?",
+    "Wer um {margin} Punkte gegen {opponent} verliert, hat keine Ausreden mehr. Bieten Sie Ihre Altlasten jetzt auf dem Transfermarkt feil?",
+    "{margin} Punkte Abweichung vom Sieg. Haben Sie nach dem Desaster gegen {opponent} vor Wut das Tablet in die Kabinenecke gepfeffert?",
+    "Das Scheitern von {team} um {margin} Punkte war vermeidbar. Werden Sie aktiv auf dem Trade-Markt oder verharren Sie in lethargischer Schockstarre?",
+    "Knapp vorbei ist auch daneben ({margin} Pkt. gegen {opponent}). Wie erklären Sie den Fans, dass am Ende wieder nur Enttäuschung bleibt?",
+    "{margin} Punkte fehlten zur Sensation. Fehlt Ihrem Roster die nötige Tiefe oder schlicht der Mut zu aggressiven Spielertäuschen?",
+    "Hauchdünn gescheitert an {opponent} mit {margin} Punkten. Ist Ihr Kader reif für ein punktuelles Upgrade oder fehlt das Verhandlungsgeschick?",
+    "{margin} Punkte Unterschied lassen das Management ratlos zurück. Ihr Statement zu dieser absolut überflüssigen Niederlage gegen {opponent}, bitte.",
+    "Nach diesen bitteren {margin} Punkten Miese gegen {opponent}: Klingelt Ihr Telefon bereits mit Geier-Angeboten für Ihre verzweifelten Stars?"
+  ]
+}

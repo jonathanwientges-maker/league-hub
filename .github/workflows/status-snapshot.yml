@@ -1,0 +1,30 @@
+# Writes into public/data/player-status/ (not data/player-status/) so the
+# snapshot ships inside the Vite build output and is reachable at
+# /data/player-status/... on the deployed site — see data/README.md.
+name: player-status-snapshot
+on:
+  schedule: [{ cron: '0 4 * * WED' }]   # 04:00 UTC Wed = 05/06:00 Berlin, pre-open
+  workflow_dispatch: {}
+permissions: { contents: write }
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch + reduce Sleeper player statuses
+        run: |
+          WEEK=$(curl -s https://api.sleeper.app/v1/state/nfl | python3 -c "import sys,json;s=json.load(sys.stdin);print(max(1,s['week']-1))")
+          SEASON=$(curl -s https://api.sleeper.app/v1/state/nfl | python3 -c "import sys,json;print(json.load(sys.stdin)['season'])")
+          mkdir -p public/data/player-status
+          curl -s https://api.sleeper.app/v1/players/nfl | python3 -c "
+          import sys, json
+          p = json.load(sys.stdin)
+          out = {pid: v.get('injury_status') for pid, v in p.items() if v.get('injury_status')}
+          json.dump(out, open('public/data/player-status/${SEASON}-w' + '${WEEK}'.zfill(2) + '.json', 'w'))
+          "
+      - name: Commit
+        run: |
+          git config user.name  'status-bot'
+          git config user.email 'bot@users.noreply.github.com'
+          git add public/data/player-status && git commit -m 'status snapshot' || echo 'no changes'
+          git push

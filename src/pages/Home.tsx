@@ -16,6 +16,10 @@ import { Skeleton } from "../components/common/Skeleton";
 import { ErrorCard } from "../components/common/ErrorCard";
 import { RevealGroup, RevealItem } from "../components/common/Reveal";
 import { SeasonHero, type SeasonHeroProps } from "../components/layout/SeasonHero";
+import { MediaDayBanner } from "../components/home/MediaDayBanner";
+import { QuoteOfTheWeekCard } from "../components/home/QuoteOfTheWeekCard";
+import { RivalrySpotlight } from "../components/home/RivalrySpotlight";
+import { RivalPicker } from "../components/home/RivalPicker";
 import styles from "./Home.module.css";
 
 /** A brand-new season has no real Week 1 data yet — every team is tied at
@@ -59,6 +63,13 @@ function isExtendedHeroPhase(
   phase: LeaguePhase | undefined
 ): phase is SeasonHeroProps["phase"] {
   return phase !== undefined && EXTENDED_HERO_PHASES.has(phase);
+}
+
+/** The rival picker is only editable before the draft — the moment the
+ * countdown hits zero and phase flips to "drafting", picks lock in and the
+ * picker disappears for good this season. */
+function isRivalPickerPhase(phase: LeaguePhase | undefined): boolean {
+  return phase === "pre-draft-unscheduled" || phase === "pre-draft-countdown";
 }
 
 function seasonPhase(currentWeek: number, playoffWeekStart: number): { eyebrow: string; headline: string } {
@@ -301,6 +312,8 @@ export function Home() {
 
   return (
     <div>
+      {isViewingLiveSeason && currentSeason && <MediaDayBanner />}
+      {isViewingLiveSeason && currentSeason && <RivalrySpotlight leagueId={currentSeason.leagueId} />}
       {isExtendedHeroPhase(effectivePhase) && heroSeason ? (
         <SeasonHero
           phase={effectivePhase}
@@ -324,6 +337,12 @@ export function Home() {
           )}
         </div>
       )}
+
+      {isViewingLiveSeason && currentSeason && isRivalPickerPhase(effectivePhase) && (
+        <RivalPicker leagueId={currentSeason.leagueId} />
+      )}
+
+      {isViewingLiveSeason && currentSeason && <QuoteOfTheWeekCard />}
 
       <RevealGroup className={styles.cardGrid}>
         {isAsPlayed ? (

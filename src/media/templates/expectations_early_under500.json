@@ -1,0 +1,20 @@
+{
+  "category_id": "expectations_early_under500",
+  "templates": [
+    "Startschwierigkeiten bei {record}. Tauschen Sie jetzt das Tafelsilber gegen Draft-Picks oder träumen Sie von Wunderheilungen?",
+    "Holpriger Start mit {record}! Haben Sie den Mut, verbleibende Stars für Picks zu verscherbeln, oder hoffen Sie auf Wunder?",
+    "{record} im ersten Saisonviertel – die Enttäuschung ist groß. Stehen Ihre besten Spieler bereits auf dem Trade-Block?",
+    "Fehlstart mit {record}! Sind Sie bereit, die Erwartungen drastisch nach unten zu korrigieren und Rebuild einzuläuten?",
+    "{record} zu Saisonbeginn ist unterirdisch für {team}. Werden Sie bald die Reißleine ziehen oder weiter träumen?",
+    "Mit {record} hinken Sie den Ansprüchen hinterher. Ihr Statement zu der Frage, ob Ihr Kader schlicht überschätzt ist.",
+    "{team} krebst bei {record} herum. Klingelt Ihr Telefon schon mit Geier-Angeboten für Ihre unzufriedenen Stars?",
+    "Nur {record} in den ersten Wochen! Liegt es an der schlechten Kaderzusammenstellung oder am katastrophalen Matchplan?",
+    "Mit {record} am Ende der Tabelle. Korrigieren Sie das Saisonziel jetzt offiziell auf einen 'Top 3 Draft-Pick'?",
+    "{record} zu Beginn – wie lange schauen Sie diesem Elend zu, bevor Sie den Kader per Trade komplett umwerfen?",
+    "Der Motor von {team} stottert gewaltig ({record}). Haben die Spieler den Glauben an die Saison bereits verloren?",
+    "Mit {record} im Tabellenkeller. Gibt es in Ihrem Kader irgendwen, der unschuldig an dieser Misere ist?",
+    "{record} nach den ersten Partien. Wie erklären Sie diesen kompletten Fehlstart den treuen Anhängern von {team}?",
+    "Fehlstart-Tristesse bei {record}! Trennen Sie sich jetzt von alternden Leistungsträgern für die Zukunft der Franchise?",
+    "Enttäuschende {record} nach wenigen Wochen. Werden Sie als Verkäufer am Transfermarkt aktiv, um Zukunfts-Assets zu sichern?"
+  ]
+}

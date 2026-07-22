@@ -1,0 +1,20 @@
+{
+  "category_id": "win_streak_3",
+  "templates": [
+    "Seither rollt der Express: {streak} Siege in Folge! Wie erklären Sie der Wissenschaft, dass Ihr Kader physikalischen Gesetzen trotzt und immer noch gewinnt?",
+    "{streak} Siege am Stück für {team}! Wie schwer fällt es Ihnen, sich im Liga-Chat nicht aufzuführen wie der Sonnenkönig persönlich?",
+    "Die Presse staunt nach {streak} Erfolgen in Serie: Spielt {team} plötzlich Football oder hattet Ihr schlicht den leichtesten Spielplan der Liga-Geschichte?",
+    "{streak} Mal hintereinander gewonnen! Ihr Statement zu dem Gerücht, dass der Erfolg von {team} rein auf statistischen Ausreißern basiert.",
+    "Wer {streak} Spiele am Stück gewinnt, fordert den Spott heraus, wenn die Blase platzt. Wie groß ist die Panik vor dem unvermeidlichen Absturz?",
+    "Die Konkurrenz erstarrt vor Ehrfurcht – oder lacht sich ins Fäustchen. Wie realistisch schätzen Sie die Serie von {streak} Siegen selbst ein?",
+    "{streak} Siege in Folge! Haben Sie den Champagner für die Championship-Party bei {team} schon kaltgestellt oder sind Sie noch bei Verstand?",
+    "Mit {streak} Siegen im Rücken lässt sich leicht reden. Wie viel unverschämter Hochmut steckt aktuell in der Führungsetage von {team}?",
+    "{streak} Erfolge am Stück! Führen Sie das auf akribische Arbeit zurück oder darauf, dass die Glücksgötter Mitleid mit Ihnen hatten?",
+    "{team} dominiert seit {streak} Wochen. Glauben Sie ernsthaft, dass Sie in dieser Liga unantastbar sind? Ihr Statement dazu, bitte.",
+    "{streak} Siege in Serie! Wer soll diesen Höhenflug eigentlich noch stoppen – außer Ihre eigene Neigung zum Größtenwahn?",
+    "Der Motor von {team} schnurrt seit {streak} Spielen. Warten Sie sonntags eigentlich nur darauf, dass der Kolbenfresser kommt?",
+    "{streak} Siege am Stück lassen die Rivalen erblassen. Genießen Sie den Neid der Liga oder zittern Ihnen vor dem nächsten Spieltag die Knie?",
+    "Flughöhe erreicht: {streak} Siege hintereinander! Haben Sie die Mannschaft schon auf den unvermeidlichen Realitätscheck vorbereitet?",
+    "Unheimliche Serie bei {team} ({streak} Siege). Ist das die Geburtsstunde einer Dynastie oder fliegen Sie nur extrem hoch vor dem Aufprall?"
+  ]
+}

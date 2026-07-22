@@ -1,0 +1,207 @@
+.wrap {
+  padding: var(--space-5) var(--space-4) var(--space-7);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.podium {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  padding: var(--space-7) var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-raised);
+}
+
+/* Sponsor wall: the league's own logo, tiled low-opacity — set via the
+   --sponsor-logo custom property (real URL) or omitted entirely if the
+   league has no avatar yet. */
+.sponsorWall {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--sponsor-logo, none);
+  background-repeat: repeat;
+  background-size: 88px 88px;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.spotlight {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.22), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.podiumContent {
+  position: relative;
+  z-index: 1;
+}
+
+.avatarWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.micMotif {
+  display: flex;
+  justify-content: center;
+  color: var(--text-dim);
+  opacity: 0.6;
+  margin-bottom: var(--space-4);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--space-3);
+}
+
+.eyebrowHot {
+  color: var(--accent-hot);
+}
+
+.prompt {
+  margin: 0 0 var(--space-2);
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.question {
+  position: relative;
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+  line-height: 1.4;
+  margin: 0 0 var(--space-5);
+  padding: 0 var(--space-3);
+}
+
+.question::before,
+.question::after {
+  font-family: Georgia, serif;
+  color: var(--accent);
+  opacity: 0.7;
+  font-size: 1.4em;
+  line-height: 0;
+}
+
+.question::before {
+  content: "\201C";
+  margin-right: 2px;
+}
+
+.question::after {
+  content: "\201D";
+  margin-left: 2px;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--surface-raised);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+  gap: var(--space-3);
+}
+
+.counter {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.counterOver {
+  color: var(--accent-hot);
+}
+
+.submitButton {
+  min-height: 44px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deadline {
+  margin-top: var(--space-3);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.error {
+  margin-top: var(--space-3);
+  color: var(--accent-hot);
+  font-size: 0.85rem;
+}
+
+.rivalryBlock {
+  margin-top: var(--space-5);
+  border-color: var(--accent-hot);
+  box-shadow: 0 0 0 1px rgba(var(--accent-hot-rgb), 0.25), var(--shadow-raised);
+}
+
+.rivalryBlock .spotlight {
+  background: radial-gradient(circle, rgba(var(--accent-hot-rgb), 0.22), transparent 70%);
+}
+
+.stateCard {
+  text-align: center;
+  padding: var(--space-7) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.stateHeadline {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 var(--space-3);
+}
+
+.countdown {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}

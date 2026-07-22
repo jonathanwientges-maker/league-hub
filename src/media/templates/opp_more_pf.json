@@ -1,0 +1,20 @@
+{
+  "category_id": "opp_more_pf",
+  "templates": [
+    "{opponent} hat deutlich mehr Punkte auf dem Konto. Akzeptieren Sie die Rolle des intellektuellen Underdogs im Duell?",
+    "Die Offense von {opponent} strotzt vor Punkten, während {team} hinterherhinkt. Haben Sie Taktik oder nur Hoffnung?",
+    "Auf dem Papier hat {opponent} viel mehr Firepower erzielt als {team}. Wie wollen Sie diesen Qualitätsunterschied wettmachen?",
+    "{opponent} erzielt Punkte am Fließband, Sie eher im Schneckentempo. Ihr Statement zu dieser eklatanten Punktekluft.",
+    "Die Punktekonto-Statistik spricht eine klare Sprache pro {opponent}. Haben Sie Angst, dass Sie am Sonntag überrannt werden?",
+    "{opponent} hat mehr Punkte auf dem Konto als {team}. Werden Sie das Spiel Mauern oder auf ein Offensivfeuerwerk hoffen?",
+    "Punkte-Vergleich: {opponent} hui, {team} eher pfui. Warum glauben Sie trotzdem an eine minimale Chance am Wochenende?",
+    "{opponent} ballert die Liga zusammen, während {team} Punkte stottert. Welcher Zaubertrick soll Ihnen am Sonntag helfen?",
+    "Die Scoring-Power von {opponent} übertrifft Ihre bei Weitem. Ist das die schmerzhafte Wahrheit über Ihren Kader?",
+    "{opponent} hat ligaweit mehr Punkte als Sie auf dem Konto. Werden Sie sich am Sonntag ehrfurchtsvoll defensiv einigeln?",
+    "Weniger erzielte Punkte als {opponent}. Geben Sie zu, dass der gegnerische Kader einfach besser zusammengestellt ist?",
+    "{opponent} ist Ihnen bei den Points For weit voraus. Wie erklären Sie den Fans diesen eklatanten sportlichen Rückstand?",
+    "Punkte-Gigant {opponent} fordert {team}. Ist Ihr Abwehrriegel stark genug oder droht eine Abreibung nach Noten?",
+    "Die Angriffsmaschine von {opponent} läuft heißer als Ihre. Bitten Sie die Football-Götter um Ladehemmung beim Gegner?",
+    "Unterlegen bei den erzielten Punkten gegenüber {opponent}. Planen Sie einen taktischen Coup oder Beten für ein Wunder?"
+  ]
+}

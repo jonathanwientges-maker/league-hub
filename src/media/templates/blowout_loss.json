@@ -1,0 +1,20 @@
+{
+  "category_id": "blowout_loss",
+  "templates": [
+    "Das war kein Spieltag, das war ein Sportunfall: Steht die {margin}-Punkte-Klatsche gegen {opponent} schon als Mahnmal für Trainerversagen im Vereinsmuseum?",
+    "Mit {margin} Punkten Abstand von {opponent} gedemütigt! Planen Sie nach dieser Abreibung den großen Ausverkauf oder vertrauen Sie weiter der Trümmergruppe?",
+    "Eine Niederlage mit {margin} Punkten grenzt an gepflegte Arbeitsverweigerung. Werden Sie Gehälter kürzen oder schicken Sie das Team ins Straftraining?",
+    "{margin} Punkte Watschn von {opponent}! Ist dieser Kader überhaupt noch zu retten oder verhökern Sie die verbliebenen Stars jetzt für Draft-Picks?",
+    "Gegen {opponent} mit {margin} Punkten untergegangen. Gab es in der Kabine von {team} nach dem Spiel eine Prügelei oder nur noch Fassungslosigkeit?",
+    "Das war kein Wettkampf, das war eine Hinrichtung auf offener Bühne ({margin} Pkt.). Haben die Spieler zur Halbzeit bereits die Koffer gepackt?",
+    "Wer mit {margin} Punkten Rückstand verliert, muss sich fragen lassen: Ist Ihr Projekt bei {team} endgültig gescheitert?",
+    "{opponent} hat mit {team} Schlitten gespielt ({margin} Pkt.). Steht Ihr Telefon für Notfall-Trades offen oder haben Sie die Saison abgehakt?",
+    "Das {margin}-Punkte-Debakel gegen {opponent} erschüttert den Verein. Welchen Veteranen opfern Sie als Erstes auf dem Transfermarkt?",
+    "Mit {margin} Punkten abgefrühstückt zu werden ist eine Blamage ohnegleichen. Sind Sie noch der richtige Mann an der Seitenlinie von {team}?",
+    "{margin} Punkte Watschen kassiert! Fühlen Sie sich von Ihrer Mannschaft im Stich gelassen oder war der Matchplan schlicht lächerlich?",
+    "Gegen {opponent} eine {margin}-Punkte-Abfuhr erlitten. Wann bitten Sie die Ligaleitung offiziell um Entschuldigung für diesen Amateursport?",
+    "Das Desaster gegen {opponent} ({margin} Pkt.) schreit nach Konsequenzen. Werden Sie den Kader per Trade komplett umpflügen?",
+    "{margin} Punkte Rückstand auf {opponent}. Welcher Notfallplan existiert im Führungsgremium von {team}, um diesen Totalschaden zu vertuschen?",
+    "Ein historischer Tiefpunkt bei {team} mit {margin} Punkten Miese. Ihr Statement zur drohenden Kernsanierung Ihres Kaders, bitte."
+  ]
+}

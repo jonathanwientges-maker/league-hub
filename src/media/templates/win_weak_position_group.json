@@ -1,0 +1,20 @@
+{
+  "category_id": "win_weak_position_group",
+  "templates": [
+    "Sieg gefeiert, aber {points} Punkte auf {position} grenzen an Kulissenschieberei. Ist diese Positionsgruppe Ihr persönliches Sommermärchen oder nur ein Sanierungsfall?",
+    "Gewonnen, aber Ihre {position}-Gruppe bringt mickrige {points} Punkte! Glauben Sie ernsthaft, dass Sie mit dieser Rumpftruppe auf Dauer durchkommen?",
+    "{points} Punkte von der {position}-Fraktion! {team} siegt zwar, aber ist diese Position nicht Ihre offenste Wunde im Meisterschaftsrennen?",
+    "Trotz Untergang auf der {position}-Position ({points} Pkt.) gewonnen. Sind Sie offen für Trades, um dieses Elend auf der Position endlich zu beenden?",
+    "Ein Sieg mit {points} Punkten auf {position} ist wie ein Lottogewinn mit gefälschtem Schein. Wann verstärken Sie sich auf dieser Schwachstelle?",
+    "Ihre {position} liefern mickrige {points} Punkte ab. Bitten Sie jeden Tag den Football-Gott um Entschuldigung für diese eklatante Lücke im Kader?",
+    "{points} Punkte von den {position}! Wie lange kann der Rest von {team} dieses Loch im Kader noch kompensieren, bevor es kracht?",
+    "Sieg trotz Katastrophen-Leistung auf {position} ({points} Pkt.). Suchen Sie auf dem Trade-Markt bereits nach Verstärkung?",
+    "Wer mit {points} Punkten auf {position} gewinnt, sollte leise sein. Wie erklären Sie das eklatante Ungleichgewicht in Ihrem Kader?",
+    "Ihre {position}-Einheit wackelt gewaltig ({points} Pkt.). War das ein einmaliger Ausrutscher oder ist das die traurige Realität bei {team}?",
+    "Gewonnen, aber die {position} holten nur {points} Punkte. Haben Sie Angst vor Teams, die diese Schwachstelle gnadenlos ausnutzen werden?",
+    "{points} Punkte auf {position} sind ein Trauerspiel. Wie wollen Sie verhindern, dass diese Position Sie die Postseason kostet?",
+    "Sieg hin oder her – Ihre {position} mit {points} Punkten waren unterirdisch. Ihr Statement zu diesem Schwachpunkt, bitte.",
+    "{points} Punkte auf {position} schreien nach Handelsaktivität. Gehen Sie in den nächsten Tagen auf die Suche nach einem Trade-Partner?",
+    "Sieg eingetütet, aber {position} bleibt mit {points} Punkten ein Trümmerfeld. Ist das Ihr Ernst oder kommt da noch ein Kader-Upgrade?"
+  ]
+}

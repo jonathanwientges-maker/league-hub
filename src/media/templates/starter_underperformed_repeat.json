@@ -1,0 +1,20 @@
+{
+  "category_id": "starter_underperformed_repeat",
+  "templates": [
+    "Die 'Causa {player}': Zum dritten Mal in Folge ein Offenbarungseid. Welches Kompromat besitzt der Mann gegen Sie, dass er ungestraft weiter starten darf?",
+    "Schon wieder unter 5 Punkte von {player}! Warum halten Sie mit einer Sturheit an ihm fest, die an Realitätsverweigerung grenzt?",
+    "Zum dritten Mal in Folge schmiert {player} komplett ab. Ist das die berüchtigte Nibelungentreue bei {team} oder feilschen Sie schon um Trades?",
+    "{player} liefert erneut eine Nullnummer. Sind Sie bereit, ihn endlich gegen einen funktionierenden Baustein zu traden, oder reiten Sie das tote Pferd weiter?",
+    "Drei Pleiten-Auftritte von {player} in Serie! Wie viel Vorschusslorbeeren hat dieser Mann auf Ihrem Roster überhaupt noch verblieben?",
+    "{player} enttäuscht am Laufband. Warum lassen Sie ihn Woche für Woche Ihr Lineup ruinieren, anstatt ihn auf den Trade-Block zu setzen?",
+    "Der 'Sané-Vorwurf' steht im Raum: {player} hat Narrenfreiheit bei {team}. Wann greifen Sie endlich hart durch?",
+    "Schon wieder ein Desaster von {player}. Bieten Sie ihn der Konkurrenz für 'nen Apfel und 'n Ei an oder hoffen Sie immer noch auf Wunder?",
+    "Wie rechtfertigen Sie den Startplatz von {player} nach drei unterirdischen Vorstellungen in Folge? Steckt da ein geheimer Vertrag dahinter?",
+    "Dreimal hintereinander gescheitert: Hat {player} Erpressungsmaterial gegen Sie in der Hand oder warum darf er immer wieder auflaufen?",
+    "{player} liefert verlässlich unter 5 Punkte. Ist er Ihr persönliches Maskottchen oder soll das professioneller Dynasty-Football sein?",
+    "Wann ist das Maß bei {player} voll? Oder wollen Sie warten, bis er Ihre kompletten Playoff-Chancen im Alleingang vernichtet hat?",
+    "Dritte Enttäuschung in Folge von {player}. Ihr Statement zu dieser unbegreiflichen Personalseilschaft bei {team}, bitte.",
+    "Dritter Nullinger in Serie von {player}. Werden Sie das Kapitel jetzt per Trade beenden oder weiter Schmerzen erdulden?",
+    "{player} verweigert zum dritten Mal die Leistung. Hören wir heute die offizielle Ankündigung, dass er zum Verkauf steht?"
+  ]
+}

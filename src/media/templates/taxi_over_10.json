@@ -1,0 +1,20 @@
+{
+  "category_id": "taxi_over_10",
+  "templates": [
+    "{points} Punkte im Taxi Squad von {player}! Die Ultras fordern die sofortige Startelf-Beförderung — oder wollen Sie das Juwel lieber an einen fähigen Manager verkaufen?",
+    "{player} zaubert {points} Punkte im Taxi Squad aufs Parkett! Presse und Fans fordern die Beförderung – was zögern Sie noch?",
+    "{points} Punkte von Taxi-Talent {player}! Lassen Sie dieses Juwel weiter im Nachwuchs versauern oder traden Sie lieber einen Star weg?",
+    "{player} explodiert mit {points} Punkten im Taxi Squad. Sind Sie zu feige, ihn ins aktive Lineup zu holen, oder worauf warten Sie?",
+    "Mit {points} Punkten brennt {player} im Taxi Squad die Hütte ab. Haben andere Manager angefragt, um Ihnen den Diamanten abzuluchsen?",
+    "{points} Punkte von {player} im Taxi-Kader! Wie erklären Sie den Fans von {team}, dass so eine Granate nicht in der Startelf steht?",
+    "{player} haut {points} Punkte raus, während Ihre Starter blass bleiben. Traden Sie Platz frei im Roster oder schikanieren Sie das Talent weiter?",
+    "Wahnsinn von {player} ({points} Pkt.) im Taxi Squad! Bekommt er am nächsten Spieltag den Startplatz oder herrscht Senioren-Bonus?",
+    "{points} Punkte von {player}! Haben Sie überhaupt gemerkt, was für ein Biest da in Ihrem Nachwuchsbereich herangewachsen ist?",
+    "{player} stiehlt Ihren Startern mit {points} Punkten die Show. Wann erlösen Sie den Jungen aus dem Taxi Squad?",
+    "{points} Punkte im Taxi Squad von {player}. Bricht bei {team} jetzt die Jugend-Revolution aus oder bremsen Sie das Talent wieder aus?",
+    "Wer {player} nach {points} Punkten weiter im Taxi Squad versauern lässt, versteht das Geschäft nicht. Was ist Ihr Plan?",
+    "{player} liefert {points} Punkte im Nachwuchs. Ihr Statement zur überfälligen Beförderung ins Hauptteam, bitte.",
+    "{points} Punkte auf der Taxi-Bank! Nutzen Sie den Hype um {player}, um ihn teuer zu traden, oder behalten Sie den Rohdiamanten?",
+    "Gala-Vorstellung von Taxi-Talent {player} ({points} Pkt.). Steht der Junge ab heute im Schaufenster für interessierte Manager?"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "category_id": "player_to_ir",
+  "templates": [
+    "{player} auf IR – Ihr Saisonprojekt liegt auf dem Gabentisch der Pathologie. Bieten Sie die verbliebenen Stars bereits auf dem Schwarzmarkt an?",
+    "{player} fällt aus und wandert auf IR. Ist damit die Saison von {team} gelaufen oder haben Sie tatsächlich einen Plan B im Ärmel?",
+    "Der Schock sitzt tief: {player} auf IR! Gehen Sie jetzt in den Ausverkauf oder klammern Sie sich weiter an die vage Hoffnung auf Playoffs?",
+    "{player} ist verletzt auf IR. Wir heucheln tiefes Mitleid: Wie sehr tut es weh zu wissen, dass Ihr bester Mann ausfällt?",
+    "Ohne {player} sieht der Kader von {team} ziemlich dünn aus. Werden Sie versuchen, den Ausfall über Trades zu kompensieren?",
+    "{player} auf IR gesetzt. Ist das der Todesstoß für Ihre Ambitionen oder die perfekte Ausrede für ein gescheitertes Jahr?",
+    "{player} muss auf IR. Klingelt Ihr Telefon schon mit Geier-Angeboten der Konkurrenz, die Ihre Not ausnutzen wollen?",
+    "{player} fällt lange aus. Wer in Ihrem Kader soll diesen Verlust bitte auffangen – oder ist das schlicht unmöglich?",
+    "{player} auf der Verletztenliste. War das das fehlende Puzzleteil, das Ihr Kartenhaus jetzt endgültig zum Einsturz bringt?",
+    "{player} auf IR. Werden Sie den Gürtel enger schnallen oder auf dem Transfermarkt noch einmal All-In gehen?",
+    "Der Ausfall von {player} trifft {team} ins Herz. Haben Sie schon Taschentücher für die Nachbesprechung verteilt?",
+    "{player} ist weg auf IR. Glauben die verbleibenden Spieler noch an Ihre Führung oder herrscht bereits Zweckoptimismus?",
+    "{player} auf IR gelandet. Ihr Statement zur plötzlichen Verwundbarkeit von {team}, bitte.",
+    "{player} liegt flach. Werden Sie jetzt als Verkäufer auf dem Trade-Markt aktiv, um wenigstens Zukunfts-Assets zu sichern?",
+    "IR-Schock bei {player}! Reagieren Sie mit einem Verzweiflungs-Deal oder geben Sie die Saison gedanklich verloren?"
+  ]
+}

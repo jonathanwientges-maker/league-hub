@@ -10,6 +10,8 @@ const NAV_ITEMS = [
   { to: "/standings", label: "Standings" },
   { to: "/playoffs", label: "Playoffs" },
   { to: "/pick-race", label: "Pick Race" },
+  { to: "/media-room", label: "Media Room" },
+  { to: "/rivalries", label: "Rivalries" },
   { to: "/teams", label: "Teams" },
   { to: "/history", label: "History" },
 ];

@@ -1,0 +1,20 @@
+{
+  "category_id": "opp_won_last",
+  "templates": [
+    "{opponent} reist mit dem Rückenwind des Erfolgs an. Welches Bollwerk wollen Sie errichten, um den Durchmarsch zu stoppen?",
+    "{opponent} kommt mit einem frischen Sieg im Rücken. Zittern Ihren Spielern bei {team} schon die Knie vor Ehrfurcht?",
+    "Der nächste Gegner {opponent} hat zuletzt gepunktet. Wie wollen Sie diesen gegnerischen Schwung brechen?",
+    "{opponent} hat Selbstvertrauen getankt. Glaubt man bei {team} wirklich, dass man diesen Gegner aufhalten kann?",
+    "Nach dem Erfolg der letzten Woche platzt {opponent} vor Arroganz. Nutzen Sie das aus oder lassen Sie sich überrollen?",
+    "{opponent} kommt mit breiter Brust zu {team}. Haben Sie eine Taktik entwickelt, um diese Zuversicht zu zerstören?",
+    "Der Sieg von {opponent} letzte Woche war eine Ansage. Ihr Statement dazu, wie {team} diesem Druck standhalten will.",
+    "{opponent} hat gewonnen und fordert nun {team}. Haben Sie die Schwachstellen aus deren letztem Auftritt analysiert?",
+    "Ein siegreiches {opponent} wartet auf Sie. Werden Sie die Serie stoppen oder werden Sie das nächste Opfer auf dem Weg?",
+    "{opponent} schwimmt auf einer Erfolgswelle. Wie wollen Sie verhindern, dass {team} darin jämmerlich ersäuft?",
+    "Gegen ein siegreiches {opponent} braucht {team} Höchstleistung. Haben Sie überhaupt das Zeug zu so einem Auftritt?",
+    "{opponent} hat letzte Woche aufgetrumpft. Haben Sie Schiss oder empfinden Sie Vorfreude auf dieses schwere Duell?",
+    "{opponent} bringt Siegesgewissheit mit. Mit welcher defensiven Waffe will {team} am Sonntag dagegenhalten?",
+    "Der Kontrahent {opponent} jubelte zuletzt. Werden Sie die Partystimmung im gegnerischen Lager nachhaltig ruinieren?",
+    "{opponent} kommt selbstbewusst aus der Vorwoche. Gehen Sie als Jäger ins Spiel oder verkriechen Sie sich defensiv?"
+  ]
+}

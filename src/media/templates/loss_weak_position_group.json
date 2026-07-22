@@ -1,0 +1,20 @@
+{
+  "category_id": "loss_weak_position_group",
+  "templates": [
+    "Untergang mit System: {points} Magerpunkte auf {position}. Wann beenden Sie die Verweigerungshaltung und holen per Trade endlich bundesligataugliches Personal?",
+    "Pleite kassiert und die {position} bringen nur {points} Punkte! Ist diese Position der Hauptgrund für den Untergang von {team}?",
+    "Mickrige {points} Punkte auf {position}! Werden Sie jetzt endlich aktiv traden oder schauen Sie tatenlos zu, wie Ihre Saison den Bach runtergeht?",
+    "Ihre {position}-Gruppe ist eine reine Baustelle ({points} Pkt.). Haben Sie den Mut für einen großen Trade oder fehlt Ihnen dafür das Verhandlungsgeschick?",
+    "Mit {points} Punkten auf {position} kann man kein Spiel gewinnen. Welchen Star auf dieser Position wollen Sie der Konkurrenz abspenstig machen?",
+    "Katastrophe auf {position} ({points} Punkte)! Ist Ihr Telefon schon heiß gelaufen oder warten Sie ab, bis die Saison gelaufen ist?",
+    "{points} Punkte von der {position}-Einheit. Sind diese Spieler überhaupt tauglich für Ihre Ambitionen oder gehören die auf den Waiver Wire?",
+    "Die Niederlage geht voll auf die Kappe Ihrer {position} ({points} Pkt.). Planen Sie bereits den Notfall-Umbau dieser Truppe per Trade?",
+    "{points} Punkte auf {position}! Wer bei {team} hat diese Kaderzusammenstellung verbrochen und wann übernimmt er die Verantwortung?",
+    "Das Desaster auf {position} ({points} Punkte) hat Ihnen das Genick gebrochen. Wie erklären Sie Ihren Fans diesen eklatanten Qualitätsmangel?",
+    "Wegen mickriger {points} Punkte auf {position} verloren. Sind Sie zu stur, um einzusehen, dass hier dringend neues Blut gebraucht wird?",
+    "{position} schmiert ab ({points} Pkt.). War das die Bestätigung, dass Ihre Kaderplanung auf dieser Position völlig schiefgelaufen ist?",
+    "{points} Punkte auf {position} haben den Untergang besiegelt. Ihr Statement zur drängendsten Baustelle bei {team}, bitte.",
+    "Offener Offenbarungseid auf {position} ({points} Pkt.). Bieten Sie Ihre First-Round-Picks feil, um dieses Loch sofort zu stopfen?",
+    "{points} Magerpunkte auf {position} verlangen nach Taten. Welche Manager in der Liga haben Sie wegen eines Trades bereits kontaktiert?"
+  ]
+}
