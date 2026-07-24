@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { Skeleton } from "../../components/common/Skeleton";
-import { berlinNow } from "../../media/berlinTime";
+import { berlinNow, formatBerlinDateTime } from "../../media/berlinTime";
+import { votingClosesAt } from "../../media/schedule";
+import { displayLabelForWeek } from "../../media/specialEvents";
 import { useAllEditions, useLeaderboard, useToggleLike } from "../../media/roomData";
 import { PressCard } from "./PressCard";
 import styles from "./Pressespiegel.module.css";
@@ -104,19 +106,21 @@ export function Pressespiegel({ rosterId }: { rosterId: number | null }) {
     );
   }
 
+  const weekLabel = current.week !== null ? (displayLabelForWeek(current.week) ?? `Woche ${current.week}`) : null;
+  const badgeLabel = current.cards[0]?.badgeLabel ?? "Zitat der Woche";
+  const votingCloseAt = votingClosesAt(new Date(current.revealAt));
+
   return (
     <div className={styles.wrap}>
       <FlashOnce editionKey={current.revealAt} />
       <div className={styles.header}>
-        <h1 className={styles.headline}>
-          Pressespiegel{current.week !== null ? ` · Woche ${current.week}` : ""}
-        </h1>
+        <h1 className={styles.headline}>Pressespiegel{weekLabel ? ` · ${weekLabel}` : ""}</h1>
         <p className={styles.editionDate}>{editionDateLabel(current.revealAt)}</p>
       </div>
 
       {current.votingOpen && (
         <p className={styles.votingBanner}>
-          🗳️ Abstimmung läuft bis Freitag 06:00 — Klatschen Sie für das Zitat der Woche!
+          🗳️ Abstimmung läuft bis {formatBerlinDateTime(votingCloseAt)} — Klatschen Sie für das {badgeLabel}!
         </p>
       )}
 
@@ -128,6 +132,7 @@ export function Pressespiegel({ rosterId }: { rosterId: number | null }) {
             rosterId={rosterId}
             votingOpen={current.votingOpen}
             votingClosed={current.votingClosed}
+            votingCloseAt={votingCloseAt}
             readOnly={false}
             onToggleLike={handleToggle}
           />

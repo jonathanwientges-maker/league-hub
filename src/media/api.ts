@@ -83,8 +83,25 @@ export interface SubmitResponseInput {
   answer: string;
 }
 
-export async function submitResponse(input: SubmitResponseInput): Promise<MediaResponse> {
-  if (!isMediaDayOpen()) {
+export interface SubmitWindowOverride {
+  /** Whether submissions are currently open — the caller has already resolved this. */
+  isOpen: boolean;
+  /** When this response should be revealed — the caller supplies it for special events. */
+  revealAt: Date;
+}
+
+/**
+ * `window` defaults to the normal weekly Wed 06:00–24:00 rule and "next
+ * Thursday 06:00" reveal. Special one-time events (src/media/specialEvents.ts)
+ * have their own submission window and reveal moment, so callers there pass
+ * an explicit override instead.
+ */
+export async function submitResponse(
+  input: SubmitResponseInput,
+  window?: SubmitWindowOverride
+): Promise<MediaResponse> {
+  const isOpen = window ? window.isOpen : isMediaDayOpen();
+  if (!isOpen) {
     throw new MediaRoomError("Redaktionsschluss verpasst.");
   }
   if (input.answer.length > MEDIA_CONFIG.answerMaxLength) {
@@ -92,6 +109,7 @@ export async function submitResponse(input: SubmitResponseInput): Promise<MediaR
   }
 
   const now = new Date();
+  const revealAt = window ? window.revealAt : computeRevealAt(now);
   const row = {
     season: input.season,
     week: input.week,
@@ -101,7 +119,7 @@ export async function submitResponse(input: SubmitResponseInput): Promise<MediaR
     template_index: input.templateIndex,
     question: input.question,
     answer: input.answer,
-    reveal_at: computeRevealAt(now).toISOString(),
+    reveal_at: revealAt.toISOString(),
     updated_at: now.toISOString(),
   };
 

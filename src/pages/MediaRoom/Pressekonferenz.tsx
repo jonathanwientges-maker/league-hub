@@ -4,7 +4,7 @@ import { Avatar } from "../../components/common/Avatar";
 import { Skeleton } from "../../components/common/Skeleton";
 import { useLeague } from "../../hooks/useLeague";
 import { MEDIA_CONFIG } from "../../media/config";
-import { computeRevealAt, nextMediaDayOpenUtc, phaseFor } from "../../media/schedule";
+import { formatBerlinDateTime } from "../../media/berlinTime";
 import { useCountdown } from "../../media/useCountdown";
 import { MediaRoomError, type MediaResponse, type ResponseKind } from "../../media/api";
 import { usePressekonferenz } from "../../media/roomData";
@@ -86,9 +86,6 @@ function StatementForm({ eyebrow, hot = false, assigned, existing, kind, onSubmi
 }
 
 export function Pressekonferenz({ leagueId, rosterId, onPick }: { leagueId: string; rosterId: number | null; onPick: (rosterId: number) => void }) {
-  const phase = phaseFor();
-  const printingCountdown = useCountdown(computeRevealAt());
-  const closedCountdown = useCountdown(nextMediaDayOpenUtc());
   const { data: league } = useLeague(leagueId);
   const sponsorLogoStyle = league?.avatar
     ? ({ "--sponsor-logo": `url(https://sleepercdn.com/avatars/${league.avatar})` } as CSSProperties)
@@ -97,7 +94,9 @@ export function Pressekonferenz({ leagueId, rosterId, onPick }: { leagueId: stri
   const {
     isLoading,
     isResponseLoading,
-    week,
+    phase,
+    countdownTarget,
+    eyebrow,
     assigned,
     rivalryAssigned,
     hasRivalryGame,
@@ -106,6 +105,8 @@ export function Pressekonferenz({ leagueId, rosterId, onPick }: { leagueId: stri
     submit,
     team,
   } = usePressekonferenz(rosterId);
+
+  const countdown = useCountdown(countdownTarget);
 
   if (rosterId === null) {
     return <TeamPicker leagueId={leagueId} onPick={onPick} />;
@@ -116,25 +117,25 @@ export function Pressekonferenz({ leagueId, rosterId, onPick }: { leagueId: stri
       <div className={styles.wrap}>
         <div className={styles.stateCard}>
           <p className={styles.stateHeadline}>🖨️ Die Druckerpresse läuft…</p>
-          <p>Pressespiegel erscheint Donnerstag 06:00.</p>
-          <p className={styles.countdown}>{printingCountdown}</p>
+          <p>Pressespiegel erscheint {formatBerlinDateTime(countdownTarget)}.</p>
+          <p className={styles.countdown}>{countdown}</p>
         </div>
       </div>
     );
   }
 
-  if (phase === "REVEALED") {
+  if (phase === "CLOSED") {
     return (
       <div className={styles.wrap}>
         <div className={styles.stateCard}>
-          <p className={styles.stateHeadline}>Die nächste Pressekonferenz beginnt Mittwoch 06:00.</p>
-          <p className={styles.countdown}>{closedCountdown}</p>
+          <p className={styles.stateHeadline}>Die nächste Pressekonferenz beginnt {formatBerlinDateTime(countdownTarget)}.</p>
+          <p className={styles.countdown}>{countdown}</p>
         </div>
       </div>
     );
   }
 
-  // MEDIA_DAY
+  // OPEN
   if (isLoading || isResponseLoading || !assigned) {
     return (
       <div className={styles.wrap}>
@@ -156,11 +157,7 @@ export function Pressekonferenz({ leagueId, rosterId, onPick }: { leagueId: stri
             <MicIcon />
           </div>
           <StatementForm
-            eyebrow={
-              (week ?? 1) <= MEDIA_CONFIG.thresholds.seasonKickoffMaxWeek
-                ? "MEDIA DAY · PRESEASON"
-                : `MEDIA DAY · WOCHE ${week}`
-            }
+            eyebrow={eyebrow}
             assigned={assigned}
             existing={myResponse}
             kind="media_day"

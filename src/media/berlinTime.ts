@@ -44,3 +44,12 @@ export function nextThursday6Utc(from: Date = new Date()): Date {
   const base = berlinWallClockToUtc(b.year, b.month, b.day, 6, 0);
   return new Date(base.getTime() + daysAhead * 86400000);
 }
+
+const WEEKDAY_NAMES_DE = ["", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+
+/** "Mittwoch, 26.08. um 06:00 Uhr" — one format for both the recurring weekly targets and any one-time special-event date. */
+export function formatBerlinDateTime(date: Date): string {
+  const b = berlinNow(date);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${WEEKDAY_NAMES_DE[b.weekday]}, ${pad(b.day)}.${pad(b.month)}. um ${pad(b.hour)}:${pad(b.minute)} Uhr`;
+}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { assignQuestion, assignSeasonKickoffQuestion } from "./assignQuestion";
+import { assignQuestion } from "./assignQuestion";
 import type { WeekContext, WeekTeamContext } from "./weekContext";
 
 function team(overrides: Partial<WeekTeamContext> = {}): WeekTeamContext {
@@ -77,35 +77,5 @@ describe("assignQuestion", () => {
 
   it("never throws for a completely empty roster set beyond the target", () => {
     expect(() => assignQuestion(ctx([team()]), 1)).not.toThrow();
-  });
-
-  it("overrides to season_kickoff before any real week has been played, regardless of category weights", () => {
-    // Would otherwise hit close_win (weight 4) — season_kickoff must win at upcomingWeek <= 1.
-    const t = team({ resultLastWeek: { result: "W", margin: 2, opponentRosterId: 2 } });
-    const c = ctx([t, team({ rosterId: 2, teamName: "Team B" })], 1, 1);
-    const result = assignQuestion(c, 1);
-    expect(result.categoryId).toBe("season_kickoff");
-    expect(result.question).toBe(
-      "Der große Saisonauftakt steht bevor! Ihr Statement zur realistischen Zielsetzung für Team A in dieser Spielzeit, bitte."
-    );
-  });
-
-  it("also overrides at upcomingWeek 0 (Sleeper's real off-season state)", () => {
-    const c = ctx([team()], 1, 0);
-    expect(assignQuestion(c, 1).categoryId).toBe("season_kickoff");
-  });
-
-  it("no longer overrides once upcomingWeek 2 arrives", () => {
-    const c = ctx([team()], 1, 2);
-    expect(assignQuestion(c, 1).categoryId).not.toBe("season_kickoff");
-  });
-});
-
-describe("assignSeasonKickoffQuestion", () => {
-  it("is deterministic and renders the team name", () => {
-    const a = assignSeasonKickoffQuestion("2026", 1, 1, { team: "Team A" });
-    const b = assignSeasonKickoffQuestion("2026", 1, 1, { team: "Team A" });
-    expect(a).toEqual(b);
-    expect(a.question).toContain("Team A");
   });
 });

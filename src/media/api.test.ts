@@ -137,6 +137,52 @@ describe("submitResponse", () => {
     expect(result.id).toBe("id-1");
     expect(result.answer).toBe("A short statement");
   });
+
+  it("with a window override, ignores isMediaDayOpen() and uses the supplied isOpen/revealAt", async () => {
+    vi.mocked(isMediaDayOpen).mockReturnValue(false); // would normally reject
+    const captured: { reveal_at?: string }[] = [];
+    mockFrom.mockImplementation(() => {
+      const builder = fakeBuilder({
+        data: {
+          id: "id-2",
+          season: "2026",
+          week: -3,
+          roster_id: 1,
+          kind: "media_day",
+          category_id: "season_kickoff",
+          template_index: 0,
+          question: "Q",
+          answer: "A",
+          reveal_at: "2026-08-26T04:00:00Z",
+          created_at: "2026-08-24T08:00:00Z",
+          updated_at: "2026-08-24T08:00:00Z",
+        },
+        error: null,
+      });
+      const originalUpsert = builder.upsert as (row: unknown, opts: unknown) => typeof builder;
+      builder.upsert = (row: { reveal_at?: string }, opts: unknown) => {
+        captured.push(row);
+        return originalUpsert(row, opts);
+      };
+      return builder;
+    });
+
+    const revealAt = new Date("2026-08-26T06:00:00+02:00");
+    const result = await api.submitResponse(
+      { ...input, week: -3, categoryId: "season_kickoff" },
+      { isOpen: true, revealAt }
+    );
+    expect(result.id).toBe("id-2");
+    expect(captured[0]?.reveal_at).toBe(revealAt.toISOString());
+  });
+
+  it("with a window override, rejects when isOpen is false, without touching Supabase", async () => {
+    vi.mocked(isMediaDayOpen).mockReturnValue(true); // would normally allow — override wins
+    await expect(
+      api.submitResponse(input, { isOpen: false, revealAt: new Date() })
+    ).rejects.toThrow("Redaktionsschluss verpasst.");
+    expect(mockFrom).not.toHaveBeenCalled();
+  });
 });
 
 describe("getRevealedWeeks", () => {

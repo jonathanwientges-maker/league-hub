@@ -2,16 +2,28 @@ import { useCallback } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useTeams } from "../hooks/useTeams";
 import { useNflState } from "../hooks/useNflState";
+import { useLeagueDrafts } from "../hooks/useLeagueDrafts";
 import { useSeasonContext } from "../context/SeasonContext";
+import { LEAGUE_CONFIG } from "../config/league";
 import type { Team } from "../domain/types";
 import { useWeekContext } from "./engine/weekContext";
 import { assignQuestion, assignRivalryQuestion, type AssignedQuestion } from "./engine/assignQuestion";
 import { useRivalryGames } from "./useRivalryGames";
 import { findRivalryGameFor } from "./rivals";
 import { MEDIA_CONFIG } from "./config";
-import { isVotingOpen, votingClosesAt } from "./schedule";
+import { computeRevealAt, isVotingOpen, nextMediaDayOpenUtc, phaseFor, votingClosesAt } from "./schedule";
+import {
+  assignSpecialEventQuestion,
+  badgeLabelForWeek,
+  displayLabelForWeek,
+  getActiveSpecialEvent,
+  nextSpecialEventOpenAt,
+  specialEventPhase,
+} from "./specialEvents";
 import * as api from "./api";
 import type { Edition, LikeRow, MediaResponse, ResponseKind, SeasonLikeTotal } from "./api";
+
+export type PressekonferenzPhase = "OPEN" | "PRINTING" | "CLOSED";
 
 export function useMediaRoomLeagueId(): string {
   const { currentSeason } = useSeasonContext();
@@ -43,44 +55,65 @@ export function usePressekonferenz(rosterId: number | null) {
   const teamsResult = useTeams(leagueId);
   const weekCtx = useWeekContext(leagueId);
   const rivalry = useRivalryGames(leagueId);
+  const draftsQuery = useLeagueDrafts(leagueId);
   const queryClient = useQueryClient();
 
+  const overrideMs = LEAGUE_CONFIG.draftCountdownOverride ? Date.parse(LEAGUE_CONFIG.draftCountdownOverride) : null;
+  const draftStartMs = overrideMs ?? draftsQuery.data?.[0]?.start_time ?? null;
+
+  const now = new Date();
+  const specialEvent = getActiveSpecialEvent(now, draftStartMs);
+
+  const team = rosterId !== null ? teamsResult.data?.teams.find((t) => t.rosterId === rosterId) : undefined;
+
+  // --- special-event response (season kickoff / pre-draft / post-draft) ---
+  const specialResponseQuery = useQuery({
+    queryKey: ["mediaRoom", "myResponse", MEDIA_CONFIG.season, specialEvent?.week, rosterId, "media_day"],
+    queryFn: () => api.getMyResponse(MEDIA_CONFIG.season, specialEvent!.week, rosterId as number, "media_day"),
+    enabled: rosterId !== null && specialEvent !== null,
+  });
+
+  // --- normal weekly cycle (only relevant when no special event is active) ---
   const week = weekCtx.data?.upcomingWeek;
 
   const previousCategoryQuery = useQuery({
     queryKey: ["mediaRoom", "previousCategory", MEDIA_CONFIG.season, week, rosterId],
     queryFn: () => api.getMyResponse(MEDIA_CONFIG.season, (week ?? 1) - 1, rosterId as number, "media_day"),
-    enabled: rosterId !== null && week !== undefined && week > 1,
+    enabled: !specialEvent && rosterId !== null && week !== undefined && week > 1,
   });
 
   const myResponseQuery = useQuery({
     queryKey: ["mediaRoom", "myResponse", MEDIA_CONFIG.season, week, rosterId, "media_day"],
     queryFn: () => api.getMyResponse(MEDIA_CONFIG.season, week as number, rosterId as number, "media_day"),
-    enabled: rosterId !== null && week !== undefined,
+    enabled: !specialEvent && rosterId !== null && week !== undefined,
   });
 
-  const rivalryGame = rosterId !== null ? findRivalryGameFor(rivalry.games, rosterId) : undefined;
+  const rivalryGame = !specialEvent && rosterId !== null ? findRivalryGameFor(rivalry.games, rosterId) : undefined;
 
   const myRivalryResponseQuery = useQuery({
     queryKey: ["mediaRoom", "myResponse", MEDIA_CONFIG.season, week, rosterId, "rivalry_statement"],
     queryFn: () =>
       api.getMyResponse(MEDIA_CONFIG.season, week as number, rosterId as number, "rivalry_statement"),
-    enabled: rosterId !== null && week !== undefined && Boolean(rivalryGame),
+    enabled: !specialEvent && rosterId !== null && week !== undefined && Boolean(rivalryGame),
   });
 
   let assigned: AssignedQuestion | null = null;
-  if (weekCtx.data && rosterId !== null) {
+  if (specialEvent && rosterId !== null && team) {
+    assigned = assignSpecialEventQuestion(specialEvent.id, MEDIA_CONFIG.season, rosterId, {
+      team: team.teamName,
+    });
+  } else if (!specialEvent && weekCtx.data && rosterId !== null) {
     assigned = assignQuestion(weekCtx.data, rosterId, previousCategoryQuery.data?.categoryId);
   }
 
   let rivalryAssigned: AssignedQuestion | null = null;
-  if (weekCtx.data && rosterId !== null && rivalryGame) {
+  if (!specialEvent && weekCtx.data && rosterId !== null && rivalryGame) {
     const opponentRosterId = rivalryGame.rosterIdA === rosterId ? rivalryGame.rosterIdB : rivalryGame.rosterIdA;
-    const team = weekCtx.data.teams.get(rosterId);
+    const t = weekCtx.data.teams.get(rosterId);
     const opponent = weekCtx.data.teams.get(opponentRosterId);
-    if (team && opponent) {
+    if (t && opponent) {
       rivalryAssigned = assignRivalryQuestion(MEDIA_CONFIG.season, weekCtx.data.upcomingWeek, rosterId, {
-        team: team.teamName,
+        team: t.teamName,
         opponent: opponent.teamName,
       });
     }
@@ -88,7 +121,28 @@ export function usePressekonferenz(rosterId: number | null) {
 
   const submit = useCallback(
     async (kind: ResponseKind, assignedQuestion: AssignedQuestion, answer: string) => {
-      if (!weekCtx.data || rosterId === null) return;
+      if (rosterId === null) return;
+
+      if (specialEvent) {
+        const submitNow = new Date();
+        await api.submitResponse(
+          {
+            season: MEDIA_CONFIG.season,
+            week: specialEvent.week,
+            rosterId,
+            kind: "media_day",
+            categoryId: assignedQuestion.categoryId,
+            templateIndex: assignedQuestion.templateIndex,
+            question: assignedQuestion.question,
+            answer,
+          },
+          { isOpen: submitNow < specialEvent.window.submitCloseAt, revealAt: specialEvent.window.revealAt }
+        );
+        await queryClient.invalidateQueries({ queryKey: ["mediaRoom", "myResponse"] });
+        return;
+      }
+
+      if (!weekCtx.data) return;
       await api.submitResponse({
         season: MEDIA_CONFIG.season,
         week: weekCtx.data.upcomingWeek,
@@ -101,20 +155,46 @@ export function usePressekonferenz(rosterId: number | null) {
       });
       await queryClient.invalidateQueries({ queryKey: ["mediaRoom", "myResponse"] });
     },
-    [weekCtx.data, rosterId, queryClient]
+    [specialEvent, weekCtx.data, rosterId, queryClient]
   );
 
-  const team = rosterId !== null ? teamsResult.data?.teams.find((t) => t.rosterId === rosterId) : undefined;
+  // --- unified phase/eyebrow/countdown the UI renders directly ---
+  let phase: PressekonferenzPhase;
+  let countdownTarget: Date;
+  let eyebrow: string;
+
+  if (specialEvent) {
+    const sub = specialEventPhase(now, specialEvent.window);
+    phase = sub === "OPEN" ? "OPEN" : sub === "PRINTING" ? "PRINTING" : "CLOSED";
+    countdownTarget =
+      sub === "PRINTING"
+        ? specialEvent.window.revealAt
+        : (nextSpecialEventOpenAt(now, draftStartMs) ?? nextMediaDayOpenUtc(now));
+    eyebrow = `MEDIA DAY · ${(displayLabelForWeek(specialEvent.week) ?? "").toUpperCase()}`;
+  } else {
+    const weeklyPhase = phaseFor(now);
+    phase = weeklyPhase === "MEDIA_DAY" ? "OPEN" : weeklyPhase === "PRINTING" ? "PRINTING" : "CLOSED";
+    countdownTarget =
+      weeklyPhase === "PRINTING"
+        ? computeRevealAt(now)
+        : (nextSpecialEventOpenAt(now, draftStartMs) ?? nextMediaDayOpenUtc(now));
+    eyebrow = `MEDIA DAY · WOCHE ${week}`;
+  }
 
   return {
-    isLoading: teamsResult.isLoading || weekCtx.isLoading || rivalry.isLoading,
-    isResponseLoading: myResponseQuery.isLoading || myRivalryResponseQuery.isLoading,
-    week,
+    isLoading: teamsResult.isLoading || weekCtx.isLoading || rivalry.isLoading || draftsQuery.isLoading,
+    isResponseLoading: specialEvent
+      ? specialResponseQuery.isLoading
+      : myResponseQuery.isLoading || myRivalryResponseQuery.isLoading,
+    phase,
+    countdownTarget,
+    eyebrow,
+    week: specialEvent ? specialEvent.week : week,
     assigned,
     rivalryAssigned,
-    hasRivalryGame: Boolean(rivalryGame),
-    myResponse: myResponseQuery.data ?? null,
-    myRivalryResponse: myRivalryResponseQuery.data ?? null,
+    hasRivalryGame: specialEvent ? false : Boolean(rivalryGame),
+    myResponse: specialEvent ? (specialResponseQuery.data ?? null) : (myResponseQuery.data ?? null),
+    myRivalryResponse: specialEvent ? null : (myRivalryResponseQuery.data ?? null),
     submit,
     team,
   };
@@ -134,6 +214,8 @@ export interface PressCardData {
   likeCount: number;
   likedByMe: boolean;
   isQuoteOfTheWeek: boolean;
+  /** "Zitat der Woche" normally, "Zitat des Tages" for the pre-/post-draft events. */
+  badgeLabel: string;
 }
 
 export interface EditionWithCards {
@@ -151,7 +233,8 @@ export function cardFor(
   likedByMe: Set<string>,
   winnerIds: Set<string>,
   fallbackRosterId: number,
-  kind: ResponseKind
+  kind: ResponseKind,
+  badgeLabel: string
 ): PressCardData {
   return {
     rosterId: team?.rosterId ?? fallbackRosterId,
@@ -165,6 +248,7 @@ export function cardFor(
     likeCount: response ? likeCounts.get(response.id) ?? 0 : 0,
     likedByMe: response ? likedByMe.has(response.id) : false,
     isQuoteOfTheWeek: response ? winnerIds.has(response.id) : false,
+    badgeLabel,
   };
 }
 
@@ -200,6 +284,9 @@ export function computeEditionsWithCards(
         : []
     );
 
+    const week = edition.responses[0]?.week ?? null;
+    const badgeLabel = badgeLabelForWeek(week ?? 0);
+
     const mediaDayResponses = edition.responses.filter((r) => r.kind === "media_day");
     const rivalryResponses = edition.responses.filter((r) => r.kind === "rivalry_statement");
 
@@ -211,11 +298,21 @@ export function computeEditionsWithCards(
         likedByMe,
         winnerIds,
         team.rosterId,
-        "media_day"
+        "media_day",
+        badgeLabel
       )
     );
     const rivalryCards = rivalryResponses.map((r) =>
-      cardFor(teamsById.get(r.rosterId), r, likeCounts, likedByMe, winnerIds, r.rosterId, "rivalry_statement")
+      cardFor(
+        teamsById.get(r.rosterId),
+        r,
+        likeCounts,
+        likedByMe,
+        winnerIds,
+        r.rosterId,
+        "rivalry_statement",
+        badgeLabel
+      )
     );
 
     const cards = [...mediaDayCards, ...rivalryCards].sort(
@@ -224,7 +321,7 @@ export function computeEditionsWithCards(
 
     return {
       revealAt: edition.revealAt,
-      week: edition.responses[0]?.week ?? null,
+      week,
       cards,
       votingOpen,
       votingClosed,

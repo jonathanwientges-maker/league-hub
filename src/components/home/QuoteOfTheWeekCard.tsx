@@ -4,6 +4,7 @@ import { Avatar } from "../common/Avatar";
 import { Chip } from "../common/Chip";
 import { useAllEditions } from "../../media/roomData";
 import { hashSeed, mulberry32 } from "../../media/engine/rng";
+import { displayLabelForWeek } from "../../media/specialEvents";
 import styles from "./QuoteOfTheWeekCard.module.css";
 
 export function QuoteOfTheWeekCard() {
@@ -30,9 +31,10 @@ export function QuoteOfTheWeekCard() {
       {isWinner ? (
         <div className={styles.eyebrowRow}>
           <p className={styles.eyebrow}>
-            Pressespiegel{current.week !== null ? ` · Woche ${current.week}` : ""}
+            Pressespiegel
+            {current.week !== null ? ` · ${displayLabelForWeek(current.week) ?? `Woche ${current.week}`}` : ""}
           </p>
-          <Chip tone="accent">📰 Zitat der Woche</Chip>
+          <Chip tone="accent">📰 {featured.badgeLabel}</Chip>
         </div>
       ) : (
         <p className={styles.freshHeadline}>Frisch aus der Druckerei</p>

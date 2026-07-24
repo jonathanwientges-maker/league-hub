@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Skeleton } from "../../components/common/Skeleton";
 import { berlinNow } from "../../media/berlinTime";
+import { displayLabelForWeek } from "../../media/specialEvents";
 import { useAllEditions, type EditionWithCards } from "../../media/roomData";
 import { PressCard } from "./PressCard";
 import styles from "./Altpapier.module.css";
@@ -14,13 +15,14 @@ function editionDateLabel(revealAt: string): string {
 function EditionRow({ edition }: { edition: EditionWithCards }) {
   const [open, setOpen] = useState(false);
   const winner = edition.cards.find((c) => c.isQuoteOfTheWeek);
+  const weekLabel = edition.week !== null ? (displayLabelForWeek(edition.week) ?? `Woche ${edition.week}`) : "Woche ?";
 
   return (
     <div className={styles.edition}>
       <button type="button" className={styles.editionToggle} onClick={() => setOpen((o) => !o)}>
         <span>
-          Woche {edition.week ?? "?"} · {editionDateLabel(edition.revealAt)}
-          {winner ? ` · Zitat der Woche: ${winner.teamName}` : ""}
+          {weekLabel} · {editionDateLabel(edition.revealAt)}
+          {winner ? ` · ${winner.badgeLabel}: ${winner.teamName}` : ""}
         </span>
         <span aria-hidden="true">{open ? "▲" : "▼"}</span>
       </button>

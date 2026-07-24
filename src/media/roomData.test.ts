@@ -45,7 +45,16 @@ describe("cardFor", () => {
   it("maps a team + response to a press card", () => {
     const t = team({ rosterId: 1, teamName: "Alpha", displayName: "Alice", avatarUrl: "a.png" });
     const r = response({ id: "resp-1", rosterId: 1, answer: "Statement text" });
-    const card = cardFor(t, r, new Map([["resp-1", 3]]), new Set(["resp-1"]), new Set(), 1, "media_day");
+    const card = cardFor(
+      t,
+      r,
+      new Map([["resp-1", 3]]),
+      new Set(["resp-1"]),
+      new Set(),
+      1,
+      "media_day",
+      "Zitat der Woche"
+    );
     expect(card).toEqual({
       rosterId: 1,
       kind: "media_day",
@@ -58,12 +67,13 @@ describe("cardFor", () => {
       likeCount: 3,
       likedByMe: true,
       isQuoteOfTheWeek: false,
+      badgeLabel: "Zitat der Woche",
     });
   });
 
   it("renders a placeholder-safe card (null answer) when there is no response", () => {
     const t = team({ rosterId: 2, teamName: "Beta" });
-    const card = cardFor(t, undefined, new Map(), new Set(), new Set(), 2, "media_day");
+    const card = cardFor(t, undefined, new Map(), new Set(), new Set(), 2, "media_day", "Zitat der Woche");
     expect(card.answer).toBeNull();
     expect(card.responseId).toBeNull();
     expect(card.likeCount).toBe(0);
@@ -71,10 +81,24 @@ describe("cardFor", () => {
   });
 
   it("falls back to the roster id and '?' labels when the team can't be found", () => {
-    const card = cardFor(undefined, undefined, new Map(), new Set(), new Set(), 99, "rivalry_statement");
+    const card = cardFor(
+      undefined,
+      undefined,
+      new Map(),
+      new Set(),
+      new Set(),
+      99,
+      "rivalry_statement",
+      "Zitat der Woche"
+    );
     expect(card.rosterId).toBe(99);
     expect(card.teamName).toBe("?");
     expect(card.managerName).toBe("?");
+  });
+
+  it("uses 'Zitat des Tages' for the pre-/post-draft special-event weeks", () => {
+    const card = cardFor(undefined, undefined, new Map(), new Set(), new Set(), 1, "media_day", "Zitat des Tages");
+    expect(card.badgeLabel).toBe("Zitat des Tages");
   });
 });
 
@@ -204,6 +228,14 @@ describe("computeEditionsWithCards", () => {
     const [edition] = computeEditionsWithCards(editions, teams, [], null, NOW);
     expect(edition.week).toBeNull();
   });
+
+  it("labels a pre-draft special-event edition's cards 'Zitat des Tages'", () => {
+    const editions: Edition[] = [
+      { revealAt: "2026-01-01T06:00:00Z", responses: [response({ id: "r1", rosterId: 1, week: -2 })] },
+    ];
+    const [edition] = computeEditionsWithCards(editions, teams, [], null, NOW);
+    expect(edition.cards.every((c) => c.badgeLabel === "Zitat des Tages")).toBe(true);
+  });
 });
 
 describe("computeLeaderboard", () => {
@@ -226,6 +258,7 @@ describe("computeLeaderboard", () => {
       likeCount: 0,
       likedByMe: false,
       isQuoteOfTheWeek,
+      badgeLabel: "Zitat der Woche",
     };
   }
 

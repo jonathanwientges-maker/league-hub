@@ -1,4 +1,3 @@
-import { MEDIA_CONFIG } from "../config";
 import { TEMPLATES, renderTemplate } from "../templates";
 import { hashSeed, mulberry32 } from "./rng";
 import { CATEGORIES, type MediaCategory } from "./categories";
@@ -32,13 +31,6 @@ export function assignQuestion(
   rosterId: number,
   previousCategoryId?: string
 ): AssignedQuestion {
-  if (ctx.upcomingWeek <= MEDIA_CONFIG.thresholds.seasonKickoffMaxWeek) {
-    const team = ctx.teams.get(rosterId);
-    return assignSeasonKickoffQuestion(ctx.season, ctx.upcomingWeek, rosterId, {
-      team: team?.teamName ?? "?",
-    });
-  }
-
   let eligible = CATEGORIES.map((category) => ({
     category,
     payload: category.appliesTo(ctx, rosterId),
@@ -69,28 +61,6 @@ export function assignQuestion(
     categoryId: chosen.category.id,
     templateIndex,
     question: renderTemplate(template, chosen.payload),
-  };
-}
-
-/**
- * The season_kickoff override assignQuestion falls back to before any real
- * week has been played — same deterministic scheme, single-template pool.
- */
-export function assignSeasonKickoffQuestion(
-  season: string,
-  week: number,
-  rosterId: number,
-  payload: Record<string, string | number>
-): AssignedQuestion {
-  const templates = TEMPLATES["season_kickoff"] ?? [];
-  const rng = mulberry32(hashSeed(`${season}-${week}-${rosterId}-season_kickoff`));
-  const templateIndex = templates.length > 0 ? Math.floor(rng() * templates.length) : 0;
-  const template = templates[templateIndex] ?? "";
-
-  return {
-    categoryId: "season_kickoff",
-    templateIndex,
-    question: renderTemplate(template, payload),
   };
 }
 

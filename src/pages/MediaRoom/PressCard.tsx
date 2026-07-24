@@ -2,6 +2,7 @@ import { useState } from "react";
 import clsx from "clsx";
 import { Card } from "../../components/common/Card";
 import { Avatar } from "../../components/common/Avatar";
+import { formatBerlinDateTime } from "../../media/berlinTime";
 import type { PressCardData } from "../../media/roomData";
 import styles from "./PressCard.module.css";
 
@@ -10,11 +11,12 @@ interface PressCardProps {
   rosterId: number | null;
   votingOpen: boolean;
   votingClosed: boolean;
+  votingCloseAt?: Date;
   readOnly: boolean;
   onToggleLike?: (card: PressCardData) => void;
 }
 
-export function PressCard({ card, rosterId, votingOpen, votingClosed, readOnly, onToggleLike }: PressCardProps) {
+export function PressCard({ card, rosterId, votingOpen, votingClosed, votingCloseAt, readOnly, onToggleLike }: PressCardProps) {
   const [pending, setPending] = useState(false);
   const isOwnCard = card.rosterId === rosterId;
   const canVote = !readOnly && !isOwnCard && votingOpen && card.responseId !== null;
@@ -37,7 +39,7 @@ export function PressCard({ card, rosterId, votingOpen, votingClosed, readOnly, 
           <span className={styles.teamName}>{card.teamName}</span>
           <span className={styles.managerName}>{card.managerName}</span>
         </div>
-        {card.isQuoteOfTheWeek && <span className={styles.badge}>📰 Zitat der Woche</span>}
+        {card.isQuoteOfTheWeek && <span className={styles.badge}>📰 {card.badgeLabel}</span>}
       </div>
 
       {card.question && <p className={styles.question}>{card.question}</p>}
@@ -59,7 +61,9 @@ export function PressCard({ card, rosterId, votingOpen, votingClosed, readOnly, 
             disabled={!votingOpen || card.responseId === null}
             title={
               !votingOpen && votingClosed
-                ? "Abstimmung beendet — Freitag 06:00 war Redaktionsschluss."
+                ? votingCloseAt
+                  ? `Abstimmung beendet — ${formatBerlinDateTime(votingCloseAt)} war Redaktionsschluss.`
+                  : "Abstimmung beendet."
                 : undefined
             }
           >
