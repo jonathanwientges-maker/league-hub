@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion, useReducedMotion } from "framer-motion";
-import { getUsers } from "../../api/sleeper";
+import { getRosters, getUsers } from "../../api/sleeper";
 import { LEAGUE_ID } from "../../config/release";
-import type { SleeperUser } from "../../api/types";
 import styles from "./RosterWall.module.css";
+
+interface FranchiseSlot {
+  rosterId: number;
+  name: string;
+  avatarId: string | null;
+}
 
 function initialsOf(name: string): string {
   const initials = name
@@ -19,7 +24,7 @@ function initialsOf(name: string): string {
 
 function AvatarCircle({ avatarId, name }: { avatarId: string | null; name: string }) {
   const [failed, setFailed] = useState(false);
-  const url = avatarId && !failed ? `https://sleepercdn.com/avatars/thumbs/${avatarId}` : null;
+  const url = avatarId && !failed ? `https://sleepercdn.com/avatars/${avatarId}` : null;
 
   if (url) {
     return (
@@ -41,6 +46,11 @@ function AvatarCircle({ avatarId, name }: { avatarId: string | null; name: strin
 
 export function RosterWall() {
   const shouldReduceMotion = useReducedMotion();
+  const rostersQuery = useQuery({
+    queryKey: ["gate", "rosters", LEAGUE_ID],
+    queryFn: () => getRosters(LEAGUE_ID),
+    staleTime: Infinity,
+  });
   const usersQuery = useQuery({
     queryKey: ["gate", "users", LEAGUE_ID],
     queryFn: () => getUsers(LEAGUE_ID),
@@ -49,32 +59,42 @@ export function RosterWall() {
 
   // Fails/loads silently — the page must look complete without this
   // section, and we never show a stuck spinner.
-  if (usersQuery.isError) return null;
-  const users: SleeperUser[] = usersQuery.data?.slice(0, 12) ?? [];
-  if (users.length === 0) return null;
+  if (rostersQuery.isError || usersQuery.isError) return null;
+  if (!rostersQuery.data || !usersQuery.data) return null;
+
+  // One slot per franchise (roster), resolved to its primary owner — not one
+  // slot per league member, which would show co-managers as extra/duplicate
+  // franchises instead of the actual manager.
+  const usersById = new Map(usersQuery.data.map((user) => [user.user_id, user]));
+  const franchises: FranchiseSlot[] = rostersQuery.data.slice(0, 12).map((roster) => {
+    const user = usersById.get(roster.owner_id);
+    return {
+      rosterId: roster.roster_id,
+      name: user?.metadata?.team_name || user?.display_name || "Unknown",
+      avatarId: user?.avatar ?? null,
+    };
+  });
+  if (franchises.length === 0) return null;
 
   return (
     <div className={styles.wrap}>
       <p className={styles.label}>12 FRANCHISES LOCKED IN</p>
       <ul className={styles.grid}>
-        {users.map((user, i) => {
-          const name = user.metadata?.team_name || user.display_name;
-          return (
-            <motion.li
-              key={user.user_id}
-              className={styles.slot}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: shouldReduceMotion ? 0 : i * 0.06,
-                duration: shouldReduceMotion ? 0 : 0.4,
-              }}
-            >
-              <AvatarCircle avatarId={user.avatar} name={name} />
-              <span className={styles.name}>{name}</span>
-            </motion.li>
-          );
-        })}
+        {franchises.map((franchise, i) => (
+          <motion.li
+            key={franchise.rosterId}
+            className={styles.slot}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: shouldReduceMotion ? 0 : i * 0.06,
+              duration: shouldReduceMotion ? 0 : 0.4,
+            }}
+          >
+            <AvatarCircle avatarId={franchise.avatarId} name={franchise.name} />
+            <span className={styles.name}>{franchise.name}</span>
+          </motion.li>
+        ))}
       </ul>
     </div>
   );

@@ -71,8 +71,8 @@ export function GatePage() {
             </p>
             <h1 className={styles.headline}>KICKOFF IS COMING</h1>
             <p className={styles.subline}>
-              One league. Twelve franchises. Every seed, every pick, every tiebreaker — finally
-              tracked in one place.
+              One league. Twelve franchises. The ultimate goal: Become immortal by building your
+              dynasty. Welcome to the League Hub of DoPE!
             </p>
 
             <Scoreboard parts={countdown.parts} releaseMs={releaseMs} />
