@@ -3,12 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import { motion, useReducedMotion } from "framer-motion";
 import { getRosters, getUsers } from "../../api/sleeper";
 import { LEAGUE_ID } from "../../config/release";
+import { resolveAvatarUrl } from "../../domain/team";
 import styles from "./RosterWall.module.css";
 
 interface FranchiseSlot {
   rosterId: number;
   name: string;
-  avatarId: string | null;
+  avatarUrl: string | null;
 }
 
 function initialsOf(name: string): string {
@@ -22,9 +23,9 @@ function initialsOf(name: string): string {
   return initials || "?";
 }
 
-function AvatarCircle({ avatarId, name }: { avatarId: string | null; name: string }) {
+function AvatarCircle({ avatarUrl, name }: { avatarUrl: string | null; name: string }) {
   const [failed, setFailed] = useState(false);
-  const url = avatarId && !failed ? `https://sleepercdn.com/avatars/${avatarId}` : null;
+  const url = avatarUrl && !failed ? avatarUrl : null;
 
   if (url) {
     return (
@@ -71,7 +72,7 @@ export function RosterWall() {
     return {
       rosterId: roster.roster_id,
       name: user?.metadata?.team_name || user?.display_name || "Unknown",
-      avatarId: user?.avatar ?? null,
+      avatarUrl: resolveAvatarUrl(user),
     };
   });
   if (franchises.length === 0) return null;
@@ -91,7 +92,7 @@ export function RosterWall() {
               duration: shouldReduceMotion ? 0 : 0.4,
             }}
           >
-            <AvatarCircle avatarId={franchise.avatarId} name={franchise.name} />
+            <AvatarCircle avatarUrl={franchise.avatarUrl} name={franchise.name} />
             <span className={styles.name}>{franchise.name}</span>
           </motion.li>
         ))}

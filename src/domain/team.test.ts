@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { assembleTeams } from "./team";
+import { assembleTeams, resolveAvatarUrl } from "./team";
 import type { SleeperRoster, SleeperUser } from "../api/types";
 
 function roster(overrides: Partial<SleeperRoster>): SleeperRoster {
@@ -64,5 +64,25 @@ describe("assembleTeams", () => {
     const [team] = assembleTeams([r], [user({})], new Map());
     expect(team.pointsFor).toBeCloseTo(412.56);
     expect(team.pointsAgainst).toBeCloseTo(380.12);
+  });
+});
+
+describe("resolveAvatarUrl", () => {
+  it("prefers the league-specific metadata.avatar over the account-level avatar hash", () => {
+    const u = user({ avatar: "generic-hash", metadata: { avatar: "https://sleepercdn.com/uploads/custom.jpg" } });
+    expect(resolveAvatarUrl(u)).toBe("https://sleepercdn.com/uploads/custom.jpg");
+  });
+
+  it("falls back to the account-level avatar hash when no league-specific picture is set", () => {
+    const u = user({ avatar: "generic-hash", metadata: null });
+    expect(resolveAvatarUrl(u)).toBe("https://sleepercdn.com/avatars/generic-hash");
+  });
+
+  it("returns null when neither is set", () => {
+    expect(resolveAvatarUrl(user({ avatar: null, metadata: null }))).toBeNull();
+  });
+
+  it("returns null for an undefined user", () => {
+    expect(resolveAvatarUrl(undefined)).toBeNull();
   });
 });

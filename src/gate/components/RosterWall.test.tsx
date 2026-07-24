@@ -60,6 +60,26 @@ describe("RosterWall", () => {
     expect(container.textContent).not.toContain("Co Manager");
   });
 
+  it("uses the league-specific metadata.avatar picture over the account-level avatar hash", async () => {
+    vi.spyOn(sleeperApi, "getRosters").mockResolvedValue([roster({ roster_id: 1, owner_id: "u1" })]);
+    vi.spyOn(sleeperApi, "getUsers").mockResolvedValue([
+      user({
+        user_id: "u1",
+        display_name: "Edelman",
+        avatar: "generic-hash",
+        metadata: { team_name: "EdelmannsEmpire", avatar: "https://sleepercdn.com/uploads/custom.jpg" },
+      }),
+    ]);
+
+    const { container } = renderWithClient(<RosterWall />);
+    const img = await waitFor(() => {
+      const el = container.querySelector("img");
+      if (!el) throw new Error("not rendered yet");
+      return el;
+    });
+    expect(img.getAttribute("src")).toBe("https://sleepercdn.com/uploads/custom.jpg");
+  });
+
   it("falls back to an initials circle when an avatar image fails to load", async () => {
     vi.spyOn(sleeperApi, "getRosters").mockResolvedValue([roster({ roster_id: 1, owner_id: "u1" })]);
     vi.spyOn(sleeperApi, "getUsers").mockResolvedValue([

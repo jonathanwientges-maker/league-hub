@@ -14,6 +14,18 @@ function decimalPoints(whole: number | undefined, decimal: number | undefined): 
   return (whole ?? 0) + (decimal ?? 0) / 100;
 }
 
+/**
+ * A user's account-level `avatar` hash applies to every league they're in.
+ * Sleeper also lets a user pick a picture just for one league, stored as a
+ * full URL in that league's `metadata.avatar` — which must win when present,
+ * or a per-league custom pic never shows up anywhere in the app.
+ */
+export function resolveAvatarUrl(user: SleeperUser | undefined): string | null {
+  const leagueAvatar = user?.metadata?.avatar;
+  if (typeof leagueAvatar === "string" && leagueAvatar.length > 0) return leagueAvatar;
+  return user?.avatar ? `https://sleepercdn.com/avatars/${user.avatar}` : null;
+}
+
 /** Builds the unified Team model from raw Sleeper rosters/users and derived weekly results. */
 export function assembleTeams(
   rosters: SleeperRoster[],
@@ -43,9 +55,7 @@ export function assembleTeams(
       ownerId: roster.owner_id,
       displayName: user?.display_name ?? "Unknown",
       teamName: user?.metadata?.team_name ?? user?.display_name ?? "Unknown",
-      avatarUrl: user?.avatar
-        ? `https://sleepercdn.com/avatars/${user.avatar}`
-        : null,
+      avatarUrl: resolveAvatarUrl(user),
       division: roster.settings.division ?? 0,
       wins: roster.settings.wins,
       losses: roster.settings.losses,

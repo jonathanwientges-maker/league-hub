@@ -51,6 +51,8 @@ export interface SleeperUser {
   avatar: string | null;
   metadata: {
     team_name?: string;
+    /** A full URL — the user's picture just for this league, distinct from the account-level `avatar` hash above. */
+    avatar?: string;
     [key: string]: unknown;
   } | null;
   is_owner?: boolean | null;
