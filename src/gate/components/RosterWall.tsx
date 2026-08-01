@@ -47,15 +47,17 @@ function AvatarCircle({ avatarUrl, name }: { avatarUrl: string | null; name: str
 
 export function RosterWall() {
   const shouldReduceMotion = useReducedMotion();
+  // No staleTime override: managers keep changing their pictures right up
+  // to launch, and this page is often left open/backgrounded for days
+  // rather than hard-reloaded, so every reopen/refocus should fetch fresh
+  // rosters/users instead of showing whatever was cached on first load.
   const rostersQuery = useQuery({
     queryKey: ["gate", "rosters", LEAGUE_ID],
     queryFn: () => getRosters(LEAGUE_ID),
-    staleTime: Infinity,
   });
   const usersQuery = useQuery({
     queryKey: ["gate", "users", LEAGUE_ID],
     queryFn: () => getUsers(LEAGUE_ID),
-    staleTime: Infinity,
   });
 
   // Fails/loads silently — the page must look complete without this

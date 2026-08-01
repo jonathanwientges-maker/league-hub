@@ -33,7 +33,9 @@ export function GatePage() {
   const leagueQuery = useQuery({
     queryKey: ["gate", "league", LEAGUE_ID],
     queryFn: () => getLeague(LEAGUE_ID),
-    staleTime: Infinity,
+    // No staleTime override: this page is often left open (or added to a
+    // phone's home screen) for days before launch, so every reopen/refocus
+    // — not just a hard reload — should pick up fresh league data.
     enabled: !LEAGUE_NAME,
   });
   const leagueName = LEAGUE_NAME || leagueQuery.data?.name || "";
