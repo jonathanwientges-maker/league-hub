@@ -3,7 +3,8 @@ import { useQuery } from "@tanstack/react-query";
 import { motion, useReducedMotion } from "framer-motion";
 import { getRosters, getUsers } from "../../api/sleeper";
 import { LEAGUE_ID } from "../../config/release";
-import { resolveAvatarUrl } from "../../domain/team";
+import { enrichUsersWithLiveAvatars, resolveAvatarUrl } from "../../domain/team";
+import { useLiveUserAvatars } from "../../hooks/useLiveAvatars";
 import styles from "./RosterWall.module.css";
 
 interface FranchiseSlot {
@@ -59,6 +60,9 @@ export function RosterWall() {
     queryKey: ["gate", "users", LEAGUE_ID],
     queryFn: () => getUsers(LEAGUE_ID),
   });
+  // Swap each member's stale league-snapshot avatar for their live account
+  // picture, so a manager changing their photo before launch shows up here.
+  const liveAvatarById = useLiveUserAvatars(usersQuery.data);
 
   // Fails/loads silently — the page must look complete without this
   // section, and we never show a stuck spinner.
@@ -68,7 +72,8 @@ export function RosterWall() {
   // One slot per franchise (roster), resolved to its primary owner — not one
   // slot per league member, which would show co-managers as extra/duplicate
   // franchises instead of the actual manager.
-  const usersById = new Map(usersQuery.data.map((user) => [user.user_id, user]));
+  const enrichedUsers = enrichUsersWithLiveAvatars(usersQuery.data, liveAvatarById);
+  const usersById = new Map(enrichedUsers.map((user) => [user.user_id, user]));
   const franchises: FranchiseSlot[] = rostersQuery.data.slice(0, 12).map((roster) => {
     const user = usersById.get(roster.owner_id);
     return {

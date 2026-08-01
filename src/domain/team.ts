@@ -26,6 +26,23 @@ export function resolveAvatarUrl(user: SleeperUser | undefined): string | null {
   return user?.avatar ? `https://sleepercdn.com/avatars/${user.avatar}` : null;
 }
 
+/**
+ * Replaces each user's stale league-snapshot `avatar` with the live account
+ * avatar hash fetched from /user/{id}, when one is available. Users who set a
+ * league-specific team picture (metadata.avatar) are left untouched — that
+ * upload already wins in resolveAvatarUrl. Falls through unchanged for any
+ * user whose live hash hasn't loaded yet.
+ */
+export function enrichUsersWithLiveAvatars(
+  users: SleeperUser[],
+  liveAvatarById: Map<string, string | null>
+): SleeperUser[] {
+  return users.map((user) => {
+    const fresh = liveAvatarById.get(user.user_id);
+    return fresh ? { ...user, avatar: fresh } : user;
+  });
+}
+
 /** Builds the unified Team model from raw Sleeper rosters/users and derived weekly results. */
 export function assembleTeams(
   rosters: SleeperRoster[],

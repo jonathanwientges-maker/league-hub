@@ -3,7 +3,7 @@ import { useQueries, useQuery } from "@tanstack/react-query";
 import { getMatchups } from "../../api/sleeper";
 import type { SleeperMatchup, SleeperPlayer, SleeperRoster } from "../../api/types";
 import type { Team } from "../../domain/types";
-import { assembleTeams } from "../../domain/team";
+import { assembleTeams, enrichUsersWithLiveAvatars } from "../../domain/team";
 import { buildAllWeekResults, buildWeekResultsByRoster, groupMatchupsByMatchupId } from "../../domain/weeklyResults";
 import { buildH2hMap } from "../../domain/h2h";
 import { rankDivisions } from "../../domain/standings";
@@ -12,6 +12,7 @@ import { MEDIA_CONFIG } from "../config";
 import { useLeague } from "../../hooks/useLeague";
 import { useRosters } from "../../hooks/useRosters";
 import { useUsers } from "../../hooks/useUsers";
+import { useLiveUserAvatars } from "../../hooks/useLiveAvatars";
 import { usePlayers } from "../../hooks/usePlayers";
 import { useNflState } from "../../hooks/useNflState";
 import byeWeeksBySeason from "../../../data/nfl-bye-weeks.json";
@@ -417,6 +418,7 @@ export function useWeekContext(leagueId: string) {
   const leagueQuery = useLeague(leagueId);
   const rostersQuery = useRosters(leagueId);
   const usersQuery = useUsers(leagueId);
+  const liveAvatarById = useLiveUserAvatars(usersQuery.data);
   const playersQuery = usePlayers();
   const nflStateQuery = useNflState();
 
@@ -474,7 +476,11 @@ export function useWeekContext(leagueId: string) {
     });
 
     const weekResultsByRoster = buildWeekResultsByRoster(matchupsByWeek);
-    const teams = assembleTeams(rostersQuery.data, usersQuery.data, weekResultsByRoster);
+    const teams = assembleTeams(
+      rostersQuery.data,
+      enrichUsersWithLiveAvatars(usersQuery.data, liveAvatarById),
+      weekResultsByRoster
+    );
     const byeWeeks =
       (byeWeeksBySeason as Record<string, Record<string, number>>)[MEDIA_CONFIG.season] ?? {};
 

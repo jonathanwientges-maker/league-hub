@@ -1,10 +1,11 @@
 import { useLeague } from "./useLeague";
 import { useRosters } from "./useRosters";
 import { useUsers } from "./useUsers";
+import { useLiveUserAvatars } from "./useLiveAvatars";
 import { useCurrentWeek } from "./useCurrentWeek";
 import { usePlayers } from "./usePlayers";
 import { useRegularSeasonMatchups } from "./useMatchups";
-import { assembleTeams } from "../domain/team";
+import { assembleTeams, enrichUsersWithLiveAvatars } from "../domain/team";
 import { buildAllWeekResults, buildWeekResultsByRoster } from "../domain/weeklyResults";
 import { buildH2hMap } from "../domain/h2h";
 import {
@@ -33,6 +34,7 @@ export function useTeams(leagueId: string) {
   const leagueQuery = useLeague(leagueId);
   const rostersQuery = useRosters(leagueId);
   const usersQuery = useUsers(leagueId);
+  const liveAvatarById = useLiveUserAvatars(usersQuery.data);
   const { currentWeek, isLoading: currentWeekLoading, error: currentWeekError } = useCurrentWeek(leagueId);
   const playersQuery = usePlayers();
 
@@ -82,7 +84,7 @@ export function useTeams(leagueId: string) {
     const h2hMap = buildH2hMap(allWeekResults);
     const baseTeams = assembleTeams(
       rostersQuery.data,
-      usersQuery.data,
+      enrichUsersWithLiveAvatars(usersQuery.data, liveAvatarById),
       weekResultsByRoster
     );
 

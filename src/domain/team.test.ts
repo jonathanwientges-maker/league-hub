@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { assembleTeams, resolveAvatarUrl } from "./team";
+import { assembleTeams, enrichUsersWithLiveAvatars, resolveAvatarUrl } from "./team";
 import type { SleeperRoster, SleeperUser } from "../api/types";
 
 function roster(overrides: Partial<SleeperRoster>): SleeperRoster {
@@ -84,5 +84,39 @@ describe("resolveAvatarUrl", () => {
 
   it("returns null for an undefined user", () => {
     expect(resolveAvatarUrl(undefined)).toBeNull();
+  });
+});
+
+describe("enrichUsersWithLiveAvatars", () => {
+  it("replaces the stale league-snapshot avatar with the live account avatar", () => {
+    const users = [user({ user_id: "u1", avatar: "stale-hash" })];
+    const enriched = enrichUsersWithLiveAvatars(users, new Map([["u1", "fresh-hash"]]));
+    expect(enriched[0].avatar).toBe("fresh-hash");
+  });
+
+  it("leaves a user unchanged when no live avatar has loaded yet", () => {
+    const users = [user({ user_id: "u1", avatar: "stale-hash" })];
+    const enriched = enrichUsersWithLiveAvatars(users, new Map());
+    expect(enriched[0].avatar).toBe("stale-hash");
+  });
+
+  it("keeps the stale avatar when the live fetch resolved to no picture (null)", () => {
+    const users = [user({ user_id: "u1", avatar: "stale-hash" })];
+    const enriched = enrichUsersWithLiveAvatars(users, new Map([["u1", null]]));
+    expect(enriched[0].avatar).toBe("stale-hash");
+  });
+
+  it("does not mutate the input user objects", () => {
+    const original = user({ user_id: "u1", avatar: "stale-hash" });
+    enrichUsersWithLiveAvatars([original], new Map([["u1", "fresh-hash"]]));
+    expect(original.avatar).toBe("stale-hash");
+  });
+
+  it("resolveAvatarUrl still prefers a league-specific team picture over an enriched account avatar", () => {
+    const users = [
+      user({ user_id: "u1", avatar: "stale-hash", metadata: { avatar: "https://sleepercdn.com/uploads/team.jpg" } }),
+    ];
+    const [enriched] = enrichUsersWithLiveAvatars(users, new Map([["u1", "fresh-hash"]]));
+    expect(resolveAvatarUrl(enriched)).toBe("https://sleepercdn.com/uploads/team.jpg");
   });
 });

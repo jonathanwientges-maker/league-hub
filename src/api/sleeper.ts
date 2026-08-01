@@ -32,6 +32,16 @@ export function getUsers(leagueId: string): Promise<SleeperUser[]> {
   return fetchJson<SleeperUser[]>(`/league/${leagueId}/users`);
 }
 
+/**
+ * The GLOBAL user object. Its `avatar` is the manager's live account
+ * picture — unlike the same field on /league/{id}/users, which is a stale
+ * snapshot frozen near when they joined and never refreshed afterward. This
+ * is the source the Sleeper app itself renders.
+ */
+export function getUser(userId: string): Promise<SleeperUser> {
+  return fetchJson<SleeperUser>(`/user/${userId}`);
+}
+
 export function getMatchups(
   leagueId: string,
   week: number

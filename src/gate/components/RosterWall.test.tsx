@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi, beforeEach } from "vitest";
 import { render, waitFor, fireEvent } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RosterWall } from "./RosterWall";
@@ -6,7 +6,7 @@ import * as sleeperApi from "../../api/sleeper";
 import type { SleeperRoster, SleeperUser } from "../../api/types";
 
 function renderWithClient(ui: React.ReactElement) {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   return render(<QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>);
 }
 
@@ -33,6 +33,12 @@ function roster(overrides: Partial<SleeperRoster>): SleeperRoster {
 }
 
 describe("RosterWall", () => {
+  // By default the live per-user lookup returns no picture, so components fall
+  // back to the league-snapshot avatar — individual tests override this.
+  beforeEach(() => {
+    vi.spyOn(sleeperApi, "getUser").mockImplementation(async (id: string) => user({ user_id: id, avatar: null }));
+  });
+
   it("renders team names for successfully fetched rosters", async () => {
     vi.spyOn(sleeperApi, "getRosters").mockResolvedValue([
       roster({ roster_id: 1, owner_id: "u1" }),
@@ -78,6 +84,22 @@ describe("RosterWall", () => {
       return el;
     });
     expect(img.getAttribute("src")).toBe("https://sleepercdn.com/uploads/custom.jpg");
+  });
+
+  it("uses the live account avatar over the stale league-snapshot avatar", async () => {
+    vi.spyOn(sleeperApi, "getRosters").mockResolvedValue([roster({ roster_id: 1, owner_id: "u1" })]);
+    vi.spyOn(sleeperApi, "getUsers").mockResolvedValue([
+      user({ user_id: "u1", display_name: "Noah", avatar: "stale-default-hash" }),
+    ]);
+    // The manager changed their profile picture; the live /user/{id} endpoint
+    // has the new hash while the league-users snapshot is still the old one.
+    vi.spyOn(sleeperApi, "getUser").mockResolvedValue(user({ user_id: "u1", avatar: "fresh-hash" }));
+
+    const { container } = renderWithClient(<RosterWall />);
+    await waitFor(() => {
+      const img = container.querySelector("img");
+      expect(img?.getAttribute("src")).toBe("https://sleepercdn.com/avatars/fresh-hash");
+    });
   });
 
   it("falls back to an initials circle when an avatar image fails to load", async () => {
