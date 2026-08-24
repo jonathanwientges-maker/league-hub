@@ -31,7 +31,8 @@ beforeEach(() => {
 describe("GatePage state machine", () => {
   it("shows the counting screen when now < RELEASE_DATE_UTC", async () => {
     vi.doMock("../config/release", () => ({
-      RELEASE_DATE_UTC: "2026-08-22T23:00:00Z",
+      // Relative to now so the test never rots once the real launch date passes.
+      RELEASE_DATE_UTC: new Date(Date.now() + 3 * 86400000).toISOString(), // 3 days out
       CAMPAIGN_START_UTC: "2026-07-17T00:00:00Z",
       LEAGUE_ID: "L1",
       LEAGUE_NAME: "",

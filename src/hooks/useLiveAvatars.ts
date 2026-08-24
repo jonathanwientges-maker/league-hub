@@ -11,15 +11,15 @@ const FIVE_MINUTES_MS = 5 * 60 * 1000;
  * account avatar lives on the per-user /user/{id} endpoint (what the Sleeper
  * app itself renders).
  *
- * This fetches that live hash for every member who has NOT set a
- * league-specific team picture (metadata.avatar) — those already win over
- * the account avatar in resolveAvatarUrl, so there's no reason to spend a
- * request refreshing them. Returns a Map of user_id -> fresh avatar hash;
- * entries only appear once their /user/{id} fetch has resolved, so callers
- * fall back to the stale value until then (progressive refresh, no blocking).
+ * This fetches that live hash for every member, since the account avatar is
+ * what we render everywhere (we intentionally ignore the league team picture,
+ * which Sleeper propagates too slowly). Returns a Map of user_id -> fresh
+ * avatar hash; entries only appear once their /user/{id} fetch has resolved,
+ * so callers fall back to the stale value until then (progressive refresh, no
+ * blocking).
  */
 export function useLiveUserAvatars(users: SleeperUser[] | undefined): Map<string, string | null> {
-  const ids = (users ?? []).filter((u) => !u.metadata?.avatar).map((u) => u.user_id);
+  const ids = (users ?? []).map((u) => u.user_id);
 
   const queries = useQueries({
     queries: ids.map((id) => ({

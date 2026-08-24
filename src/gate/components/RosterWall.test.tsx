@@ -66,24 +66,25 @@ describe("RosterWall", () => {
     expect(container.textContent).not.toContain("Co Manager");
   });
 
-  it("uses the league-specific metadata.avatar picture over the account-level avatar hash", async () => {
+  it("shows the manager's account avatar even when a league-specific team picture is set", async () => {
     vi.spyOn(sleeperApi, "getRosters").mockResolvedValue([roster({ roster_id: 1, owner_id: "u1" })]);
     vi.spyOn(sleeperApi, "getUsers").mockResolvedValue([
       user({
         user_id: "u1",
         display_name: "Edelman",
-        avatar: "generic-hash",
+        avatar: "stale-hash",
+        // A team picture is set, but we intentionally ignore it — Sleeper
+        // propagates team-picture changes too slowly to be reliable.
         metadata: { team_name: "EdelmannsEmpire", avatar: "https://sleepercdn.com/uploads/custom.jpg" },
       }),
     ]);
+    vi.spyOn(sleeperApi, "getUser").mockResolvedValue(user({ user_id: "u1", avatar: "fresh-account-hash" }));
 
     const { container } = renderWithClient(<RosterWall />);
-    const img = await waitFor(() => {
-      const el = container.querySelector("img");
-      if (!el) throw new Error("not rendered yet");
-      return el;
+    await waitFor(() => {
+      const img = container.querySelector("img");
+      expect(img?.getAttribute("src")).toBe("https://sleepercdn.com/avatars/fresh-account-hash");
     });
-    expect(img.getAttribute("src")).toBe("https://sleepercdn.com/uploads/custom.jpg");
   });
 
   it("uses the live account avatar over the stale league-snapshot avatar", async () => {

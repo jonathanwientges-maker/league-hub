@@ -68,12 +68,12 @@ describe("assembleTeams", () => {
 });
 
 describe("resolveAvatarUrl", () => {
-  it("prefers the league-specific metadata.avatar over the account-level avatar hash", () => {
+  it("uses the account-level avatar even when a league-specific team picture is set", () => {
     const u = user({ avatar: "generic-hash", metadata: { avatar: "https://sleepercdn.com/uploads/custom.jpg" } });
-    expect(resolveAvatarUrl(u)).toBe("https://sleepercdn.com/uploads/custom.jpg");
+    expect(resolveAvatarUrl(u)).toBe("https://sleepercdn.com/avatars/generic-hash");
   });
 
-  it("falls back to the account-level avatar hash when no league-specific picture is set", () => {
+  it("uses the account-level avatar hash when no team picture is set", () => {
     const u = user({ avatar: "generic-hash", metadata: null });
     expect(resolveAvatarUrl(u)).toBe("https://sleepercdn.com/avatars/generic-hash");
   });
@@ -112,11 +112,11 @@ describe("enrichUsersWithLiveAvatars", () => {
     expect(original.avatar).toBe("stale-hash");
   });
 
-  it("resolveAvatarUrl still prefers a league-specific team picture over an enriched account avatar", () => {
+  it("resolveAvatarUrl uses the enriched account avatar even when a team picture is set", () => {
     const users = [
       user({ user_id: "u1", avatar: "stale-hash", metadata: { avatar: "https://sleepercdn.com/uploads/team.jpg" } }),
     ];
     const [enriched] = enrichUsersWithLiveAvatars(users, new Map([["u1", "fresh-hash"]]));
-    expect(resolveAvatarUrl(enriched)).toBe("https://sleepercdn.com/uploads/team.jpg");
+    expect(resolveAvatarUrl(enriched)).toBe("https://sleepercdn.com/avatars/fresh-hash");
   });
 });

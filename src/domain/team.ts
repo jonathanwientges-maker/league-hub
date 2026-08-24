@@ -15,23 +15,23 @@ function decimalPoints(whole: number | undefined, decimal: number | undefined): 
 }
 
 /**
- * A user's account-level `avatar` hash applies to every league they're in.
- * Sleeper also lets a user pick a picture just for one league, stored as a
- * full URL in that league's `metadata.avatar` — which must win when present,
- * or a per-league custom pic never shows up anywhere in the app.
+ * We always show the manager's account-level avatar (their Sleeper profile
+ * picture) — NOT the league-specific team picture (metadata.avatar). Sleeper's
+ * public /league/{id}/users endpoint serves the team picture from a backend
+ * cache that can lag hours behind a manager's actual change (confirmed even
+ * when hitting Sleeper's origin directly, bypassing every CDN/client cache),
+ * whereas the account avatar — fetched live from /user/{id} and swapped in via
+ * enrichUsersWithLiveAvatars — updates promptly. So the account avatar is the
+ * reliable, fast-updating source and the one we render everywhere.
  */
 export function resolveAvatarUrl(user: SleeperUser | undefined): string | null {
-  const leagueAvatar = user?.metadata?.avatar;
-  if (typeof leagueAvatar === "string" && leagueAvatar.length > 0) return leagueAvatar;
   return user?.avatar ? `https://sleepercdn.com/avatars/${user.avatar}` : null;
 }
 
 /**
  * Replaces each user's stale league-snapshot `avatar` with the live account
- * avatar hash fetched from /user/{id}, when one is available. Users who set a
- * league-specific team picture (metadata.avatar) are left untouched — that
- * upload already wins in resolveAvatarUrl. Falls through unchanged for any
- * user whose live hash hasn't loaded yet.
+ * avatar hash fetched from /user/{id}, when one is available. Falls through
+ * unchanged for any user whose live hash hasn't loaded yet.
  */
 export function enrichUsersWithLiveAvatars(
   users: SleeperUser[],
