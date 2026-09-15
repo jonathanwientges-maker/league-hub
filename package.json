@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "push:send": "node --env-file=.env.local --import tsx scripts/send-push.ts"
   },
   "dependencies": {
     "@fontsource/archivo-black": "^5.2.8",
@@ -33,8 +34,10 @@
     "oxlint": "^1.71.0",
     "satori": "^0.28.0",
     "sharp": "^0.35.3",
+    "tsx": "^4.23.13",
     "typescript": "~6.0.2",
     "vite": "^8.1.1",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.10",
+    "web-push": "^3.6.7"
   }
 }

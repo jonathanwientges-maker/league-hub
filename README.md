@@ -54,6 +54,27 @@ Until `RELEASE_DATE_UTC` (in `src/config/release.ts`), the site shows a cinemati
 - **No redeploy needed on launch day.** Since the gate/app choice is just a clock comparison against a constant, the same deployed build automatically starts serving the real app the moment `RELEASE_DATE_UTC` passes. A visitor with the countdown page open when it hits zero gets a "We Are Live" screen with an "Enter the league" button that reloads the page.
 - To regenerate the OG share image / app icons after a design change: `node scripts/generate-gate-assets.mjs` (uses `satori` + `sharp`, outputs to `public/`).
 
+## Push notifications
+
+Managers can opt in (Media Room footer, "🔔 Benachrichtigungen aktivieren") to a
+Web Push for the weekly Media Day cycle: presser opens (Wed 06:00 Berlin), a
+last-call nudge to anyone who hasn't submitted yet (Wed 18:00), and the reveal
+(Thu 06:00). `public/sw.js` is a push-only service worker; `src/push/` holds
+the client-side subscribe/unsubscribe flow (Supabase `push_subscriptions`
+table via `security definer` RPCs — the anon key can never read subscriptions
+directly); `scripts/send-push.ts` is the actual sender, run on a schedule by
+`.github/workflows/push-notifications.yml`.
+
+- **Never regenerate the VAPID keypair** — every existing subscription on
+  every manager's phone dies instantly and they'd all need to re-opt-in.
+- Secrets: `.env.local` (local dev + running the sender by hand) and the
+  matching GitHub Actions secrets (`SUPABASE_SERVICE_ROLE_KEY`,
+  `VAPID_PRIVATE_KEY`, etc. — the sender needs the service role key because
+  `push_subscriptions` has no RLS policy the anon key can use).
+- To send a test push to just your own device:
+  `PUSH_FORCE=1 PUSH_EVENT=media_day_open PUSH_ROSTER=<your roster id> npm run push:send`
+  (`PUSH_FORCE=1` skips the once-per-week dedupe log, so it's safe to repeat).
+
 ## Manual QA checklist
 
 Run through this after any change that touches layout, data-fetching, or the season/rules branching — `npm run build` and `npm test` catch type errors and logic regressions, not layout breaks or a blank screen from a bad league ID:

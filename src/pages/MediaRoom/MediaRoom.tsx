@@ -6,6 +6,7 @@ import { phaseFor } from "../../media/schedule";
 import { Pressekonferenz } from "./Pressekonferenz";
 import { Pressespiegel } from "./Pressespiegel";
 import { Altpapier } from "./Altpapier";
+import { NotificationToggle } from "./NotificationToggle";
 import styles from "./MediaRoom.module.css";
 
 type Tab = "pressekonferenz" | "pressespiegel" | "altpapier";
@@ -46,6 +47,7 @@ export function MediaRoom() {
 
       {rosterId !== null && (
         <div className={styles.footer}>
+          <NotificationToggle rosterId={rosterId} />
           <button type="button" className={styles.switchTeam} onClick={clearIdentity}>
             Team wechseln
           </button>

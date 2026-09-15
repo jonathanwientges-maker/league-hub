@@ -1,0 +1,47 @@
+# Sends the Media Day push notifications. Cron is UTC and Berlin switches
+# between UTC+2 (summer) and UTC+1 (winter), so each event fires at both
+# candidate hours; scripts/send-push.ts checks the Berlin wall-clock hour and
+# the push_sends dedupe table, so the wrong slot is a no-op.
+name: push-notifications
+on:
+  schedule:
+    - cron: '0 4,5 * * WED'    # media_day_open      — Wed 06:00 Berlin
+    - cron: '0 16,17 * * WED'  # media_day_last_call — Wed 18:00 Berlin
+    - cron: '0 4,5 * * THU'    # reveal              — Thu 06:00 Berlin
+  workflow_dispatch:
+    inputs:
+      event:
+        description: 'Force an event: media_day_open | media_day_last_call | reveal'
+        required: false
+      roster:
+        description: 'Only send to this roster_id (testing)'
+        required: false
+      force:
+        description: 'Skip dedupe + season gate (use with roster for tests)'
+        type: boolean
+        default: false
+      dry_run:
+        description: 'Log only, send nothing'
+        type: boolean
+        default: false
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/send-push.ts
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          PUSH_EVENT: ${{ inputs.event }}
+          PUSH_ROSTER: ${{ inputs.roster }}
+          PUSH_FORCE: ${{ inputs.force == true && '1' || '' }}
+          PUSH_DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
