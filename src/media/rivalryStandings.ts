@@ -1,5 +1,6 @@
 import type { Team } from "../domain/types";
 import type { RivalEntry } from "./rivals";
+import { isWeekFinal } from "../domain/potentialPoints";
 
 export interface RivalryRecord {
   rosterId: number;
@@ -34,13 +35,17 @@ function emptyRecord(rosterId: number): RivalryRecord {
  * Season-long rivalry win/loss tracking, aggregated straight from each
  * team's already-computed weeklyScores (no separate matchup fetch needed —
  * useTeams already covers the whole regular season). Regular season only,
- * same rule as getRivalryGames(); one-sided rivalry picks count exactly the
- * same as mutual ones, matching detection everywhere else in the app.
+ * and only weeks that have actually finished (see isWeekFinal) — Sleeper
+ * returns a 0-0 placeholder matchup for future weeks that would otherwise
+ * be misread as a genuine tie. Same rule as getRivalryGames(); one-sided
+ * rivalry picks count exactly the same as mutual ones, matching detection
+ * everywhere else in the app.
  */
 export function computeRivalryStandings(
   teams: Team[],
   entries: RivalEntry[],
-  playoffWeekStart: number
+  playoffWeekStart: number,
+  currentWeek: number
 ): { records: Map<number, RivalryRecord>; gameLog: RivalryGameLogEntry[] } {
   const pointsByRosterWeek = new Map<string, number>();
   for (const team of teams) {
@@ -60,6 +65,7 @@ export function computeRivalryStandings(
     for (const w of team.weeklyScores) {
       if (w.opponentRosterId === null || w.result === null) continue;
       if (w.week >= playoffWeekStart) continue;
+      if (!isWeekFinal(w.week, currentWeek)) continue;
 
       const { isRivalry, mutual } = rivalryPairing(entries, team.rosterId, w.opponentRosterId);
       if (!isRivalry) continue;

@@ -20,9 +20,10 @@ export function useRivalryStandings(leagueId: string) {
 
   const teams = teamsResult.data?.teams ?? [];
   const playoffWeekStart = teamsResult.data?.playoffWeekStart ?? LEAGUE_CONFIG.regularSeasonWeeks + 1;
+  const currentWeek = teamsResult.data?.currentWeek ?? 1;
   const entries = (rivalsQuery.data ?? []).map((r) => ({ rosterId: r.rosterId, rivals: r.rivalRosterIds }));
 
-  const { records, gameLog } = computeRivalryStandings(teams, entries, playoffWeekStart);
+  const { records, gameLog } = computeRivalryStandings(teams, entries, playoffWeekStart, currentWeek);
   const { ranking, lambs } = buildRivalryRanking(teams, records);
 
   return {

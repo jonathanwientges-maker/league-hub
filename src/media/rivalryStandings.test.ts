@@ -34,6 +34,7 @@ function team(overrides: Partial<Team> = {}): Team {
 }
 
 const PLAYOFF_WEEK_START = 15;
+const CURRENT_WEEK = 16; // past every week used in these fixtures, so isWeekFinal() never excludes them
 
 describe("computeRivalryStandings", () => {
   it("tallies wins/losses/points only for weeks played against a rival", () => {
@@ -57,7 +58,7 @@ describe("computeRivalryStandings", () => {
     });
 
     const entries: RivalEntry[] = [{ rosterId: 1, rivals: [2] }];
-    const { records } = computeRivalryStandings([teamA, teamB, teamC], entries, PLAYOFF_WEEK_START);
+    const { records } = computeRivalryStandings([teamA, teamB, teamC], entries, PLAYOFF_WEEK_START, CURRENT_WEEK);
 
     expect(records.get(1)).toMatchObject({ wins: 1, losses: 0, ties: 0, gamesPlayed: 1, pointsFor: 120, pointsAgainst: 95 });
     expect(records.get(2)).toMatchObject({ wins: 0, losses: 1, ties: 0, gamesPlayed: 1 });
@@ -75,7 +76,7 @@ describe("computeRivalryStandings", () => {
     });
     // Only roster 1 picked roster 2 — one-sided.
     const entries: RivalEntry[] = [{ rosterId: 1, rivals: [2] }];
-    const { records, gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START);
+    const { records, gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START, CURRENT_WEEK);
 
     expect(records.get(1)?.gamesPlayed).toBe(1);
     expect(records.get(2)?.gamesPlayed).toBe(1);
@@ -96,7 +97,7 @@ describe("computeRivalryStandings", () => {
       { rosterId: 1, rivals: [2] },
       { rosterId: 2, rivals: [1] },
     ];
-    const { records, gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START);
+    const { records, gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START, CURRENT_WEEK);
 
     expect(records.get(1)).toMatchObject({ wins: 0, losses: 0, ties: 1, gamesPlayed: 1 });
     expect(gameLog[0].mutual).toBe(true);
@@ -112,7 +113,7 @@ describe("computeRivalryStandings", () => {
       weeklyScores: [score({ week: 15, actualPoints: 80, opponentRosterId: 1, result: "L" })],
     });
     const entries: RivalEntry[] = [{ rosterId: 1, rivals: [2] }];
-    const { records, gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START);
+    const { records, gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START, CURRENT_WEEK);
 
     expect(records.get(1)?.gamesPlayed).toBe(0);
     expect(gameLog).toHaveLength(0);
@@ -124,7 +125,47 @@ describe("computeRivalryStandings", () => {
       weeklyScores: [score({ week: 1, actualPoints: 100, opponentRosterId: null, result: null })],
     });
     const entries: RivalEntry[] = [{ rosterId: 1, rivals: [2] }];
-    expect(() => computeRivalryStandings([teamA], entries, PLAYOFF_WEEK_START)).not.toThrow();
+    expect(() => computeRivalryStandings([teamA], entries, PLAYOFF_WEEK_START, CURRENT_WEEK)).not.toThrow();
+  });
+
+  it("ignores unplayed future weeks, even when Sleeper reports them as a 0-0 tie", () => {
+    const teamA = team({
+      rosterId: 1,
+      weeklyScores: [
+        score({ week: 1, actualPoints: 120, opponentRosterId: 2, result: "W" }), // played
+        score({ week: 10, actualPoints: 0, opponentRosterId: 2, result: "T" }), // not played yet
+      ],
+    });
+    const teamB = team({
+      rosterId: 2,
+      weeklyScores: [
+        score({ week: 1, actualPoints: 95, opponentRosterId: 1, result: "L" }),
+        score({ week: 10, actualPoints: 0, opponentRosterId: 1, result: "T" }),
+      ],
+    });
+    const entries: RivalEntry[] = [{ rosterId: 1, rivals: [2] }];
+    // currentWeek 5: week 1 is final, week 10 has not been played yet.
+    const { records, gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START, 5);
+
+    expect(records.get(1)).toMatchObject({ wins: 1, losses: 0, ties: 0, gamesPlayed: 1 });
+    expect(gameLog).toEqual([{ week: 1, rosterIdA: 1, rosterIdB: 2, pointsA: 120, pointsB: 95, mutual: false }]);
+  });
+
+  it("keeps a manager in Zarte Lämmer when their only rivalry game is in the future", () => {
+    const teamA = team({
+      rosterId: 1,
+      weeklyScores: [score({ week: 10, actualPoints: 0, opponentRosterId: 2, result: "T" })],
+    });
+    const teamB = team({
+      rosterId: 2,
+      weeklyScores: [score({ week: 10, actualPoints: 0, opponentRosterId: 1, result: "T" })],
+    });
+    const entries: RivalEntry[] = [{ rosterId: 1, rivals: [2] }];
+    const { records } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START, 5);
+    const { ranking, lambs } = buildRivalryRanking([teamA, teamB], records);
+
+    expect(ranking).toHaveLength(0);
+    expect(lambs.map((r) => r.rosterId)).toEqual([1, 2]);
   });
 
   it("logs each rivalry game exactly once, not twice", () => {
@@ -137,7 +178,7 @@ describe("computeRivalryStandings", () => {
       weeklyScores: [score({ week: 3, actualPoints: 80, opponentRosterId: 1, result: "L" })],
     });
     const entries: RivalEntry[] = [{ rosterId: 1, rivals: [2] }];
-    const { gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START);
+    const { gameLog } = computeRivalryStandings([teamA, teamB], entries, PLAYOFF_WEEK_START, CURRENT_WEEK);
     expect(gameLog).toHaveLength(1);
     expect(gameLog[0]).toEqual({ week: 3, rosterIdA: 1, rosterIdB: 2, pointsA: 100, pointsB: 80, mutual: false });
   });
