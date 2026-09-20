@@ -52,7 +52,7 @@ export function Standings() {
         <h2>Full League</h2>
         <Card className={styles.card}>
           <div className={styles.tableWrap}>
-            <FullStandingsTable teams={data.teams} />
+            <FullStandingsTable teams={data.teams} h2hMap={data.h2hMap} />
           </div>
         </Card>
       </div>

@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import type { Team } from "../../domain/types";
+import type { H2hMap, Team } from "../../domain/types";
+import { rankByRecord } from "../../domain/standings";
 import { Avatar } from "../common/Avatar";
 import styles from "./FullStandingsTable.module.css";
 
 interface FullStandingsTableProps {
   teams: Team[];
+  h2hMap: H2hMap;
 }
 
 type SortKey = "team" | "division" | "record" | "pointsFor" | "pointsAgainst" | "potentialPoints" | "efficiency";
@@ -20,16 +22,15 @@ const COLUMNS: { key: SortKey; label: string; numeric?: boolean }[] = [
   { key: "efficiency", label: "Eff%", numeric: true },
 ];
 
-function sortValue(team: Team, key: SortKey): number | string {
+/** Sort values for every column except "record", which instead uses
+ * rankByRecord directly so it applies the league's h2h/points-for
+ * tiebreakers rather than a plain win% comparison (see FullStandingsTable). */
+function sortValue(team: Team, key: Exclude<SortKey, "record">): number | string {
   switch (key) {
     case "team":
       return team.teamName.toLowerCase();
     case "division":
       return team.division;
-    case "record": {
-      const games = team.wins + team.losses + team.ties;
-      return games === 0 ? 0 : (team.wins + team.ties * 0.5) / games;
-    }
     case "pointsFor":
       return team.pointsFor;
     case "pointsAgainst":
@@ -41,16 +42,26 @@ function sortValue(team: Team, key: SortKey): number | string {
   }
 }
 
-export function FullStandingsTable({ teams }: FullStandingsTableProps) {
+export function FullStandingsTable({ teams, h2hMap }: FullStandingsTableProps) {
   const [sortKey, setSortKey] = useState<SortKey>("record");
   const [descending, setDescending] = useState(true);
 
-  const sorted = [...teams].sort((a, b) => {
-    const va = sortValue(a, sortKey);
-    const vb = sortValue(b, sortKey);
-    const cmp = typeof va === "string" ? va.localeCompare(vb as string) : va - (vb as number);
-    return descending ? -cmp : cmp;
-  });
+  // "record" needs the league's actual tiebreak rules (h2h, then points for)
+  // rather than a plain win% comparison, otherwise teams tied on win% just
+  // fall back to array order instead of the same ranking used everywhere
+  // else (division standings, playoff seeding).
+  let sorted: Team[];
+  if (sortKey === "record") {
+    const ranked = rankByRecord(teams, h2hMap);
+    sorted = descending ? ranked : [...ranked].reverse();
+  } else {
+    sorted = [...teams].sort((a, b) => {
+      const va = sortValue(a, sortKey);
+      const vb = sortValue(b, sortKey);
+      const cmp = typeof va === "string" ? va.localeCompare(vb as string) : va - (vb as number);
+      return descending ? -cmp : cmp;
+    });
+  }
 
   function handleSort(key: SortKey) {
     if (key === sortKey) {
