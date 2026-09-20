@@ -110,6 +110,19 @@
   text-align: center;
 }
 
+.allTime {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin: var(--space-2) 0 0;
+}
+
+.allTimeValue {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
 .statements {
   display: grid;
   grid-template-columns: 1fr 1fr;

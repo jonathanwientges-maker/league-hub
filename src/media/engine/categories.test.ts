@@ -7,6 +7,7 @@ function team(overrides: Partial<WeekTeamContext> = {}): WeekTeamContext {
   const losses = overrides.losses ?? 3;
   return {
     rosterId: 1,
+    ownerId: "owner1",
     teamName: "Team A",
     avatarUrl: null,
     division: 1,

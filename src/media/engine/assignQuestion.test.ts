@@ -5,6 +5,7 @@ import type { WeekContext, WeekTeamContext } from "./weekContext";
 function team(overrides: Partial<WeekTeamContext> = {}): WeekTeamContext {
   return {
     rosterId: 1,
+    ownerId: "owner1",
     teamName: "Team A",
     avatarUrl: null,
     division: 1,

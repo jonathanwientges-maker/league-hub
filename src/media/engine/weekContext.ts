@@ -51,6 +51,7 @@ export interface ResultLastWeek {
 
 export interface WeekTeamContext {
   rosterId: number;
+  ownerId: string;
   teamName: string;
   avatarUrl: string | null;
   division: number;
@@ -352,6 +353,7 @@ export function computeWeekContext(input: WeekContextInput): WeekContext {
 
     teamContexts.set(team.rosterId, {
       rosterId: team.rosterId,
+      ownerId: team.ownerId,
       teamName: team.teamName,
       avatarUrl: team.avatarUrl,
       division: team.division,

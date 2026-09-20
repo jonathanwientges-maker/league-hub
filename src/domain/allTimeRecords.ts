@@ -111,3 +111,48 @@ export function computeAllTimeRecords(seasons: SeasonRecordInput[]): AllTimeReco
 
   return { managers: managersList, highestActualWeek, highestOptimalWeek, bestSeasonEfficiency };
 }
+
+export interface HeadToHeadRecord {
+  winsA: number;
+  winsB: number;
+  ties: number;
+  meetings: number;
+}
+
+/**
+ * Tallies two managers' regular-season results against each other across
+ * every season supplied — the all-time record shown on the Rivalry Game
+ * cards (Home screen). Matched by ownerId, not rosterId: a manager's roster
+ * gets a new rosterId every season (allTimeRecords' own rule, see
+ * ManagerAllTimeRecord above), so weeklyScores.opponentRosterId is only
+ * meaningful once resolved back to an ownerId within that same season.
+ * Playoff/consolation meetings count too — regular-season-only filtering is
+ * rivalries.ts's rule (its rivalry-game slotting only runs pre-playoffs),
+ * not a property of "these two teams played" history.
+ */
+export function computeAllTimeHeadToHead(
+  seasons: { teams: Team[] }[],
+  ownerIdA: string,
+  ownerIdB: string
+): HeadToHeadRecord {
+  let winsA = 0;
+  let winsB = 0;
+  let ties = 0;
+
+  for (const { teams } of seasons) {
+    const ownerByRosterId = new Map(teams.map((t) => [t.rosterId, t.ownerId]));
+    const teamA = teams.find((t) => t.ownerId === ownerIdA);
+    if (!teamA) continue;
+
+    for (const week of teamA.weeklyScores) {
+      if (week.opponentRosterId === null || week.result === null) continue;
+      if (ownerByRosterId.get(week.opponentRosterId) !== ownerIdB) continue;
+
+      if (week.result === "W") winsA += 1;
+      else if (week.result === "L") winsB += 1;
+      else ties += 1;
+    }
+  }
+
+  return { winsA, winsB, ties, meetings: winsA + winsB + ties };
+}

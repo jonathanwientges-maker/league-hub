@@ -2,15 +2,94 @@ import clsx from "clsx";
 import { Card } from "../common/Card";
 import { Avatar } from "../common/Avatar";
 import { useRivalryGames } from "../../media/useRivalryGames";
-import { useWeekContext } from "../../media/engine/weekContext";
+import { useWeekContext, type WeekTeamContext } from "../../media/engine/weekContext";
 import { useAllEditions } from "../../media/roomData";
+import { useAllTimeHeadToHead } from "../../media/useAllTimeHeadToHead";
 import { useMatchups } from "../../hooks/useMatchups";
+import type { RivalryGame } from "../../media/rivals";
+import type { SleeperMatchup } from "../../api/types";
 import styles from "./RivalrySpotlight.module.css";
 
 function streakLabel(winStreak: number, lossStreak: number): string {
   if (winStreak > 0) return `${winStreak}W in Folge`;
   if (lossStreak > 0) return `${lossStreak}L in Folge`;
   return "–";
+}
+
+function allTimeLabel(
+  teamA: WeekTeamContext,
+  teamB: WeekTeamContext,
+  record: ReturnType<typeof useAllTimeHeadToHead>["record"]
+): string | null {
+  if (!record || record.meetings === 0) return null;
+  const tieSuffix = record.ties > 0 ? `-${record.ties}` : "";
+  return `All-Time: ${teamA.teamName} ${record.winsA}-${record.winsB}${tieSuffix} ${teamB.teamName}`;
+}
+
+function RivalryCard({
+  game,
+  teamA,
+  teamB,
+  upcomingWeek,
+  matchupA,
+  matchupB,
+  statementsRevealed,
+  statementA,
+  statementB,
+}: {
+  game: RivalryGame;
+  teamA: WeekTeamContext;
+  teamB: WeekTeamContext;
+  upcomingWeek: number | undefined;
+  matchupA: SleeperMatchup | undefined;
+  matchupB: SleeperMatchup | undefined;
+  statementsRevealed: boolean;
+  statementA: string | null | undefined;
+  statementB: string | null | undefined;
+}) {
+  const { record, loaders } = useAllTimeHeadToHead(teamA.ownerId, teamB.ownerId);
+  const label = allTimeLabel(teamA, teamB, record);
+
+  return (
+    <Card className={styles.card}>
+      {loaders}
+      <div className={styles.cardContent}>
+        <p className={clsx(styles.eyebrow, game.mutual && styles.eyebrowHot)}>
+          {game.mutual ? "🔥 BLOOD FEUD 🔥" : `🔥 RIVALRY GAME · WOCHE ${upcomingWeek}`}
+        </p>
+        <div className={styles.tape}>
+          <div className={styles.side}>
+            <Avatar url={teamA.avatarUrl} name={teamA.teamName} size={48} />
+            <span className={styles.stat}>{teamA.record}</span>
+            <span className={styles.stat}>{streakLabel(teamA.winStreak, teamA.lossStreak)}</span>
+            <span className={styles.stat}>{teamA.pointsFor.toFixed(1)} PF</span>
+          </div>
+          <div className={styles.score}>
+            {(matchupA?.points ?? 0).toFixed(1)} : {(matchupB?.points ?? 0).toFixed(1)}
+          </div>
+          <div className={clsx(styles.side, styles.sideRight)}>
+            <Avatar url={teamB.avatarUrl} name={teamB.teamName} size={48} />
+            <span className={styles.stat}>{teamB.record}</span>
+            <span className={styles.stat}>{streakLabel(teamB.winStreak, teamB.lossStreak)}</span>
+            <span className={styles.stat}>{teamB.pointsFor.toFixed(1)} PF</span>
+          </div>
+        </div>
+        {label && <p className={styles.allTime}>{label}</p>}
+        <div className={styles.statements}>
+          {statementsRevealed ? (
+            <>
+              <p className={styles.bubble}>{statementA ? `„${statementA}“` : "— keine Stellungnahme —"}</p>
+              <p className={styles.bubble}>{statementB ? `„${statementB}“` : "— keine Stellungnahme —"}</p>
+            </>
+          ) : (
+            <p className={clsx(styles.bubble, styles.bubblePending)}>
+              Statements erscheinen Donnerstag 06:00
+            </p>
+          )}
+        </div>
+      </div>
+    </Card>
+  );
 }
 
 export function RivalrySpotlight({ leagueId }: { leagueId: string }) {
@@ -42,46 +121,18 @@ export function RivalrySpotlight({ leagueId }: { leagueId: string }) {
           : undefined;
 
         return (
-          <Card key={`${game.rosterIdA}-${game.rosterIdB}`} className={styles.card}>
-            <div className={styles.cardContent}>
-              <p className={clsx(styles.eyebrow, game.mutual && styles.eyebrowHot)}>
-                {game.mutual ? "🔥 BLOOD FEUD 🔥" : `🔥 RIVALRY GAME · WOCHE ${upcomingWeek}`}
-              </p>
-              <div className={styles.tape}>
-                <div className={styles.side}>
-                  <Avatar url={teamA.avatarUrl} name={teamA.teamName} size={48} />
-                  <span className={styles.stat}>{teamA.record}</span>
-                  <span className={styles.stat}>{streakLabel(teamA.winStreak, teamA.lossStreak)}</span>
-                  <span className={styles.stat}>{teamA.pointsFor.toFixed(1)} PF</span>
-                </div>
-                <div className={styles.score}>
-                  {(matchupA?.points ?? 0).toFixed(1)} : {(matchupB?.points ?? 0).toFixed(1)}
-                </div>
-                <div className={clsx(styles.side, styles.sideRight)}>
-                  <Avatar url={teamB.avatarUrl} name={teamB.teamName} size={48} />
-                  <span className={styles.stat}>{teamB.record}</span>
-                  <span className={styles.stat}>{streakLabel(teamB.winStreak, teamB.lossStreak)}</span>
-                  <span className={styles.stat}>{teamB.pointsFor.toFixed(1)} PF</span>
-                </div>
-              </div>
-              <div className={styles.statements}>
-                {statementsRevealed ? (
-                  <>
-                    <p className={styles.bubble}>
-                      {statementA ? `„${statementA}“` : "— keine Stellungnahme —"}
-                    </p>
-                    <p className={styles.bubble}>
-                      {statementB ? `„${statementB}“` : "— keine Stellungnahme —"}
-                    </p>
-                  </>
-                ) : (
-                  <p className={clsx(styles.bubble, styles.bubblePending)}>
-                    Statements erscheinen Donnerstag 06:00
-                  </p>
-                )}
-              </div>
-            </div>
-          </Card>
+          <RivalryCard
+            key={`${game.rosterIdA}-${game.rosterIdB}`}
+            game={game}
+            teamA={teamA}
+            teamB={teamB}
+            upcomingWeek={upcomingWeek}
+            matchupA={matchupA}
+            matchupB={matchupB}
+            statementsRevealed={statementsRevealed}
+            statementA={statementA}
+            statementB={statementB}
+          />
         );
       })}
     </div>
