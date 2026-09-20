@@ -16,16 +16,6 @@ function streakLabel(winStreak: number, lossStreak: number): string {
   return "–";
 }
 
-function allTimeLabel(
-  teamA: WeekTeamContext,
-  teamB: WeekTeamContext,
-  record: ReturnType<typeof useAllTimeHeadToHead>["record"]
-): string | null {
-  if (!record || record.meetings === 0) return null;
-  const tieSuffix = record.ties > 0 ? `-${record.ties}` : "";
-  return `All-Time: ${teamA.teamName} ${record.winsA}-${record.winsB}${tieSuffix} ${teamB.teamName}`;
-}
-
 function RivalryCard({
   game,
   teamA,
@@ -47,12 +37,19 @@ function RivalryCard({
   statementA: string | null | undefined;
   statementB: string | null | undefined;
 }) {
-  const { record, loaders } = useAllTimeHeadToHead(teamA.ownerId, teamB.ownerId);
-  const label = allTimeLabel(teamA, teamB, record);
+  // Reads a precomputed static snapshot (see useAllTimeHeadToHead's doc
+  // comment) — cheap enough that every card just calls this directly;
+  // react-query dedupes the one underlying fetch across all of them.
+  const { record } = useAllTimeHeadToHead(teamA.ownerId, teamB.ownerId);
+  const label =
+    record && record.meetings > 0
+      ? `All-Time: ${teamA.teamName} ${record.winsA}-${record.winsB}${
+          record.ties > 0 ? `-${record.ties}` : ""
+        } ${teamB.teamName}`
+      : null;
 
   return (
     <Card className={styles.card}>
-      {loaders}
       <div className={styles.cardContent}>
         <p className={clsx(styles.eyebrow, game.mutual && styles.eyebrowHot)}>
           {game.mutual ? "🔥 BLOOD FEUD 🔥" : `🔥 RIVALRY GAME · WOCHE ${upcomingWeek}`}

@@ -120,6 +120,16 @@ export interface HeadToHeadRecord {
 }
 
 /**
+ * Order-independent key for a pair of managers — shared by
+ * scripts/generate-all-time-h2h.ts (which writes records keyed this way)
+ * and useAllTimeHeadToHead.ts (which reads them back), so the two can never
+ * drift into using different key shapes for the same pair.
+ */
+export function headToHeadPairKey(ownerIdA: string, ownerIdB: string): string {
+  return [ownerIdA, ownerIdB].sort().join("|");
+}
+
+/**
  * Tallies two managers' regular-season results against each other across
  * every season supplied — the all-time record shown on the Rivalry Game
  * cards (Home screen). Matched by ownerId, not rosterId: a manager's roster

@@ -33,3 +33,14 @@ These are NOT in this folder. They're runtime-fetched at
 `/data/player-status/{season}-w{week}.json`, which means they have to ship
 inside the Vite build output, so they live in `public/data/player-status/`
 instead — see the comment at the top of `.github/workflows/status-snapshot.yml`.
+
+## All-time head-to-head snapshot
+
+Also NOT in this folder, for the same reason: runtime-fetched at
+`/data/all-time-h2h.json`, so it lives in `public/data/`. Every manager
+pair's combined record across every season, precomputed by
+`scripts/generate-all-time-h2h.ts` on a daily schedule
+(`.github/workflows/all-time-h2h-snapshot.yml`) rather than assembled live
+in the browser — the Home screen's Rivalry Game cards read this file
+directly (`src/media/useAllTimeHeadToHead.ts`) instead of each fetching
+every season's full rosters/users/matchups on every cold load.

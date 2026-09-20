@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { computeAllTimeHeadToHead } from "./allTimeRecords";
+import { computeAllTimeHeadToHead, headToHeadPairKey } from "./allTimeRecords";
 import type { Team } from "./types";
 
 function team(overrides: Partial<Team>): Team {
@@ -134,5 +134,15 @@ describe("computeAllTimeHeadToHead", () => {
 
     const record = computeAllTimeHeadToHead([seasonWithoutB, seasonWithBoth], "ownerA", "ownerB");
     expect(record).toEqual({ winsA: 1, winsB: 0, ties: 0, meetings: 1 });
+  });
+});
+
+describe("headToHeadPairKey", () => {
+  it("is order-independent, so a snapshot written for (A, B) is found when looked up as (B, A)", () => {
+    expect(headToHeadPairKey("ownerA", "ownerB")).toBe(headToHeadPairKey("ownerB", "ownerA"));
+  });
+
+  it("gives distinct keys for distinct pairs", () => {
+    expect(headToHeadPairKey("ownerA", "ownerB")).not.toBe(headToHeadPairKey("ownerA", "ownerC"));
   });
 });
