@@ -13,6 +13,7 @@ import {
   buildPlayerPositionsMap,
   computeAllTeamsPotentialPoints,
   mergeTeamsWithPotentialPoints,
+  isWeekFinal,
 } from "../domain/potentialPoints";
 import { LEAGUE_CONFIG } from "../config/league";
 import type { Team, H2hMap } from "../domain/types";
@@ -79,8 +80,20 @@ export function useTeams(leagueId: string) {
       matchupsByWeek.set(i + 1, q.data ?? []);
     });
 
-    const allWeekResults = buildAllWeekResults(matchupsByWeek);
-    const weekResultsByRoster = buildWeekResultsByRoster(matchupsByWeek);
+    // Sleeper returns live/partial scores for the current week (and a 0-0
+    // placeholder for future ones) well before it's actually final — reading
+    // those as decided games would let an in-progress matchup's leader flip
+    // head-to-head tiebreakers (and W/L history) before the week is over.
+    // Standings/pick-race/playoff seeding must only see completed weeks;
+    // team.wins/losses/pointsFor stay authoritative from roster.settings
+    // regardless (see assembleTeams), so this only trims what h2h/weekly
+    // results are derived from.
+    const finalMatchupsByWeek = new Map(
+      [...matchupsByWeek].filter(([week]) => isWeekFinal(week, currentWeek))
+    );
+
+    const allWeekResults = buildAllWeekResults(finalMatchupsByWeek);
+    const weekResultsByRoster = buildWeekResultsByRoster(finalMatchupsByWeek);
     const h2hMap = buildH2hMap(allWeekResults);
     const baseTeams = assembleTeams(
       rostersQuery.data,
