@@ -35,13 +35,39 @@ export const PUSH_EVENTS: Record<PushEventId, Omit<PushPayload, "tag">> = {
   },
 };
 
-/** Which scheduled event (if any) is due at `now`, judged by Berlin wall-clock hour. */
+/**
+ * Which scheduled event (if any) is due at `now`, judged by Berlin wall-clock
+ * hour. Each event owns a whole window, not a single exact hour: GitHub
+ * Actions' `schedule` trigger is best-effort and this repo has repeatedly
+ * seen scheduled runs land several hours late (observed 5-7h delays on
+ * other cron jobs here), so a run that fires late still needs to recognize
+ * "yes, media_day_open is still the right event for today" rather than see
+ * its exact hour has passed and silently report nothing due. Actual
+ * duplicate-send protection is push_sends' unique constraint in
+ * send-push.ts, not this function — widening these windows is safe because
+ * a second, still-in-window run for the same event just no-ops there.
+ *
+ * Windows (Berlin time), in order checked:
+ *   media_day_open:      mediaDay.weekday, openHour     .. lastCallHour (excl.)
+ *   media_day_last_call: mediaDay.weekday, lastCallHour  .. closeHour    (excl.)
+ *   reveal:               mediaDay.weekday + 1, revealHour onward, through
+ *                          the rest of that day — generous on purpose so a
+ *                          very late run still catches it.
+ */
 export function dueEvent(now: Date = new Date()): PushEventId | null {
   const b = berlinNow(now);
-  const { weekday, openHour } = MEDIA_CONFIG.mediaDay;
-  if (b.weekday === weekday && b.hour === openHour) return "media_day_open";
-  if (b.weekday === weekday && b.hour === PUSH_CONFIG.lastCallHour) return "media_day_last_call";
-  if (b.weekday === weekday + 1 && b.hour === MEDIA_CONFIG.revealHour) return "reveal";
+  const { weekday, openHour, closeHour } = MEDIA_CONFIG.mediaDay;
+  const { lastCallHour } = PUSH_CONFIG;
+
+  if (b.weekday === weekday && b.hour >= openHour && b.hour < lastCallHour) {
+    return "media_day_open";
+  }
+  if (b.weekday === weekday && b.hour >= lastCallHour && b.hour < closeHour) {
+    return "media_day_last_call";
+  }
+  if (b.weekday === weekday + 1 && b.hour >= MEDIA_CONFIG.revealHour) {
+    return "reveal";
+  }
   return null;
 }
 
