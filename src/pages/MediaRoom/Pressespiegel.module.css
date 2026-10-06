@@ -4,29 +4,99 @@
   margin: 0 auto;
 }
 
-.header {
-  margin-bottom: var(--space-4);
+.masthead {
+  text-align: center;
+  padding: var(--space-3) 0 var(--space-4);
+  margin-bottom: var(--space-5);
+  border-top: 3px double var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.mastheadMeta {
+  margin: 0 0 var(--space-1);
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
 .headline {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
   margin: 0;
 }
 
-.editionDate {
-  color: var(--text-dim);
-  font-size: 0.85rem;
-  margin: 4px 0 0;
+.leadWrap {
+  margin-bottom: var(--space-4);
 }
 
-.votingBanner {
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
-  background: rgba(var(--accent-rgb), 0.12);
-  color: var(--accent);
-  font-size: 0.85rem;
+.votingStrip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
   margin-bottom: var(--space-4);
+  border-radius: var(--radius-md);
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+}
+
+.votingIcon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.16);
+}
+
+.votingText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.votingTitle {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.votingSub {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+.votingBar {
+  display: block;
+  height: 0.2rem;
+  margin-top: 0.3rem;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.votingBarFill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  transition: transform 1s linear;
+}
+
+.votingClock {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
 }
 
 .grid {
@@ -58,10 +128,11 @@
 
 .leaderboardToggle {
   width: 100%;
-  min-height: 44px;
+  min-height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-2);
   padding: var(--space-3) var(--space-4);
   background: none;
   border: none;
@@ -71,10 +142,70 @@
   cursor: pointer;
 }
 
+.leaderboardBody {
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.podiumCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 0;
+  text-align: center;
+}
+
+.podiumName {
+  max-width: 100%;
+  font-size: 0.78rem;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.podiumLikes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.podiumBlock {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 0.25rem;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-bottom: none;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--text-dim);
+}
+
+.podiumCol[data-place="1"] .podiumBlock {
+  background: rgba(var(--gold-rgb), 0.16);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 .leaderboardList {
   list-style: none;
   margin: 0;
-  padding: 0 var(--space-4) var(--space-4);
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -87,19 +218,20 @@
 }
 
 .rank {
-  width: 1.6em;
+  width: 1.4em;
   font-family: var(--font-display);
   font-weight: 800;
   color: var(--text-dim);
-}
-
-.rankFirst {
-  color: var(--accent);
+  font-variant-numeric: tabular-nums;
 }
 
 .leaderboardName {
   flex: 1;
+  min-width: 0;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .leaderboardStats {
@@ -108,6 +240,12 @@
   font-size: 0.8rem;
   color: var(--text-dim);
   font-variant-numeric: tabular-nums;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .flashOverlay {

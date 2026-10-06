@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { Avatar } from "../../components/common/Avatar";
 import { Skeleton } from "../../components/common/Skeleton";
 import { berlinNow, formatBerlinDateTime } from "../../media/berlinTime";
 import { votingClosesAt } from "../../media/schedule";
 import { displayLabelForWeek } from "../../media/specialEvents";
-import { useAllEditions, useLeaderboard, useToggleLike } from "../../media/roomData";
+import { useAllEditions, useLeaderboard, useToggleLike, type LeaderboardRow } from "../../media/roomData";
+import { MEDIA_CONFIG } from "../../media/config";
+import { useCountdown } from "../../media/useCountdown";
 import { PressCard } from "./PressCard";
+import { Disclosure } from "./Disclosure";
+import { BallotIcon, ClapIcon, NewspaperIcon } from "./icons";
 import styles from "./Pressespiegel.module.css";
 
 function editionDateLabel(revealAt: string): string {
@@ -24,7 +29,7 @@ function FlashOnce({ editionKey }: { editionKey: string }) {
     if (sessionStorage.getItem(flagKey)) return;
     sessionStorage.setItem(flagKey, "1");
     setShow(true);
-    const timeout = setTimeout(() => setShow(false), 900);
+    const timeout = setTimeout(() => setShow(false), 800);
     return () => clearTimeout(timeout);
   }, [editionKey, shouldReduceMotion]);
 
@@ -34,43 +39,109 @@ function FlashOnce({ editionKey }: { editionKey: string }) {
         <motion.div
           className={styles.flashOverlay}
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.9, 0, 0.7, 0] }}
+          animate={{ opacity: [0, 0.55, 0] }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.9, times: [0, 0.15, 0.35, 0.55, 1] }}
+          transition={{ duration: 0.8, times: [0, 0.2, 1], ease: "easeOut" }}
         />
       )}
     </AnimatePresence>
   );
 }
 
-function Leaderboard({ rosterId }: { rosterId: number | null }) {
-  const [open, setOpen] = useState(false);
-  const { rows, isLoading } = useLeaderboard(rosterId);
+const PODIUM_HEIGHT = [4.5, 3.25, 2.5]; // rem: 1st, 2nd, 3rd
 
+function PodiumStep({ row, place }: { row: LeaderboardRow; place: 0 | 1 | 2 }) {
+  const reduce = useReducedMotion();
   return (
-    <div className={styles.leaderboard}>
-      <button type="button" className={styles.leaderboardToggle} onClick={() => setOpen((o) => !o)}>
-        <span>Liebling der Massen</span>
-        <span aria-hidden="true">{open ? "▲" : "▼"}</span>
-      </button>
-      {open && (
-        <ul className={styles.leaderboardList}>
-          {isLoading ? (
-            <Skeleton height={120} />
-          ) : (
-            rows.map((row, i) => (
-              <li key={row.rosterId} className={styles.leaderboardRow}>
-                <span className={i === 0 ? `${styles.rank} ${styles.rankFirst}` : styles.rank}>{i + 1}</span>
-                <span className={styles.leaderboardName}>{row.teamName}</span>
-                <span className={styles.leaderboardStats}>
-                  <span>👏 {row.totalLikes}</span>
-                  <span>📰 {row.quoteWins}</span>
-                </span>
-              </li>
-            ))
-          )}
-        </ul>
+    <div className={styles.podiumCol} data-place={place + 1}>
+      <Avatar url={row.avatarUrl} name={row.teamName} size={place === 0 ? 56 : 44} />
+      <span className={styles.podiumName}>{row.teamName}</span>
+      <span className={styles.podiumLikes}>
+        <ClapIcon size={14} /> {row.totalLikes}
+      </span>
+      <motion.div
+        className={styles.podiumBlock}
+        style={{ height: `${PODIUM_HEIGHT[place]}rem`, transformOrigin: "bottom" }}
+        initial={{ scaleY: reduce ? 1 : 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: reduce ? 0 : 0.08 * (place + 1) }}
+      >
+        <span>{place + 1}</span>
+      </motion.div>
+    </div>
+  );
+}
+
+function LeaderboardBody({ rosterId }: { rosterId: number | null }) {
+  const { rows, isLoading } = useLeaderboard(rosterId);
+  if (isLoading) return <Skeleton height={160} />;
+
+  const [first, second, third, ...rest] = rows;
+  return (
+    <div className={styles.leaderboardBody}>
+      {first && (
+        <div className={styles.podium}>
+          {second && <PodiumStep row={second} place={1} />}
+          <PodiumStep row={first} place={0} />
+          {third && <PodiumStep row={third} place={2} />}
+        </div>
       )}
+      {rest.length > 0 && (
+        <ol className={styles.leaderboardList} start={4}>
+          {rest.map((row, i) => (
+            <li key={row.rosterId} className={styles.leaderboardRow}>
+              <span className={styles.rank}>{i + 4}</span>
+              <Avatar url={row.avatarUrl} name={row.teamName} size={28} />
+              <span className={styles.leaderboardName}>{row.teamName}</span>
+              <span className={styles.leaderboardStats}>
+                <span className={styles.stat}>
+                  <ClapIcon size={14} /> {row.totalLikes}
+                </span>
+                <span className={styles.stat}>
+                  <NewspaperIcon size={14} /> {row.quoteWins}
+                </span>
+              </span>
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+  );
+}
+
+function Leaderboard({ rosterId }: { rosterId: number | null }) {
+  return (
+    <Disclosure
+      className={styles.leaderboard}
+      headerClassName={styles.leaderboardToggle}
+      header="Liebling der Massen"
+    >
+      <LeaderboardBody rosterId={rosterId} />
+    </Disclosure>
+  );
+}
+
+/** Slim strip: what's open, how long, and how much of the voting window is gone. */
+function VotingStrip({ revealAt, closesAt, badgeLabel }: { revealAt: Date; closesAt: Date; badgeLabel: string }) {
+  const countdown = useCountdown(closesAt);
+  const total = MEDIA_CONFIG.votingDurationHours * 3600_000;
+  const left = Math.min(1, Math.max(0, (closesAt.getTime() - Date.now()) / total));
+  void revealAt;
+  return (
+    <div className={styles.votingStrip} role="status">
+      <span className={styles.votingIcon}>
+        <BallotIcon size={20} />
+      </span>
+      <div className={styles.votingText}>
+        <span className={styles.votingTitle}>Abstimmung läuft</span>
+        <span className={styles.votingSub}>Klatschen Sie für das {badgeLabel}!</span>
+        <span className={styles.votingBar} aria-hidden="true">
+          <span className={styles.votingBarFill} style={{ transform: `scaleX(${left})` }} />
+        </span>
+      </div>
+      <span className={styles.votingClock} title={`bis ${formatBerlinDateTime(closesAt)}`}>
+        {countdown}
+      </span>
     </div>
   );
 }
@@ -80,15 +151,15 @@ export function Pressespiegel({ rosterId }: { rosterId: number | null }) {
   const toggleLike = useToggleLike();
   const current = editions[0];
 
-  const handleToggle = (card: Parameters<typeof toggleLike>[0]) => {
+  const handleToggle = async (card: Parameters<typeof toggleLike>[0]) => {
     if (rosterId === null) return;
-    void toggleLike(card, rosterId);
+    await toggleLike(card, rosterId);
   };
 
   if (isLoading) {
     return (
       <div className={styles.wrap}>
-        <Skeleton height={40} className={styles.header} />
+        <Skeleton height={96} className={styles.leadWrap} />
         <div className={styles.grid}>
           {Array.from({ length: 4 }).map((_, i) => (
             <Skeleton key={i} height={160} />
@@ -108,36 +179,40 @@ export function Pressespiegel({ rosterId }: { rosterId: number | null }) {
 
   const weekLabel = current.week !== null ? (displayLabelForWeek(current.week) ?? `Woche ${current.week}`) : null;
   const badgeLabel = current.cards[0]?.badgeLabel ?? "Zitat der Woche";
-  const votingCloseAt = votingClosesAt(new Date(current.revealAt));
+  const revealAt = new Date(current.revealAt);
+  const votingCloseAt = votingClosesAt(revealAt);
+  const lead = current.cards.find((c) => c.isQuoteOfTheWeek);
+  const others = current.cards.filter((c) => c !== lead);
+
+  const renderCard = (card: (typeof current.cards)[number], isLead = false) => (
+    <PressCard
+      key={card.rosterId + (card.responseId ?? "")}
+      card={card}
+      rosterId={rosterId}
+      votingOpen={current.votingOpen}
+      votingClosed={current.votingClosed}
+      votingCloseAt={votingCloseAt}
+      readOnly={false}
+      lead={isLead}
+      onToggleLike={handleToggle}
+    />
+  );
 
   return (
     <div className={styles.wrap}>
       <FlashOnce editionKey={current.revealAt} />
-      <div className={styles.header}>
-        <h1 className={styles.headline}>Pressespiegel{weekLabel ? ` · ${weekLabel}` : ""}</h1>
-        <p className={styles.editionDate}>{editionDateLabel(current.revealAt)}</p>
-      </div>
-
-      {current.votingOpen && (
-        <p className={styles.votingBanner}>
-          🗳️ Abstimmung läuft bis {formatBerlinDateTime(votingCloseAt)} — Klatschen Sie für das {badgeLabel}!
+      <header className={styles.masthead}>
+        <p className={styles.mastheadMeta}>
+          {weekLabel ?? "Ausgabe"} · {editionDateLabel(current.revealAt)}
         </p>
-      )}
+        <h1 className={styles.headline}>Pressespiegel</h1>
+      </header>
 
-      <div className={styles.grid}>
-        {current.cards.map((card) => (
-          <PressCard
-            key={card.rosterId + (card.responseId ?? "")}
-            card={card}
-            rosterId={rosterId}
-            votingOpen={current.votingOpen}
-            votingClosed={current.votingClosed}
-            votingCloseAt={votingCloseAt}
-            readOnly={false}
-            onToggleLike={handleToggle}
-          />
-        ))}
-      </div>
+      {current.votingOpen && <VotingStrip revealAt={revealAt} closesAt={votingCloseAt} badgeLabel={badgeLabel} />}
+
+      {lead && <div className={styles.leadWrap}>{renderCard(lead, true)}</div>}
+
+      <div className={styles.grid}>{others.map((card) => renderCard(card))}</div>
 
       <Leaderboard rosterId={rosterId} />
     </div>

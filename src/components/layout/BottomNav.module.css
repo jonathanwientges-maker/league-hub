@@ -1,0 +1,97 @@
+.tabBar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .tabBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 var(--safe-right) var(--safe-bottom) var(--safe-left);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    /* Bright top edge: light catching the material. */
+    border-top: 1px solid var(--glass-edge);
+    box-shadow: 0 -1px 0 var(--line);
+  }
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  min-height: var(--tabbar-h);
+  padding: var(--space-2) 0;
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tab > * {
+  transition: transform 100ms var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+/* Respond on press, not release. */
+.tab:active > * {
+  transform: scale(0.9);
+}
+
+.tabActive {
+  color: var(--accent);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.moreList {
+  list-style: none;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  display: grid;
+}
+
+.moreLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 100ms var(--ease-out);
+}
+
+.moreLink:active {
+  background: var(--surface-raised);
+}
+
+.moreLink[aria-current="page"] {
+  color: var(--accent);
+}
+
+.moreLink span {
+  color: var(--text-dim);
+}
+
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .tabBar {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

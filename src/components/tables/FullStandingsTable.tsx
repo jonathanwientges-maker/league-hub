@@ -97,9 +97,9 @@ export function FullStandingsTable({ teams, h2hMap }: FullStandingsTableProps) {
           return (
             <tr key={team.rosterId}>
               <td>
-                <Link to={`/team/${team.rosterId}`} className={styles.teamCell}>
-                  <Avatar url={team.avatarUrl} name={team.teamName} size={24} />
-                  <span className={styles.teamName}>{team.teamName}</span>
+                <Link to={`/team/${team.rosterId}`} className={styles.teamCell} title={team.teamName}>
+                  <Avatar url={team.avatarUrl} name={team.teamName} size={32} />
+                  <span className="sr-only">{team.teamName}</span>
                 </Link>
               </td>
               <td className={styles.numeric}>{team.division}</td>

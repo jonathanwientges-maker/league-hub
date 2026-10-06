@@ -42,10 +42,12 @@
   transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 }
 
-.team:hover,
-.team:focus-visible {
-  transform: translateY(-2px);
-  border-color: var(--accent);
+@media (hover: hover) {
+  .team:hover,
+  .team:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
 }
 
 .team:focus-visible {
@@ -61,4 +63,8 @@
 .managerName {
   font-size: 0.75rem;
   color: var(--text-dim);
+}
+
+.team:active {
+  transform: scale(var(--press-scale));
 }

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { usePushNotifications } from "../../push/usePushNotifications";
+import { BellIcon } from "./icons";
 import styles from "./NotificationToggle.module.css";
 
 export function NotificationToggle({ rosterId }: { rosterId: number | null }) {
@@ -21,21 +22,29 @@ export function NotificationToggle({ rosterId }: { rosterId: number | null }) {
     );
   } else if (status === "off") {
     content = (
-      <>
-        <button type="button" className={styles.button} onClick={enable}>
-          🔔 Benachrichtigungen aktivieren
+      <div className={styles.row}>
+        <span className={styles.rowIcon}><BellIcon size={20} /></span>
+        <div className={styles.rowText}>
+          <span className={styles.rowTitle}>Benachrichtigungen</span>
+          <span className={styles.subline}>Pressekonferenz, letzter Aufruf, Pressespiegel</span>
+        </div>
+        <button type="button" className={styles.primary} onClick={enable}>
+          Aktivieren
         </button>
-        <p className={styles.subline}>Pressekonferenz, letzter Aufruf, Pressespiegel</p>
-      </>
+      </div>
     );
   } else if (status === "on") {
     content = (
-      <>
-        <span>🔔 Benachrichtigungen aktiv</span>{" "}
-        <button type="button" className={styles.button} onClick={disable}>
+      <div className={styles.row}>
+        <span className={`${styles.rowIcon} ${styles.rowIconOn}`}><BellIcon size={20} /></span>
+        <div className={styles.rowText}>
+          <span className={styles.rowTitle}>Benachrichtigungen aktiv</span>
+          <span className={styles.subline}>Pressekonferenz, letzter Aufruf, Pressespiegel</span>
+        </div>
+        <button type="button" className={styles.secondary} onClick={disable}>
           Deaktivieren
         </button>
-      </>
+      </div>
     );
   }
 

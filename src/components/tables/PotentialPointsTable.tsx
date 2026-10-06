@@ -12,9 +12,9 @@ function TeamRow({ team }: { team: Team }) {
   return (
     <tr>
       <td>
-        <div className={styles.teamCell}>
-          <Avatar url={team.avatarUrl} name={team.teamName} size={24} />
-          <span className={styles.teamName}>{team.teamName}</span>
+        <div className={styles.teamCell} title={team.teamName}>
+          <Avatar url={team.avatarUrl} name={team.teamName} size={32} />
+          <span className="sr-only">{team.teamName}</span>
         </div>
       </td>
       <td className={`${styles.numeric} tabular-nums`}>

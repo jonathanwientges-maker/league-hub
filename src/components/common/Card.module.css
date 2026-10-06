@@ -13,7 +13,16 @@
   display: block;
 }
 
-.interactive:hover {
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .interactive:hover {
+    transform: translateY(var(--lift));
+    border-color: var(--accent);
+  }
+}
+
+/* Feedback lives on the press, and it's instant. */
+.interactive:active {
+  transform: scale(var(--press-scale));
   border-color: var(--accent);
+  transition-duration: 80ms;
 }

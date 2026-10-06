@@ -43,8 +43,10 @@
   border-radius: var(--radius-sm);
 }
 
-.row:hover {
-  background: var(--surface-raised);
+@media (hover: hover) {
+  .row:hover {
+    background: var(--surface-raised);
+  }
 }
 
 .teamLabel {

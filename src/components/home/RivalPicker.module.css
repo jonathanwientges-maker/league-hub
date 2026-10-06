@@ -50,9 +50,11 @@
   transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 }
 
-.team:hover:not(:disabled) {
-  transform: translateY(-2px);
-  border-color: var(--accent);
+@media (hover: hover) {
+  .team:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
 }
 
 .team:focus-visible {
@@ -102,4 +104,8 @@
   font-size: 0.8rem;
   color: var(--text-dim);
   text-align: center;
+}
+
+.team:active:not(:disabled) {
+  transform: scale(var(--press-scale));
 }

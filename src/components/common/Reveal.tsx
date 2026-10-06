@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 /**
  * The one orchestrated page-load reveal per page (Step 6.0 Motion): wrap a
  * page's cards in <RevealGroup>, each card in <RevealItem>, and they
- * stagger in as a fade/slide. Respects prefers-reduced-motion.
+ * stagger in as a spring slide. Reduced motion becomes a short cross-fade.
  */
 export function RevealGroup({ children, className }: { children: ReactNode; className?: string }) {
   const shouldReduceMotion = useReducedMotion();
@@ -16,7 +16,7 @@ export function RevealGroup({ children, className }: { children: ReactNode; clas
       variants={{
         hidden: {},
         show: {
-          transition: { staggerChildren: shouldReduceMotion ? 0 : 0.08 },
+          transition: { staggerChildren: shouldReduceMotion ? 0 : 0.06 },
         },
       }}
     >
@@ -35,7 +35,10 @@ export function RevealItem({ children, className }: { children: ReactNode; class
         show: {
           opacity: 1,
           y: 0,
-          transition: { duration: shouldReduceMotion ? 0 : 0.32, ease: [0.16, 1, 0.3, 1] },
+          // Critically damped spring: settles smoothly, no overshoot on content that just appeared.
+          transition: shouldReduceMotion
+            ? { duration: 0.16 }
+            : { type: "spring", bounce: 0, duration: 0.5 },
         },
       }}
     >

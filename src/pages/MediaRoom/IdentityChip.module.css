@@ -1,0 +1,77 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding: 0 var(--space-3);
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 100ms var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.chip:active {
+  transform: scale(var(--press-scale));
+}
+
+@media (hover: hover) {
+  .chip:hover {
+    border-color: var(--accent);
+  }
+}
+
+.label {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.name {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.body {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.who {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.whoName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.whoManager {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.switch {
+  min-height: 3rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 100ms var(--ease-out), background 100ms var(--ease-out);
+}
+
+.switch:active {
+  transform: scale(var(--press-scale));
+  background: var(--surface-raised);
+}

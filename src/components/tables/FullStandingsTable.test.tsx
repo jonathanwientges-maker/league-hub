@@ -29,7 +29,7 @@ function teamNamesInOrder() {
   // textContent.
   return screen
     .getAllByRole("link")
-    .map((el) => el.querySelector(".teamName, [class*='teamName']")?.textContent);
+    .map((el) => el.querySelector(".sr-only")?.textContent);
 }
 
 describe("FullStandingsTable", () => {

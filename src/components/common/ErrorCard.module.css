@@ -25,6 +25,12 @@
   transition: background var(--duration-fast) var(--ease-out);
 }
 
-.retry:hover {
-  background: rgba(var(--accent-hot-rgb), 0.15);
+@media (hover: hover) {
+  .retry:hover {
+    background: rgba(var(--accent-hot-rgb), 0.15);
+  }
+}
+
+.retry:active {
+  transform: scale(var(--press-scale));
 }

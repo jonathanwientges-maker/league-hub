@@ -8,9 +8,9 @@
   text-align: left;
   color: var(--text-dim);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   padding: var(--space-2);
   border-bottom: 1px solid var(--line);
   white-space: nowrap;
@@ -27,11 +27,19 @@
   padding: 0;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
+  min-height: 2.75rem;
+  touch-action: manipulation;
 }
 
-.sortButton:hover {
-  color: var(--text);
+.sortButton:active {
+  opacity: 0.6;
+}
+
+@media (hover: hover) {
+  .sortButton:hover {
+    color: var(--text);
+  }
 }
 
 .table td {
@@ -56,12 +64,51 @@
   color: inherit;
 }
 
-.teamCell:hover .teamName {
-  color: var(--accent);
+@media (hover: hover) {
+  .teamCell:hover .teamName {
+    color: var(--accent);
+  }
 }
 
 .teamName {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Phones: keep the team/week column pinned while stats scroll sideways, and
+   give every row a thumb-sized (44px) target. */
+.table th:first-child,
+.table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--surface);
+}
+
+.table th:first-child::after,
+.table td:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -0.5rem;
+  bottom: 0;
+  width: 0.5rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.18), transparent);
+  pointer-events: none;
+}
+
+@media (min-width: 769px) {
+  .table th:first-child::after,
+  .table td:first-child::after {
+    display: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .table td,
+  .table th {
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+  }
 }

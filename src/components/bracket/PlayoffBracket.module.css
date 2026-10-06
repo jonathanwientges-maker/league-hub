@@ -105,11 +105,22 @@
     gap: var(--space-4);
     overflow-x: auto;
     padding-bottom: var(--space-2);
+    /* Snap card-by-card; the next card peeks in as a "there's more" cue, and
+       the native overscroll rubber-bands at both ends. */
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--space-1);
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .roundCards::-webkit-scrollbar {
+    display: none;
   }
 
   .roundCards > * {
-    min-width: 240px;
+    min-width: min(15rem, 78%);
     flex-shrink: 0;
+    scroll-snap-align: start;
   }
 
   .roundLabel {

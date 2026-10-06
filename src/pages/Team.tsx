@@ -180,6 +180,13 @@ export function Team() {
                     <tr
                       className={styles.weekRow}
                       onClick={() => setExpandedWeek(isExpanded ? null : week.week)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setExpandedWeek(isExpanded ? null : week.week);
+                        }
+                      }}
+                      tabIndex={0}
                       aria-expanded={isExpanded}
                     >
                       <td>{week.week}</td>

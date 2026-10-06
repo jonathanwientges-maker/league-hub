@@ -1,9 +1,10 @@
-import { useState } from "react";
 import { Skeleton } from "../../components/common/Skeleton";
+import { Avatar } from "../../components/common/Avatar";
 import { berlinNow } from "../../media/berlinTime";
 import { displayLabelForWeek } from "../../media/specialEvents";
 import { useAllEditions, type EditionWithCards } from "../../media/roomData";
 import { PressCard } from "./PressCard";
+import { Disclosure } from "./Disclosure";
 import styles from "./Altpapier.module.css";
 
 function editionDateLabel(revealAt: string): string {
@@ -13,34 +14,42 @@ function editionDateLabel(revealAt: string): string {
 }
 
 function EditionRow({ edition }: { edition: EditionWithCards }) {
-  const [open, setOpen] = useState(false);
   const winner = edition.cards.find((c) => c.isQuoteOfTheWeek);
   const weekLabel = edition.week !== null ? (displayLabelForWeek(edition.week) ?? `Woche ${edition.week}`) : "Woche ?";
 
   return (
-    <div className={styles.edition}>
-      <button type="button" className={styles.editionToggle} onClick={() => setOpen((o) => !o)}>
-        <span>
-          {weekLabel} · {editionDateLabel(edition.revealAt)}
-          {winner ? ` · ${winner.badgeLabel}: ${winner.teamName}` : ""}
-        </span>
-        <span aria-hidden="true">{open ? "▲" : "▼"}</span>
-      </button>
-      {open && (
-        <div className={styles.grid}>
-          {edition.cards.map((card) => (
-            <PressCard
-              key={card.rosterId + (card.responseId ?? "")}
-              card={card}
-              rosterId={null}
-              votingOpen={false}
-              votingClosed={edition.votingClosed}
-              readOnly
-            />
-          ))}
-        </div>
-      )}
-    </div>
+    <Disclosure
+      className={styles.edition}
+      headerClassName={styles.editionToggle}
+      header={
+        <>
+          {winner && <Avatar url={winner.avatarUrl} name={winner.teamName} size={32} />}
+          <span className={styles.editionText}>
+            <span className={styles.editionTitle}>
+              {weekLabel} · {editionDateLabel(edition.revealAt)}
+            </span>
+            {winner && (
+              <span className={styles.editionWinner}>
+                {winner.badgeLabel}: {winner.teamName}
+              </span>
+            )}
+          </span>
+        </>
+      }
+    >
+      <div className={styles.grid}>
+        {edition.cards.map((card) => (
+          <PressCard
+            key={card.rosterId + (card.responseId ?? "")}
+            card={card}
+            rosterId={null}
+            votingOpen={false}
+            votingClosed={edition.votingClosed}
+            readOnly
+          />
+        ))}
+      </div>
+    </Disclosure>
   );
 }
 

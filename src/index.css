@@ -16,9 +16,14 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  /* The tab bar / top bar own the safe areas; this just covers landscape notches. */
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
 }
 
 #root {
@@ -27,13 +32,39 @@ body {
   flex-direction: column;
 }
 
+/* Optical sizing: tracking and leading tighten as type grows. */
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-display);
   font-weight: 800;
-  letter-spacing: -0.02em;
   margin: 0;
+  font-optical-sizing: auto;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 1rem + 0.9vw, 1.55rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+}
+
+/* Small caps-style labels read better with a little air. */
+th {
+  letter-spacing: 0.06em;
 }
 
 a {
@@ -42,6 +73,30 @@ a {
 
 button {
   font-family: inherit;
+}
+
+/* Taps respond on pointer-down and skip the 300ms double-tap wait. */
+a,
+button,
+select,
+summary,
+[role="button"],
+[role="tab"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Text for assistive tech only (e.g. avatar-only table cells). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 .tabular-nums {
@@ -56,16 +111,16 @@ button {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-  border-radius: var(--radius-sm);
 }
 
+/* Reduced motion: no looping or sliding animation. Opacity/color
+   transitions are kept (tokens shorten them) so state changes stay legible. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }

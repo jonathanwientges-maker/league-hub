@@ -38,8 +38,10 @@
   font-weight: 600;
 }
 
-.placementName:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  .placementName:hover {
+    text-decoration: underline;
+  }
 }
 
 .links {

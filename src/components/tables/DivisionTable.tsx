@@ -37,9 +37,9 @@ export function DivisionTable({ title, standings }: DivisionTableProps) {
               >
                 <td>{standing.rank}</td>
                 <td>
-                  <div className={styles.teamCell}>
-                    <Avatar url={team.avatarUrl} name={team.teamName} size={24} />
-                    <span className={styles.teamName}>{team.teamName}</span>
+                  <div className={styles.teamCell} title={team.teamName}>
+                    <Avatar url={team.avatarUrl} name={team.teamName} size={32} />
+                    <span className="sr-only">{team.teamName}</span>
                   </div>
                 </td>
                 <td className={clsx(styles.numeric, "tabular-nums")}>

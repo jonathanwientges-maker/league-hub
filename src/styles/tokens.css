@@ -10,23 +10,27 @@
   --accent-hot: #ff5d5d;
   --gold: #f5c044;
 
+  --bg-rgb: 11, 18, 32;
+  --text-rgb: 234, 240, 250;
+  --surface-rgb: 20, 30, 48;
   --accent-rgb: 61, 220, 151;
   --accent-hot-rgb: 255, 93, 93;
   --gold-rgb: 245, 192, 68;
 
   /* Typography */
-  --font-display: "Archivo", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
 
   /* Spacing scale */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 64px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
 
   /* Radii */
   --radius-sm: 6px;
@@ -41,6 +45,20 @@
   --duration-fast: 200ms;
   --duration-base: 320ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Spatial feedback — zeroed under reduced motion so only opacity/color remain. */
+  --lift: -2px;
+  --press-scale: 0.97;
+
+  /* Chrome */
+  --nav-h: 3.5rem;
+  --tabbar-h: 3.5rem;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --glass-bg: rgba(var(--surface-rgb), 0.72);
+  --glass-blur: blur(20px) saturate(180%);
+  --glass-edge: rgba(255, 255, 255, 0.08);
 
   color-scheme: dark light;
 }
@@ -54,13 +72,16 @@
     --line: #dde3ef;
     --text: #0b1220;
     --text-dim: #56637d;
-    --accent: #1f9d6f;
-    --accent-hot: #d13f3f;
-    --gold: #b8860b;
+    --accent: #157a56;
+    --accent-hot: #c23636;
+    --gold: #8a6508;
 
-    --accent-rgb: 31, 157, 111;
-    --accent-hot-rgb: 209, 63, 63;
-    --gold-rgb: 184, 134, 11;
+    --bg-rgb: 244, 246, 251;
+    --text-rgb: 11, 18, 32;
+    --surface-rgb: 255, 255, 255;
+    --accent-rgb: 21, 122, 86;
+    --accent-hot-rgb: 194, 54, 54;
+    --gold-rgb: 138, 101, 8;
   }
 }
 
@@ -74,6 +95,9 @@
   --accent: #3ddc97;
   --accent-hot: #ff5d5d;
   --gold: #f5c044;
+  --bg-rgb: 11, 18, 32;
+  --text-rgb: 234, 240, 250;
+  --surface-rgb: 20, 30, 48;
   --accent-rgb: 61, 220, 151;
   --accent-hot-rgb: 255, 93, 93;
   --gold-rgb: 245, 192, 68;
@@ -86,17 +110,41 @@
   --line: #dde3ef;
   --text: #0b1220;
   --text-dim: #56637d;
-  --accent: #1f9d6f;
-  --accent-hot: #d13f3f;
-  --gold: #b8860b;
-  --accent-rgb: 31, 157, 111;
-  --accent-hot-rgb: 209, 63, 63;
-  --gold-rgb: 184, 134, 11;
+  --accent: #157a56;
+  --accent-hot: #c23636;
+  --gold: #8a6508;
+  --bg-rgb: 244, 246, 251;
+  --text-rgb: 11, 18, 32;
+  --surface-rgb: 255, 255, 255;
+  --accent-rgb: 21, 122, 86;
+  --accent-hot-rgb: 194, 54, 54;
+  --gold-rgb: 138, 101, 8;
 }
 
+/* Reduced motion keeps feedback, drops the vestibular part: no lifts, scales
+   or slides — opacity/color transitions stay (short) so state is still legible. */
 @media (prefers-reduced-motion: reduce) {
   :root {
-    --duration-fast: 0ms;
-    --duration-base: 0ms;
+    --duration-fast: 120ms;
+    --duration-base: 160ms;
+    --lift: 0px;
+    --press-scale: 1;
+  }
+}
+
+/* Frostier / solid chrome for users who asked for less transparency or more contrast. */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-bg: rgb(var(--surface-rgb));
+    --glass-blur: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --glass-bg: rgb(var(--surface-rgb));
+    --glass-blur: none;
+    --line: color-mix(in srgb, var(--text) 45%, var(--bg));
+    --text-dim: color-mix(in srgb, var(--text) 80%, var(--bg));
   }
 }

@@ -150,8 +150,10 @@
   font-size: 1rem;
 }
 
-.sleeperLink:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  .sleeperLink:hover {
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 640px) {

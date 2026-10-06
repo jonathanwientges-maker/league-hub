@@ -1,0 +1,123 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-7) var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: radial-gradient(120% 80% at 50% 0%, rgba(var(--accent-rgb), 0.1), transparent 60%), var(--surface);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.12);
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.sub {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.clock {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.unitBox {
+  min-width: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) var(--space-2);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 8vw, 2.4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit {
+  margin-top: 0.3rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.track {
+  width: min(100%, 18rem);
+  height: 0.25rem;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+  margin-top: var(--space-2);
+}
+
+.fill {
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  transition: transform 1s linear;
+}
+
+.reminder {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0 var(--space-4);
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 100ms var(--ease-out), background 100ms var(--ease-out);
+}
+
+.reminder:active {
+  transform: scale(var(--press-scale));
+  background: rgba(var(--accent-rgb), 0.12);
+}
+
+.reminderOn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.error {
+  margin: 0;
+  color: var(--accent-hot);
+  font-size: 0.85rem;
+}

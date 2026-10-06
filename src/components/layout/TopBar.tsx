@@ -1,80 +1,56 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import { useLeague } from "../../hooks/useLeague";
 import { useSeasonContext } from "../../context/SeasonContext";
 import { LEAGUE_CONFIG } from "../../config/league";
+import { NAV_ITEMS } from "./navItems";
+import { SeasonSwitcher } from "./SeasonSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import styles from "./TopBar.module.css";
-
-const NAV_ITEMS = [
-  { to: "/", label: "Home", end: true },
-  { to: "/standings", label: "Standings" },
-  { to: "/playoffs", label: "Playoffs" },
-  { to: "/pick-race", label: "Pick Race" },
-  { to: "/media-room", label: "Media Room" },
-  { to: "/rivalries", label: "Rivalries" },
-  { to: "/teams", label: "Teams" },
-  { to: "/history", label: "History" },
-];
-
-function SeasonSwitcher() {
-  const { chain, currentSeason, selectedSeason, setSelectedSeason } = useSeasonContext();
-
-  if (chain.length === 0) return null;
-
-  return (
-    <select
-      className={styles.seasonSwitcher}
-      aria-label="Season"
-      value={selectedSeason?.leagueId ?? ""}
-      onChange={(e) => {
-        const season = chain.find((ref) => ref.leagueId === e.target.value);
-        if (season) setSelectedSeason(season);
-      }}
-    >
-      {[...chain].reverse().map((season) => (
-        <option key={season.leagueId} value={season.leagueId}>
-          {season.season}
-          {season.leagueId === currentSeason?.leagueId ? " · Live" : ""}
-        </option>
-      ))}
-    </select>
-  );
-}
 
 export function TopBar() {
   const { selectedSeason } = useSeasonContext();
   const { data: league } = useLeague(selectedSeason?.leagueId ?? "");
-  const avatarUrl = league?.avatar
-    ? `https://sleepercdn.com/avatars/${league.avatar}`
-    : null;
+  const avatarUrl = league?.avatar ? `https://sleepercdn.com/avatars/${league.avatar}` : null;
+
+  // The divider is a scroll-edge fade that only appears once content is
+  // actually sliding under the bar — not a permanent hairline.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className={styles.topBar}>
+    <header className={styles.topBar} data-scrolled={scrolled}>
       <NavLink to="/" className={styles.brand}>
         {avatarUrl ? (
           <img className={styles.avatar} src={avatarUrl} alt="" />
         ) : (
           <span className={styles.avatarPlaceholder} aria-hidden="true" />
         )}
-        <span className={styles.leagueName}>
-          {LEAGUE_CONFIG.displayName ?? league?.name ?? "League Hub"}
-        </span>
+        <span className={styles.leagueName}>{LEAGUE_CONFIG.displayName ?? league?.name ?? "League Hub"}</span>
       </NavLink>
+      {/* Phones use the bottom tab bar instead (see BottomNav). */}
       <nav className={styles.nav} aria-label="Primary">
         {NAV_ITEMS.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}
             end={item.end}
-            className={({ isActive }) =>
-              clsx(styles.navLink, isActive && styles.navLinkActive)
-            }
+            className={({ isActive }) => clsx(styles.navLink, isActive && styles.navLinkActive)}
           >
             {item.label}
           </NavLink>
         ))}
       </nav>
-      <SeasonSwitcher />
+      <div className={styles.actions}>
+        <SeasonSwitcher />
+        <ThemeToggle />
+      </div>
     </header>
   );
 }

@@ -1,47 +1,75 @@
+.identityRow {
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--space-3);
+}
+
+/* Sticks just under the global top bar (not at 0, where it'd hide behind it). */
 .tabs {
   position: sticky;
-  top: 0;
-  z-index: 10;
+  top: calc(var(--nav-h) + var(--safe-top));
+  z-index: 9;
   display: flex;
-  gap: 4px;
-  padding: var(--space-2) var(--space-4);
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
+  gap: var(--space-1);
+  padding: var(--space-1);
+  margin: 0 auto var(--space-3);
+  max-width: 40rem;
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--line);
 }
 
 .tab {
+  position: relative;
   flex: 1;
-  min-height: 44px;
+  min-height: 2.75rem;
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--text-dim);
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out), transform 100ms var(--ease-out);
+}
+
+.tab:active {
+  transform: scale(var(--press-scale));
 }
 
 .tabActive {
-  background: var(--surface-raised);
   color: var(--text);
 }
 
-.tab:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
+.pill {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
-.footer {
-  text-align: center;
-  padding: var(--space-5) var(--space-4);
+.tabLabel {
+  position: relative;
 }
 
-.switchTeam {
-  background: none;
-  border: none;
-  color: var(--text-dim);
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: 0.85rem;
-  min-height: 44px;
+.short {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .long {
+    display: none;
+  }
+
+  .short {
+    display: inline;
+  }
+}
+
+.panel {
+  /* Horizontal pans reach us; vertical scrolling stays native. */
+  touch-action: pan-y;
 }
