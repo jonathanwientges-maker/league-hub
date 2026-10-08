@@ -181,8 +181,10 @@ export function Pressespiegel({ rosterId }: { rosterId: number | null }) {
   const badgeLabel = current.cards[0]?.badgeLabel ?? "Zitat der Woche";
   const revealAt = new Date(current.revealAt);
   const votingCloseAt = votingClosesAt(revealAt);
-  const lead = current.cards.find((c) => c.isQuoteOfTheWeek);
-  const others = current.cards.filter((c) => c !== lead);
+  // Managers who gave no statement this week get no card.
+  const answered = current.cards.filter((c) => c.responseId !== null && c.answer?.trim());
+  const lead = answered.find((c) => c.isQuoteOfTheWeek);
+  const others = answered.filter((c) => c !== lead);
 
   const renderCard = (card: (typeof current.cards)[number], isLead = false) => (
     <PressCard
