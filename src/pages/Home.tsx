@@ -20,6 +20,7 @@ import { MediaDayBanner } from "../components/home/MediaDayBanner";
 import { QuoteOfTheWeekCard } from "../components/home/QuoteOfTheWeekCard";
 import { RivalrySpotlight } from "../components/home/RivalrySpotlight";
 import { RivalPicker } from "../components/home/RivalPicker";
+import { MiniPlayoffBracket, MiniPickRaceBrackets } from "../components/home/MiniBracket";
 import styles from "./Home.module.css";
 
 /** A brand-new season has no real Week 1 data yet — every team is tied at
@@ -139,18 +140,7 @@ function CustomRulesSummaryCards({
           {bracketResult.isLoading ? (
             <Skeleton height={140} />
           ) : bracketResult.bracket ? (
-            <ul className={styles.miniList}>
-              {bracketResult.bracket.seeds.map((seed) => {
-                const team = teamsById.get(seed.rosterId);
-                return (
-                  <li key={seed.seed} className={styles.miniRow}>
-                    <span className={styles.miniSeed}>{seed.seed}</span>
-                    <Avatar url={team?.avatarUrl ?? null} name={team?.teamName ?? "?"} size={22} />
-                    <span className={styles.miniName}>{team?.teamName ?? "Unknown"}</span>
-                  </li>
-                );
-              })}
-            </ul>
+            <MiniPlayoffBracket bracket={bracketResult.bracket} teamsById={teamsById} />
           ) : (
             <p className={styles.emptyState}>Playoff picture not available yet.</p>
           )}
@@ -165,19 +155,8 @@ function CustomRulesSummaryCards({
           </h2>
           {pickRaceResult.isLoading ? (
             <Skeleton height={140} />
-          ) : pickRaceResult.draftOrder ? (
-            <ul className={styles.miniList}>
-              {pickRaceResult.draftOrder.slice(0, 6).map((pick) => {
-                const team = pick.rosterId !== null ? teamsById.get(pick.rosterId) : undefined;
-                return (
-                  <li key={pick.pick} className={styles.miniRow}>
-                    <span className={styles.miniSeed}>{pick.pick}</span>
-                    {team && <Avatar url={team.avatarUrl} name={team.teamName} size={22} />}
-                    <span className={styles.miniName}>{team?.teamName ?? "TBD"}</span>
-                  </li>
-                );
-              })}
-            </ul>
+          ) : pickRaceResult.pickRace ? (
+            <MiniPickRaceBrackets pickRace={pickRaceResult.pickRace} teamsById={teamsById} />
           ) : (
             <p className={styles.emptyState}>Pick race projection not available yet.</p>
           )}

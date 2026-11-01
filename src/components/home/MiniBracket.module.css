@@ -1,0 +1,131 @@
+/* One game = two stacked logos. --slot is a logo plus its padding, so the
+ * connector math below stays in one place. */
+.bracket,
+.pickBracket {
+  --logo: 22px;
+  --pad: 3px;
+  --slot: calc(var(--logo) + var(--pad) * 2);
+  --game: calc(var(--slot) * 2);
+  --link: 1px solid var(--line);
+}
+
+.bracket {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.colCenter {
+  justify-content: center;
+}
+
+.gap {
+  width: var(--space-4);
+}
+
+/* "]" joining the two semifinals into the final: runs between the two
+ * games' vertical centres, with a stub out to the final. */
+.joinPair {
+  position: relative;
+  width: var(--space-4);
+  margin: calc(var(--game) / 2) 0;
+  border-top: var(--link);
+  border-bottom: var(--link);
+  border-right: var(--link);
+}
+
+.joinPair::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: var(--space-2);
+  border-top: var(--link);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  width: var(--slot);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  overflow: hidden;
+}
+
+.slot,
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--slot);
+}
+
+.slot + .slot,
+.slot + .empty,
+.empty + .slot,
+.empty + .empty {
+  border-top: 1px solid var(--line);
+}
+
+.empty::before {
+  content: "";
+  width: var(--logo);
+  height: var(--logo);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--line);
+}
+
+.winner {
+  background: rgba(var(--gold-rgb), 0.18);
+}
+
+.loser {
+  opacity: 0.4;
+}
+
+/* Pick race */
+.pickWrap {
+  display: flex;
+  justify-content: space-around;
+  gap: var(--space-4);
+}
+
+.pickGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pickLabel {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+
+.pickBracket {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* The semifinal's centre lines up with the final's second seat (1.5 slots
+ * down), so it sits half a slot lower than the final. */
+.pickSemi {
+  padding-top: calc(var(--slot) / 2);
+}
+
+.stub {
+  width: var(--space-4);
+  margin-top: calc(var(--slot) * 1.5);
+  border-top: var(--link);
+}
